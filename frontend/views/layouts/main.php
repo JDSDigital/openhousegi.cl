@@ -117,39 +117,80 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 
 <div class="wrap">
     <?php
-    NavBar::begin([
-        'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => 'img-responsive']),
-        'brandUrl' => Yii::$app->homeUrl,
-        'brandOptions' => [
-            'class' => 'vertical-align',
-        ],
-        'options' => [
-            'class' => 'navbar-inverse bg-color1 navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
+        if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') { ?>
+          <header class="navigation side-menu left">
+            <div class="main-nav">
+        				<a class="nav-trigger">
+        					<div class="bar-icon-wrapper">
+        						<span class="bar-icon"></span>
+        						<span class="bar-icon"></span>
+        						<span class="bar-icon"></span>
+        					</div>
+        				</a>
+                <div class="container">
+                    <div class="navbar navbar-default bg-color1" role="navigation">
+                        <?php
+                        NavBar::begin([
+                          'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
+                          'brandUrl' => Yii::$app->homeUrl,
+                          'brandOptions' => [
+                            'class' => 'logo',
+                          ],
+                          'innerContainerOptions' => [
+                              'class' => 'bg-color1',
+                          ],
+                        ]);
+                        $menuItems = [
+                          ['label' => 'Home', 'url' => ['/site/index']],
+                          ['label' => 'About', 'url' => ['/site/about']],
+                          ['label' => 'Contact', 'url' => ['/site/contact']],
+                        ];
+                        echo Nav::widget([
+                          'options' => ['class' => 'navbar-nav'],
+                          'items' => $menuItems,
+                        ]);
+                        NavBar::end();
+                      ?>
+          						<div class="side-menu-bottom">
+          							<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
+          								<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
+          								<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+          								<li><a href="#" class="flickr"><i class="fa fa-flickr"></i></a></li>
+          								<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+          								<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+          								<li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+          								<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
+          								<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+          							</ul>
+          							<p class="text text-uppercase"><strong>© Revelo Inc.</strong></p>
+          						</div>
+                    </div>
+                </div>
+            </div>
+        </header> <!-- End of Header -->
+
+      <?php } else {
+            NavBar::begin([
+              'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => 'img-responsive']),
+              'brandUrl' => Yii::$app->homeUrl,
+              'brandOptions' => [
+                'class' => 'vertical-align navbar-top',
+              ],
+              'options' => [
+                'class' => 'navbar-inverse bg-color1 navbar-fixed-top',
+              ],
+            ]);
+            $menuItems = [
+              ['label' => 'Home', 'url' => ['/site/index']],
+              ['label' => 'About', 'url' => ['/site/about']],
+              ['label' => 'Contact', 'url' => ['/site/contact']],
+            ];
+            echo Nav::widget([
+              'options' => ['class' => 'navbar-nav navbar-right'],
+              'items' => $menuItems,
+            ]);
+            NavBar::end();
+        }
     ?>
 
     <div class="container">
@@ -161,13 +202,71 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+<!-- Footer 8 - Theme -->
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+	<footer class="footer footer-plain footer-theme bg-color1">
+		<div class="container mt60 mb50">
+			<div class="row">
+				<div class="col-md-3 text-center">
+					<?= Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'img-responsive mt20']) ?>
+					<ul class="social-icons list-inline list-unstyled si-6-white si-no-border inverse lg mt20">
+						<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 mar-top-15">
+					<p>
+					Suite 101, Creek Street,<br/>
+					Splace, 100001,<br/>
+					SA, SCountry<br/>
+					Email: <a href="#">support@revelo.com</a><br/>
+					Phone: <a href="#">+1 101 0000001</a><br/>
+					Fax: <a href="#">+1 101 1000001</a>
+					</p>
+				</div>
+				<div class="col-md-3">
+					<h5 class="footer-title">Recent Posts</h5>
+					<ul class="list-unstyled page-links">
+						<li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+						<li><a href="#"> Aliquam lorem ante viverra quis.</a></li>
+						<li><a href="#">Duis leo. Sed fringilla mauris sit amet nibh.</a></li>
+					</ul>
+				</div>
+        <div class="col-md-3">
+					<h5 class="footer-title">Latest Projects</h5>
+					<ul class="list-unstyled latest-projects clearfix">
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/2-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/3-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/7-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/6-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/9-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/4-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5">
+						<p>Copyright © <?= date('Y') ?> <?= Html::a('openhousegi.cl',['//site/index']) ?> / Diseño y desarrollo por <?= Html::a('Geknology', Url::to('http://www.geknology.com/')) ?></p>
+					</div>
+					<div class="col-sm-7 visible-sm-block visible-md-block visible-lg-block">
+						<nav>
+							<ul>
+								<li><?= Html::a('Home', ['/site/index']) ?></li>
+								<li><?= Html::a('About', ['/site/about']) ?></li>
+								<li><?= Html::a('Contact', ['/site/contact']) ?></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End of Footer 8 - Theme -->
 
 <?php $this->endBody() ?>
 </body>

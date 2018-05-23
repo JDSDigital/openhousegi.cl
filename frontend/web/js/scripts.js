@@ -46,51 +46,51 @@ function navResponsive() {
 
 
 function navEvents() {
-	
+
     /*---- Dropdown Menu Events ----*/
-    
+
     $('.main-nav .navbar-nav > .dropdown > .dropdown-menu').click(function(event) {
     	if(screenWidth <= 991) {
 			event.stopPropagation();
 		}
 	});
-	
+
 	$( ".main-nav .navbar-nav>.dropdown>.dropdown-menu>.dropdown-submenu" ).click(function(event) {
 		if(screenWidth < 991) {
 			$(this)
 				.siblings(".dropdown-submenu")
 				.removeClass("open")
-				.end(); 
+				.end();
 			$( this ).parents(".dropdown-submenu").addClass('open');
 			$( this ).toggleClass('open');
 			event.stopPropagation();
 		}
 	});
-	
+
 	$('.main-nav .navbar-nav > .dropdown > a').click(function(event) {
     	$('.main-nav .navbar-nav .dropdown-submenu').removeClass('open');
-    });	
-	
+    });
+
 	$('.main-nav .nav > li .dropdown-submenu > a').click(function(event) {
 		if(screenWidth > 991) {
 			event.stopPropagation();
 		}
 	});
-	
+
 	$('.main-nav .nav > li').hover(function() {
 		var dropdownList = $(this).find("> .dropdown-menu");
 
 		if (screenWidth > 991) {
-			
+
 			/*---- Dropdown Animation on Hover ----*/
 
-			dropdownList.addClass('animated fadeIn');        
+			dropdownList.addClass('animated fadeIn');
 			window.setTimeout( function(){
 				dropdownList.removeClass('animated fadeIn');
-			}, 500);        
+			}, 500);
 
 			/*---- Positioning Dropdown Menu ----*/
-			
+
 			if(!dropdownList.hasClass('megamenu')){
 				var childDropdownList = $(this).find(".dropdown-submenu .dropdown-menu"),
 				dropdownOffset = $(this).offset(),
@@ -114,9 +114,9 @@ function navEvents() {
 					childDropdownList.removeAttr('style')
 				}
 			}
-			
+
 			/*---- Positioning Mega Menu ----*/
-			
+
 			else if(dropdownList.hasClass('megamenu')){
 				dropdownList.css('position','absolute');
 				var dropdownOffset = $(this).offset(),
@@ -136,7 +136,7 @@ function navEvents() {
 				}
 				else {
 					if (!isDropdownVisible) {
-						
+
 						calculateOffset = docWidth - dropdownWidth - shiftOffset;
 						dropdownList.css('left',+calculateOffset+'px');
 					}
@@ -144,18 +144,18 @@ function navEvents() {
 						dropdownList.css('left',+positionedValue+'px');
 					}
 				}
-				
+
 			}
 		}
-		
+
 	});
-	
-	
+
+
 /* ------------------------------------------------
 	Side Navigation Events
 --------------------------------------------------- */
 
-	
+
 	$(".nav-trigger").click(function(e) {
 		e.preventDefault();
 		if ($('.side-menu').hasClass("active")) {
@@ -171,7 +171,7 @@ function navEvents() {
 		if ($('.side-menu-icons').hasClass("active")) {
 			if ( $('ul.collapse').hasClass('in') ) {
 			$('ul.collapse').removeClass('in');
-		}	
+		}
 		}
 		$(".side-menu-icons").toggleClass("active");
 	});
@@ -182,7 +182,7 @@ function navEvents() {
 			.siblings(".with-dropdown")
 			.children(".menu-dropdown.collapse")
 			.removeClass("in")
-			.end(); 
+			.end();
 		$( this ).parents(".with-dropdown").children(".menu-dropdown.collapse").toggleClass('in');
 		event.stopPropagation();
 	});
@@ -198,12 +198,12 @@ function navEvents() {
 			.siblings(".with-dropdown")
 			.children(".menu-dropdown.collapse")
 			.removeClass("in")
-			.end(); 
+			.end();
 		$( this ).parents(".with-dropdown").children(".menu-dropdown.collapse").toggleClass('in');
 		event.stopPropagation();
 	});
 
-	
+
 }
 
 
@@ -218,13 +218,13 @@ function headerSearch() {
         var t = $(this).closest("form"),
             n = t.find("input");
         t.addClass("active"), n.focus(), e.preventDefault()
-    }); 
+    });
 	$(document).on("click", '.navbar-collapse form[role="search"].active button[type="submit"]', function(e) {
         e.preventDefault();
         var t = $(this).closest("form"),
             n = t.find("input");
         "" != n.val() && t.submit(), closeSearch()
-    }); 
+    });
 	$(document).mouseup(function(e) {
         var t = $('.navbar-collapse form[role="search"].active');
         t.is(e.target) || 0 !== t.has(e.target).length || t.removeClass("active")
@@ -292,7 +292,7 @@ var headerHeight = $('.main-nav').outerHeight(),
 	headerFixedPos = 0,
 	isHeaderFixed = false,
 	isHeaderVisible = false;
-	
+
 function stickyMenu(){
 	if ($('.main-nav').hasClass('sticky')) {
 		var headerY = $('.navigation').offset().top + 1;
@@ -336,7 +336,7 @@ function stickyMenu(){
 		});
 	}
 }
-	
+
 
 /* ------------------------------------------------
     One Page Navigation
@@ -344,7 +344,7 @@ function stickyMenu(){
 
 
 function navOnePage() {
-    if( $('body').hasClass('one-page')){	
+    if( $('body').hasClass('one-page')){
         var offset = 0,
 			delay =0;
 		var $sections = $('.one-page-section');
@@ -378,7 +378,7 @@ function navOnePage() {
             $('.main-nav .nav > li').removeClass('active');
             $("[href=#"+id+"]").parent('li').addClass('active');
         }
-		var timer;  
+		var timer;
         $(window).scroll(function(){
             if(timer){
                 sectionOffset();
@@ -393,7 +393,7 @@ function navOnePage() {
         $('.main-nav .nav li a[href*=#]:not([href=#])').click(function(e) {
 			e.preventDefault();
 			if(scrollActive == true) {
-			    event.preventDefault();	
+			    event.preventDefault();
             }
             else {
                 var offset = 59;
@@ -417,7 +417,7 @@ function navOnePage() {
 
 
 /* ------------------------------------------------
-    
+
 	Fixed Footer
 
 --------------------------------------------------- */
@@ -494,7 +494,7 @@ function themeImageSection () {
     var fullScreenImage = document.getElementsByClassName("theme-background-section");
     if(document.getElementsByClassName("theme-background-section")){
         var windowH = window.innerHeight;
-        $('.theme-background-section').each(function(){ 
+        $('.theme-background-section').each(function(){
             $selection =  $(this);
             if($selection.hasClass('custom-height')) {
                 var customHeight = $selection.attr('data-custom-height');
@@ -515,7 +515,7 @@ function themeImageSection () {
                 if (typeof offsetContainer !== typeof undefined && offsetContainer !== false && offsetContainer !== '' && screenWidth > 767) {
                     var containerArray = offsetContainer.split(",");
                     var i, offsetHeight = 0, currentContainer;
-                    for (i = 0; i < containerArray.length; i++) { 
+                    for (i = 0; i < containerArray.length; i++) {
                         currentContainer = String(containerArray[i]);
                         offsetHeight += $(currentContainer).outerHeight();
                     }
@@ -550,7 +550,7 @@ function themeImageSection () {
 
 
 /* ------------------------------------------------
-    
+
 	Fixed Social Icons
 
 --------------------------------------------------- */
@@ -564,7 +564,7 @@ function fixedSocialIcons() {
 
 
 /* ------------------------------------------------
-    
+
 	Bottom Contact Form & Scroll to Top
 
 --------------------------------------------------- */
@@ -577,7 +577,7 @@ function bottomLinks () {
 	$(window).scroll(function(){
 		if ($(document).scrollTop() > 100) {
 			$('.to-top, .floating-contact, .floating-contact-panel').addClass('active');
-		} 
+		}
 		else {
 			$('.to-top, .floating-contact, .floating-contact-panel').removeClass('active');
 		}
@@ -585,11 +585,11 @@ function bottomLinks () {
 	$(window).scroll(function(){
 		if ($(document).scrollTop() > 100) {
 			$('.to-top, .floating-contact, .floating-contact-panel').addClass('active');
-		} 
+		}
 		else {
 			$('.to-top, .floating-contact, .floating-contact-panel').removeClass('active');
 		}
-		
+
 	});
 	$('.floating-contact').click(function(event){
 		event.preventDefault();
@@ -601,7 +601,7 @@ function bottomLinks () {
 				$('.bottomContactPanel').hide()
 			}
 		}
-	});	 
+	});
 	$('.to-top').click(function () {
 		$("html, body").animate({
 			scrollTop: 0
@@ -612,7 +612,7 @@ function bottomLinks () {
 
 
 /* ------------------------------------------------
-    
+
 	Split Screen Section
 
 --------------------------------------------------- */
@@ -660,7 +660,7 @@ function splitScreenImages() {
 
 
 /* ------------------------------------------------
-    
+
 	Promo Bar
 
 --------------------------------------------------- */
@@ -669,13 +669,13 @@ function splitScreenImages() {
 $('.promo-bar a').click(function (e) {
 	e.preventDefault();
 	$('.promo-bar').slideUp('slow', function () {
-		stickyMenu();	
+		stickyMenu();
 	});
 });
 
 
 /* ------------------------------------------------
-    
+
 	Sliding Panel
 
 --------------------------------------------------- */
@@ -688,7 +688,7 @@ $('.panel-trigger-button').click(function() {
 
 
 /* ------------------------------------------------
-    
+
 	# Links
 
 --------------------------------------------------- */
@@ -703,7 +703,7 @@ $('a').click(function(e) {
 
 
 /* ------------------------------------------------
-    
+
 	Expandable Sections
 
 --------------------------------------------------- */
@@ -726,7 +726,7 @@ $('.expandable-section a.expansion-trigger').click(function(e){
 
 
 /* ------------------------------------------------
-    
+
 	Career Form Conditional Fields
 
 --------------------------------------------------- */
@@ -748,7 +748,7 @@ function ifEmployeed(e) {
 
 
 /* ------------------------------------------------
-    
+
 	Today's Date
 
 --------------------------------------------------- */
@@ -774,7 +774,7 @@ function dateToday() {
 
 
 /* ------------------------------------------------
-    
+
 	Coupon Code
 
 --------------------------------------------------- */
@@ -794,7 +794,7 @@ $('.coupon-close').click(function() {
 
 
 /* ------------------------------------------------
-    
+
 	Jump Links
 
 --------------------------------------------------- */
@@ -816,10 +816,10 @@ $('a[href*=#]:not([href=#]).jump').click(function() {
 		}
 	}
 });
-		
+
 
 /* ------------------------------------------------
-    
+
 	Quantity Button
 
 --------------------------------------------------- */
@@ -834,7 +834,7 @@ $('.qtyplus').click(function(e){
 	}
 	else if (!isNaN(currentVal) ) {
 		$('input[name='+fieldName+']').val(currentVal + 1);
-	} 
+	}
 	else {
 		$('input[name='+fieldName+']').val(0);
 	}
@@ -853,7 +853,7 @@ $(".qtyminus").click(function(e) {
 
 
 /* ------------------------------------------------
-    
+
 	Checkout Form's Conditional Fields
 
 --------------------------------------------------- */
@@ -873,7 +873,7 @@ $('input:radio[name=paymentOptions]').click(function(){
 	var val = $('input:radio[name=paymentOptions]:checked').val();
 	if (val == 1) {
 		$("#paymentForm :input").prop("disabled", false);
-		$(".btn-card-type").removeAttr("style");	
+		$(".btn-card-type").removeAttr("style");
 	}
 	else {
 		$("#paymentForm :input").not('button').prop("disabled", true);
@@ -882,7 +882,7 @@ $('input:radio[name=paymentOptions]').click(function(){
 });
 
 /* ------------------------------------------------
-    
+
 	Initializing Tooltips
 
 --------------------------------------------------- */
@@ -906,7 +906,7 @@ function tooltip() {
 
 
 /* ------------------------------------------------
-    
+
 	Google Map
 
 --------------------------------------------------- */
@@ -1001,7 +1001,7 @@ function defaultMap() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Owl Carousel
 
 --------------------------------------------------- */
@@ -1017,7 +1017,7 @@ function owlC() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Counters
 
 --------------------------------------------------- */
@@ -1032,7 +1032,7 @@ function counters() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Isotope For Filtering
 
 --------------------------------------------------- */
@@ -1073,7 +1073,7 @@ function isotope() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Shop Slider
 
 --------------------------------------------------- */
@@ -1090,7 +1090,7 @@ function shopSlider() {
 
 
 /* ------------------------------------------------
-    
+
 	Initialzing Nivo Lightbox
 
 --------------------------------------------------- */
@@ -1102,7 +1102,7 @@ function nivoLightbox() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Wow.js
 
 --------------------------------------------------- */
@@ -1118,7 +1118,7 @@ function wowInit() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Knobs
 
 --------------------------------------------------- */
@@ -1163,7 +1163,7 @@ function knobs() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Progress Bars
 
 --------------------------------------------------- */
@@ -1179,7 +1179,7 @@ function progressBarsOnView() {
 
 
 /* ------------------------------------------------
-    
+
 	Initialzing News Carousel
 
 --------------------------------------------------- */
@@ -1191,8 +1191,8 @@ function newsCarousel() {
 
 
 /* ------------------------------------------------
-    
-	Initializing Countdown 
+
+	Initializing Countdown
 
 --------------------------------------------------- */
 
@@ -1205,7 +1205,7 @@ function countDown() {
 
 
 /* ------------------------------------------------
-    
+
 	Intializing Tweet
 
 --------------------------------------------------- */
@@ -1221,7 +1221,7 @@ function tweets() {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Dribble Shots
 
 --------------------------------------------------- */
@@ -1244,7 +1244,7 @@ function dribbleShots () {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Instagram Feed
 
 --------------------------------------------------- */
@@ -1267,7 +1267,7 @@ function instagramFeed () {
 
 
 /* ------------------------------------------------
-    
+
 	Initializing Flickr Thumbnails
 
 --------------------------------------------------- */
@@ -1279,7 +1279,7 @@ function flickrThumbnails() {
 
 
 /* ------------------------------------------------
-    
+
 	Function Call and Initializing Global Variables
 
 --------------------------------------------------- */
@@ -1308,48 +1308,48 @@ var $win = $(window);
 
 
 $win.on("resize", function() {
-	
-	var isStickyElementFixed = !1, 
-	
-	winScrollY = 0, 
-	
-	stickyElementSetPoint = 0, 
-	
-	stickyElementY = 0, 
-	
+
+	var isStickyElementFixed = !1,
+
+	winScrollY = 0,
+
+	stickyElementSetPoint = 0,
+
+	stickyElementY = 0,
+
 	screenWidth = window.innerWidth,
-	
-	winScrollY = 0, 
-	
-	stickyElementTop = 0, 
-	
-	stickyElementDisabled = !1, 
-	
-	headerVisiblePos = 0, 
-	
-	headerFixedPos = 0, 
-	
+
+	winScrollY = 0,
+
+	stickyElementTop = 0,
+
+	stickyElementDisabled = !1,
+
+	headerVisiblePos = 0,
+
+	headerFixedPos = 0,
+
 	isHeaderFixed = !1,
-	
-	isHeaderVisible = !1; 
-	
-	themeImageSection(), 
-	
-	navResponsive(), 
-	
+
+	isHeaderVisible = !1;
+
+	themeImageSection(),
+
+	navResponsive(),
+
 	navOnePage(),
-	
-	centerModal(), 
-	
-	setTimeout(stickElement, 3000), 
-	
-	setTimeout(stickyMenu, 300), 
-	
-	setTimeout(fixedFooter, 1300), 
-	
+
+	centerModal(),
+
+	setTimeout(stickElement, 3000),
+
+	setTimeout(stickyMenu, 300),
+
+	setTimeout(fixedFooter, 1300),
+
 	splitScreenImages()
-	
-}).resize(); 
+
+}).resize();
 
 
 /* ------------------------------------------------
@@ -1358,55 +1358,55 @@ $win.on("resize", function() {
 
 
 $win.on("load", function() {
-	
-	navEvents(), 
-	
-	headerSearch(), 
-	
-	topSearch(), 
-	
-	navOnePage(), 
-	
+
+	navEvents(),
+
+	headerSearch(),
+
+	topSearch(),
+
+	navOnePage(),
+
 	dateToday(),
-	
-	bottomLinks(), 
-	
-	knobs(), 
-	
-	countDown(), 
-	
-	progressBarsOnView(), 
-	
+
+	bottomLinks(),
+
+	knobs(),
+
+	countDown(),
+
+	progressBarsOnView(),
+
 	owlC(),
-	
-	isotope(), 
-	
-	counters(), 
-	
-	wowInit(), 
-	
-	shopSlider(), 
-	
+
+	isotope(),
+
+	counters(),
+
+	wowInit(),
+
+	shopSlider(),
+
 	nivoLightbox(),
-	
-	newsCarousel(), 
-	
-	tooltip(), 
-	
-	fixedSocialIcons(), 
-	
+
+	newsCarousel(),
+
+	tooltip(),
+
+	fixedSocialIcons(),
+
 	flickrThumbnails(),
-	
-	multiScroll(), 
-	
-	tweets(), 
-	
-	instagramFeed(), 
-	
+
+	multiScroll(),
+
+	tweets(),
+
+	instagramFeed(),
+
 	dribbleShots(),
-	
+
 	defaultMap();
-	
+
     /*---- Auto Modal Box ----*/
 
 	$(".modal.auto").modal("show");
@@ -1414,5 +1414,5 @@ $win.on("load", function() {
     /*---- Hide Page Loader ----*/
 
 	$(".loader").fadeOut("slow");
-	
+
 });

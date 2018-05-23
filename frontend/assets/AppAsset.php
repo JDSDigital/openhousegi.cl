@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
     		'third-party/revolution/css/layers.css',
     		'third-party/revolution/css/navigation.css',
         'css/style.css',
+        'css/master.css',
         'css/site.css',
     ];
     public $js = [

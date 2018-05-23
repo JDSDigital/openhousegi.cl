@@ -24,10 +24,10 @@ body {
 }
 
 .footer {
-    height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    /* height: 60px; */
+    /* background-color: #f5f5f5; */
+    /* border-top: 1px solid #ddd; */
+    padding: 0;
 }
 
 .jumbotron {
@@ -175,7 +175,7 @@ a.desc:after {
 .navbar-brand {
   padding: 5px;
 }
-.navbar-brand img {
+.navbar-brand.navbar-top img {
   max-width: 200px;
 }
 .navbar-inverse .navbar-nav>li>a {
@@ -186,4 +186,19 @@ a.desc:after {
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
   background-color: #ff8022 !important;
+}
+.side-menu .main-nav .navbar .navbar .navbar-collapse {
+  padding: 0 !important;
+}
+.side-menu .main-nav .navbar .navbar {
+  border-radius: 0;
+}
+.side-menu .nav.navbar-nav > li {
+  background: transparent;
+}
+.side-menu.active.left .navbar-header a.logo img {
+  height: 40px;
+}
+.footer > .container {
+  margin-bottom: 0;
 }
