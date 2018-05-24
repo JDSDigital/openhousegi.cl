@@ -169,6 +169,18 @@ a.desc:after {
 .bg-color5 {
   background-color: #fdff50 !important;
 }
+.white-text {
+  color: #FFF !important;
+}
+.bg-white {
+  background-color: #FFF !important;
+}
+.black-text {
+  color: #333 !important;
+}
+.bg-black {
+  background-color: #333 !important;
+}
 
 /* Fixes */
 
@@ -182,10 +194,11 @@ a.desc:after {
   color: #FFF;
 }
 .navbar-inverse .navbar-nav>li>a:hover {
-  color: #ff8022;
+  /* color: #ff8022; */
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-  background-color: #ff8022 !important;
+  color: #333;
+  background-color: #EEE !important;
 }
 .side-menu .main-nav .navbar .navbar .navbar-collapse {
   padding: 0 !important;
@@ -199,6 +212,19 @@ a.desc:after {
 .side-menu.active.left .navbar-header a.logo img {
   height: 40px;
 }
+.side-menu .nav.navbar-nav > li > a, .side-menu-bottom a i {
+  color: #FFF;
+}
+.side-menu .nav.navbar-nav > li.active > a, .side-menu .nav.navbar-nav > li:hover > a {
+  color: #333;
+}
+.side-menu .nav-trigger .bar-icon {
+  background: #FFF;
+}
 .footer > .container {
   margin-bottom: 0;
+}
+.no-pt-heading {
+  border-color: #333;
+  background-image:url('../images/patterns/bright_squares.png');
 }

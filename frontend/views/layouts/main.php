@@ -121,7 +121,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
           <header class="navigation side-menu left">
             <div class="main-nav">
         				<a class="nav-trigger">
-        					<div class="bar-icon-wrapper">
+        					<div class="bar-icon-wrapper bg-color1">
         						<span class="bar-icon"></span>
         						<span class="bar-icon"></span>
         						<span class="bar-icon"></span>
@@ -162,12 +162,19 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
           								<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
           								<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
           							</ul>
-          							<p class="text text-uppercase"><strong>© Revelo Inc.</strong></p>
+          							<p class="text text-uppercase white-text"><strong>© Open House</strong></p>
           						</div>
                     </div>
                 </div>
             </div>
         </header> <!-- End of Header -->
+
+        <div class="">
+            <div class="container">
+              <?= Alert::widget() ?>
+            </div>
+            <?= $content ?>
+        </div>
 
       <?php } else {
             NavBar::begin([
@@ -190,16 +197,28 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
               'items' => $menuItems,
             ]);
             NavBar::end();
-        }
-    ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+            ?>
+            <div class="pt50">
+                <div class="page-top-grey-bottom no-pt-heading">
+          					<div class="container">
+          						<div class="row">
+          							<div class="col-md-12">
+                          <?= Breadcrumbs::widget([
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'options' => [
+                              'class' => 'breadcrumb',
+                            ],
+                          ]) ?>
+          						</div>
+          					</div>
+          				</div>
+                </div>
+                <div class="container">
+                  <?= Alert::widget() ?>
+                  <?= $content ?>
+                </div>
+            </div>
+        <?php } ?>
 </div>
 
 <!-- Footer 8 - Theme -->
@@ -248,7 +267,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 				</div>
 			</div>
 		</div>
-		<div class="footer-copyright">
+		<div class="footer-copyright bg-black">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-5">
