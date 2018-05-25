@@ -15,8 +15,8 @@ body {
 .wrap {
     min-height: 100%;
     height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .wrap > .container {
@@ -28,6 +28,7 @@ body {
     /* background-color: #f5f5f5; */
     /* border-top: 1px solid #ddd; */
     padding: 0;
+    margin: 0;
 }
 
 .jumbotron {
@@ -227,4 +228,11 @@ a.desc:after {
 .no-pt-heading {
   border-color: #333;
   background-image:url('../images/patterns/bright_squares.png');
+}
+.tp-revslider-mainul {
+  padding: 0;
+}
+.logo-rev-slider {
+  width: 50vw !important;
+  height: auto !important;
 }
