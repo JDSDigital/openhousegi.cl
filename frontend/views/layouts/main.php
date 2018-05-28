@@ -141,9 +141,9 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
                           ],
                         ]);
                         $menuItems = [
-                          ['label' => 'Home', 'url' => ['/site/index']],
-                          ['label' => 'About', 'url' => ['/site/about']],
-                          ['label' => 'Contact', 'url' => ['/site/contact']],
+                          ['label' => 'Inicio', 'url' => ['/site/index']],
+                          ['label' => 'Quienes Somos'],
+                          ['label' => 'Contacto'],
                         ];
                         echo Nav::widget([
                           'options' => ['class' => 'navbar-nav'],
@@ -188,9 +188,9 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
               ],
             ]);
             $menuItems = [
-              ['label' => 'Home', 'url' => ['/site/index']],
-              ['label' => 'About', 'url' => ['/site/about']],
-              ['label' => 'Contact', 'url' => ['/site/contact']],
+              ['label' => 'Inicio', 'url' => ['/site/index']],
+              ['label' => 'Quienes Somos'],
+              ['label' => 'Contacto'],
             ];
             echo Nav::widget([
               'options' => ['class' => 'navbar-nav navbar-right'],
@@ -247,7 +247,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					</p>
 				</div>
 				<div class="col-md-3">
-					<h5 class="footer-title">Recent Posts</h5>
+					<h5 class="footer-title">Links Útiles</h5>
 					<ul class="list-unstyled page-links">
 						<li><a href="#">Lorem ipsum dolor sit amet.</a></li>
 						<li><a href="#"> Aliquam lorem ante viverra quis.</a></li>
@@ -255,14 +255,14 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					</ul>
 				</div>
         <div class="col-md-3">
-					<h5 class="footer-title">Latest Projects</h5>
+					<h5 class="footer-title">Ultimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/2-square.jpg', ['class' => 'img-responsive']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/3-square.jpg', ['class' => 'img-responsive']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/7-square.jpg', ['class' => 'img-responsive']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/6-square.jpg', ['class' => 'img-responsive']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/9-square.jpg', ['class' => 'img-responsive']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/portfolio/4-square.jpg', ['class' => 'img-responsive']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/03.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/04.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/05.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/06.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
 					</ul>
 				</div>
 			</div>
@@ -276,9 +276,9 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					<div class="col-sm-7 visible-sm-block visible-md-block visible-lg-block">
 						<nav>
 							<ul>
-								<li><?= Html::a('Home', ['/site/index']) ?></li>
-								<li><?= Html::a('About', ['/site/about']) ?></li>
-								<li><?= Html::a('Contact', ['/site/contact']) ?></li>
+								<li><?= Html::a('Inicio', ['/site/index']) ?></li>
+								<li><?= Html::a('Quienes Somos') ?></li>
+								<li><?= Html::a('Contacto') ?></li>
 							</ul>
 						</nav>
 					</div>

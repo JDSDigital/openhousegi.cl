@@ -76,7 +76,7 @@ $this->title = 'Open House';
 			</div>
 		</div><!-- End of Revolution Slider -->
 
-		<div class="bg-white">
+		<div class="bg-white animated fadeInUp">
 
     <ul class="grid portfolio filterArea list-unstyled text-center">
 
@@ -133,26 +133,26 @@ $this->title = 'Open House';
 
 			</ul><!-- End of Portfolio 3 Grid -->
 </div>
-      <div class="bg-white">
+      <div class="container mt50 mb50 bg-white">
         <div class="row">
 
 					<!-- Related Products -->
 
 					<div class="col-md-12 sidebar-products text-center">
-						<h3><strong>RELATED PRODUCTS</strong></h3>
+						<h3 class="small-line text-center"><strong>Propiedades Destacadas</strong></h3>
 						<br>
 						<div class="row">
 							<!-- Related Product 1 -->
 
 							<div class="col-sm-3 col-xs-6">
 								<div class="product-image">
-									<img alt="image" class="img-responsive" src="images/products/wayfarer.jpg">
+									<?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop']) ?>
 									<div class="thumbnail-btns">
 										<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
 									</div>
 								</div>
-								<h4 class="name"><strong><a href="#">Wayfarer</a></strong></h4>
+								<h4 class="name"><strong><a href="#">Apartamento 1</a></strong></h4>
 								<h5 class="price">$<span>750</span></h5>
 							</div> <!-- End of Related Product 1 -->
 
@@ -160,13 +160,13 @@ $this->title = 'Open House';
 
 							<div class="col-sm-3 col-xs-6">
 								<div class="product-image">
-									<img alt="image" class="img-responsive" src="images/products/satchel.jpg">
+									<?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop']) ?>
 									<div class="thumbnail-btns">
 										<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
 									</div>
 								</div>
-								<h4 class="name"><strong><a href="#">Dark Grey Satchel</a></strong></h4>
+								<h4 class="name"><strong><a href="#">Apartamento 2</a></strong></h4>
 								<h5 class="price">$<span>750</span></h5>
 							</div> <!-- End of Related Product 2 -->
 
@@ -174,13 +174,13 @@ $this->title = 'Open House';
 
 							<div class="col-sm-3 col-xs-6">
 								<div class="product-image">
-									<img alt="image" class="img-responsive" src="images/products/scarf.jpg">
+									<?= Html::img(Yii::getAlias('@web') . '/images/properties/03.jpg', ['class' => 'img-responsive crop']) ?>
 									<div class="thumbnail-btns">
 										<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
 									</div>
 								</div>
-								<h4 class="name"><strong><a href="#">Scarf</a></strong></h4>
+								<h4 class="name"><strong><a href="#">Apartamento 3</a></strong></h4>
 								<h5 class="price">$<span>750</span></h5>
 							</div> <!-- End of Related Product 3 -->
 
@@ -188,13 +188,13 @@ $this->title = 'Open House';
 
 							<div class="col-sm-3 col-xs-6">
 								<div class="product-image">
-									<img alt="image" class="img-responsive" src="images/products/light-grey-jacket.jpg">
+									<?= Html::img(Yii::getAlias('@web') . '/images/properties/04.jpg', ['class' => 'img-responsive crop']) ?>
 									<div class="thumbnail-btns">
 										<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
 									</div>
 								</div>
-								<h4 class="name"><strong><a href="#">Grey Jacket</a></strong></h4>
+								<h4 class="name"><strong><a href="#">Apartamento 4</a></strong></h4>
 								<h5 class="price">$<span>750</span></h5>
 							</div> <!-- End of Related Product 4 -->
 						</div>
