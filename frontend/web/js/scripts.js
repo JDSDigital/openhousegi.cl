@@ -1360,55 +1360,55 @@ $win.on("load", function() {
 
 	navEvents(),
 
-	headerSearch(),
+	// headerSearch(),
 
-	topSearch(),
+	// topSearch(),
 
-	navOnePage(),
+	// navOnePage(),
 
-	dateToday(),
+	// dateToday(),
 
-	bottomLinks(),
+	// bottomLinks(),
 
-	knobs(),
+	// knobs(),
 
-	countDown(),
+	// countDown(),
 
-	progressBarsOnView(),
+	// progressBarsOnView(),
 
-	owlC(),
+	// owlC(),
 
-	isotope(),
+	// isotope(),
 
-	counters(),
+	// counters(),
 
-	wowInit(),
+	// wowInit(),
 
-	shopSlider(),
+	// shopSlider(),
 
-	nivoLightbox(),
+	// nivoLightbox(),
 
-	newsCarousel(),
+	// newsCarousel(),
 
-	tooltip(),
+	// tooltip(),
 
-	fixedSocialIcons(),
+	// fixedSocialIcons(),
 
-	flickrThumbnails(),
+	// flickrThumbnails(),
 
-	multiScroll(),
+	// multiScroll(),
 
-	tweets(),
+	// tweets(),
 
-	instagramFeed(),
+	// instagramFeed(),
 
-	dribbleShots(),
+	// dribbleShots(),
 
-	defaultMap();
+	// defaultMap();
 
     /*---- Auto Modal Box ----*/
 
-	$(".modal.auto").modal("show");
+	// $(".modal.auto").modal("show");
 
     /*---- Hide Page Loader ----*/
 

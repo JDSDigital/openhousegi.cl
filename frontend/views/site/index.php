@@ -7,7 +7,7 @@ use yii\helpers\Html;
 $this->title = 'Open House';
 ?>
 
-<div class="parallax-window" data-parallax data-src="<?= Yii::getAlias('@web') . '/images/blue-sky-building.jpg' ?>" style="height:100vh;">
+<div style="position:relative;height:100vh;background-image:url('<?= Yii::getAlias('@web') . '/images/blue-sky-building.jpg' ?>');background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
 	<?= Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'logo-rev-slider wow fadeIn', 'data-wow-delay'=>'1s']) ?>
 </div>
 

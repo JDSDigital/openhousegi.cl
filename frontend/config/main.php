@@ -36,7 +36,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /* 'assetManager' => [
+        /*'assetManager' => [
             'bundles' => [
                 'yii\web\JqueryAsset' => [
                     'js' => [],

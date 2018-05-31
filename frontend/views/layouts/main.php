@@ -115,7 +115,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
   </div>
 </div><!-- End of Page Loader -->
 
-<div class="wrap">
+<div class="page-content wrap">
     <?php
         if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') { ?>
           <header class="navigation side-menu left">
