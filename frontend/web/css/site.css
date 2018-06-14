@@ -249,10 +249,13 @@ a.desc:after {
 .logo-rev-slider {
   width: 50vw !important;
   height: auto !important;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  /* position: absolute; */
+  /* margin: auto; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
+}
+.rs-background-video-layer[data-videomp4] iframe {
+    visibility: visible !important;
 }
