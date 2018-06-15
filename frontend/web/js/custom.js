@@ -17,10 +17,10 @@ tpj(document).ready(function() {
       jsFileLocation:"third-party/revolution/js/",
       sliderLayout:"fullscreen",
       dottedOverlay:"none",
-      delay:5000,
+      delay:9000,
       navigation: {
+        onHoverStop: 'off',
         arrows: {
-
           enable: true,
           style: 'hesperiden',
           tmp: '',
@@ -78,6 +78,8 @@ tpj(document).ready(function() {
       stopLoop: "off",
       stopAfterLoops: -1,
       stopAtSlide: -1,
+      stopOnHover: "off",
+      onHoverStop: 'off',
       shuffle: "off",
       autoHeight:"off",
       fullScreenAlignForce:"off",

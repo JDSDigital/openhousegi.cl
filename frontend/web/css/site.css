@@ -256,6 +256,12 @@ a.desc:after {
   /* left: 0; */
   /* right: 0; */
 }
-.rs-background-video-layer[data-videomp4] iframe {
+.rev-slider-title {
+  font-size: 80px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rs-background-video-layer[data-videomp4] video {
     visibility: visible !important;
+    opacity: 1 !important;
 }

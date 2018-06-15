@@ -20,6 +20,7 @@ $this->title = 'Open House';
 				<div class="rs-background-video-layer"
 					data-forcerewind="on"
 					data-volume="mute"
+					data-muted="true"
 					data-videowidth="100%"
 					data-videoheight="100%"
 					data-videomp4="<?= Yii::getAlias('@web') . '/video/Working-Space.mp4' ?>"
@@ -98,16 +99,17 @@ $this->title = 'Open House';
 			</li>
 			<li data-index="rs-334" data-transition="fade" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="Intro" data-description="">
 				<!-- MAIN IMAGE -->
-				<img src="<?= Yii::getAlias('@web') . '/video/office_cover.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+				<img src="<?= Yii::getAlias('@web') . '/video/fire_cover.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 				<!-- LAYERS -->
 
 				<!-- BACKGROUND VIDEO LAYER -->
 				<div class="rs-background-video-layer"
 					data-forcerewind="on"
 					data-volume="mute"
+					data-muted="true"
 					data-videowidth="100%"
 					data-videoheight="100%"
-					data-videomp4="<?= Yii::getAlias('@web') . '/video/Working-Space.mp4' ?>"
+					data-videomp4="<?= Yii::getAlias('@web') . '/video/fire.mp4' ?>"
 					data-videopreload="preload"
 					data-videoloop="loopandnoslidestop"
 					data-forceCover="1"
@@ -154,7 +156,7 @@ $this->title = 'Open House';
 
 
 					style="z-index: 6; white-space: nowrap;">
-					<?= Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'logo-rev-slider']) ?>
+					<h1 class="white-text rev-slider-title">Lorem Ipsum</h1>
 				</div>
 
 				<!-- LAYER NR. 7 -->
