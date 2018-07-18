@@ -187,6 +187,7 @@ $this->title = 'Open House';
 		<div class="tp-bannertimer tp-bottom" style="height: 5px; background: #fff;"></div>
 	</div>
 </div><!-- END REVOLUTION SLIDER -->
+
 <div class="row">
 	<div class="test">
 		<a href="#">
@@ -223,6 +224,45 @@ $this->title = 'Open House';
 </div>
 
 <div class="container mt50 mb50 bg-white">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-theme form-big">
+				<div class="input-group">
+					<?= Html::input('text', 'search', '', ['class' => 'form-control', 'placeholder' => 'Buscar...']) ?>
+					<span class="input-group-btn">
+						<button class="btn btn-theme" type="button"><i class="glyphicon glyphicon-search"></i></button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt30 mb30">
+		<div class="col-md-4">
+			<div class="form-theme form-md">
+				<select class="form-control">
+					<option>Alquiler</option>
+					<option>Venta</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-theme form-md">
+				<select class="form-control">
+					<option>Distrito Capital</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-theme form-md">
+				<select class="form-control">
+					<option>Todos los precios</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
   <div class="row wow fadeInUp">
 
 		<!-- Related Products -->

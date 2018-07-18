@@ -29,6 +29,13 @@ body {
     position: relative;
 }
 
+::selection {
+  background: #5b44be; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #5b44be; /* Gecko Browsers */
+}
+
 .m0a {
     margin: 0 auto;
 }
@@ -284,4 +291,8 @@ figure.trailer {
     width: 100%;
     float: left;
   }
+}
+.search-bar {
+  padding: 30px;
+  border: 1px solid black;
 }
