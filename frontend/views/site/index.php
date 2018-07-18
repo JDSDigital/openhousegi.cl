@@ -187,7 +187,40 @@ $this->title = 'Open House';
 		<div class="tp-bannertimer tp-bottom" style="height: 5px; background: #fff;"></div>
 	</div>
 </div><!-- END REVOLUTION SLIDER -->
-
+<div class="row">
+	<div class="test">
+		<a href="#">
+			<figure class="trailer effect-3">
+				<?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop-menu']) ?>
+				<figcaption>
+					<div class="trailer-text trailer-full-dark">
+						<div class="trailer-center">
+							<div class="trailer-light">
+								<h2>Propiedades en Venta</h2>
+							</div>
+						</div>
+					</div>
+				</figcaption>
+			</figure>
+		</a>
+	</div>
+	<div class="test">
+		<a href="#">
+			<figure class="trailer effect-3">
+				<?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop-menu']) ?>
+				<figcaption>
+					<div class="trailer-text trailer-full-dark">
+						<div class="trailer-center">
+							<div class="trailer-light">
+								<h2>Propiedades en Arriendo</h2>
+							</div>
+						</div>
+					</div>
+				</figcaption>
+			</figure>
+		</a>
+	</div>
+</div>
 
 <div class="container mt50 mb50 bg-white">
   <div class="row wow fadeInUp">
