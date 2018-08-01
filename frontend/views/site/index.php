@@ -250,14 +250,16 @@ $this->title = 'Open House';
 		<div class="col-md-4">
 			<div class="form-theme form-md">
 				<select class="form-control">
-					<option>Distrito Capital</option>
+					<option>Apartamentos</option>
+					<option>Casas</option>
 				</select>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-theme form-md">
 				<select class="form-control">
-					<option>Todos los precios</option>
+					<option>Todas las zonas</option>
+					<option>Santiago</option>
 				</select>
 			</div>
 		</div>
