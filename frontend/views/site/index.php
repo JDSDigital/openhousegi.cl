@@ -187,7 +187,7 @@ $this->title = 'Open House';
 		<div class="tp-bannertimer tp-bottom" style="height: 5px; background: #fff;"></div>
 	</div>
 </div><!-- END REVOLUTION SLIDER -->
-
+<?php /* ?>
 <div class="row">
 	<div class="test">
 		<a href="#">
@@ -222,7 +222,7 @@ $this->title = 'Open House';
 		</a>
 	</div>
 </div>
-
+<?php */ ?>
 <div class="container mt50 mb50 bg-white">
 
 	<div class="row">
@@ -331,4 +331,63 @@ $this->title = 'Open House';
 			</div>
 		</div> <!-- End of Related Products -->
 	</div>
+
+	<hr>
+
+	<div class="row wow fadeInUp">
+			<div class="col-sm-6">
+				<h3><strong>Quienes Somos</strong></h3>
+				<div class="symbol">
+					<i class="fa fa-thumbs-up"></i>
+					<hr>
+				</div>
+				<p>En Openhouse lo más importante eres TU, fidelizarte para toda la vida es nuestro gran objetivo.<p>
+				<p>Te guiamos durante todos los procesos, entregándote un servicio personalizado semana a semana que va a la vanguardia en un mercado cada vez más exigente.<p>
+				<p>Nuestro modelo lo ajustamos a la medida de cada cliente, verás que ocupamos las mejores estrategias y herramientas a un nivel de clase mundial.<p>
+
+				<p class="pad-top-50" style="color:#666;">
+					<strong>Ven a vernos, te estamos esperando...</strong>
+				</p>
+			</div>
+
+			<!-- Boostrap Carousel -->
+
+			<div class="col-md-6">
+				<div id="carousel-example-3" class="carousel slide" data-ride="carousel">
+
+					<!-- Indicators -->
+
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-3" data-slide-to="0" class=""></li>
+						<li data-target="#carousel-example-3" data-slide-to="1" class="active"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+
+					<div class="carousel-inner">
+						<div class="item">
+							<img class="img-responsive" src="images/blog/6.jpg" alt=" ">
+							<div class="carousel-caption text-light">
+								<h4>Lorem Ipsum Dolor</h4>
+							</div>
+						</div>
+						<div class="item active">
+							<img class="img-responsive" src="images/blog/8.jpg" alt=" ">
+							<div class="carousel-caption text-light">
+								<h4>Aenean Massa</h4>
+							</div>
+						</div>
+					</div>
+
+					<!-- Controls -->
+
+					<a class="left carousel-control" href="#carousel-example-3" role="button" data-slide="prev">
+						<i class="fa fa-angle-left fa-2x"></i>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-3" role="button" data-slide="next">
+						<i class="fa fa-angle-right fa-2x"></i>
+					</a>
+				</div>
+			</div><!-- End of Boostrap Carousel -->
+		</div>
 </div>
