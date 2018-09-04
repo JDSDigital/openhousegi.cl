@@ -16,7 +16,7 @@ AppAsset::register($this);
 // Meta tags
 $this->registerMetaTag(['name' => 'author', 'content' => 'geknology.com']);
 $this->registerMetaTag(['name' => 'description', 'content' => '']);
-$this->registerMetaTag(['name' => 'keywords', 'content' => '']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => 'propiedades, inmuebles, alquiler, venta, apartamento, casa']);
 $this->registerMetaTag(['rel' => 'canonical', 'href' => 'http://www.openhousegi.cl']);
 
 $this->registerMetaTag([
@@ -120,13 +120,13 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
         if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') { ?>
           <header class="navigation side-menu left">
             <div class="main-nav">
-        				<a class="nav-trigger">
-        					<div class="bar-icon-wrapper bg-color1">
-        						<span class="bar-icon"></span>
-        						<span class="bar-icon"></span>
-        						<span class="bar-icon"></span>
-        					</div>
-        				</a>
+				<a class="nav-trigger">
+					<div class="bar-icon-wrapper bg-color1">
+						<span class="bar-icon"></span>
+						<span class="bar-icon"></span>
+						<span class="bar-icon"></span>
+					</div>
+				</a>
                 <div class="container">
                     <div class="navbar navbar-default bg-color1" role="navigation">
                         <?php
@@ -150,20 +150,20 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
                           'items' => $menuItems,
                         ]);
                         NavBar::end();
-                      ?>
-          						<div class="side-menu-bottom">
-          							<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
-          								<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
-          								<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-          								<li><a href="#" class="flickr"><i class="fa fa-flickr"></i></a></li>
-          								<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-          								<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-          								<li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-          								<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
-          								<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-          							</ul>
-          							<p class="text text-uppercase white-text"><strong>© Open House</strong></p>
-          						</div>
+                      	?>
+						<div class="side-menu-bottom">
+							<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
+								<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#" class="flickr"><i class="fa fa-flickr"></i></a></li>
+								<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
+								<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							</ul>
+							<p class="text text-uppercase white-text"><strong>© Open House</strong></p>
+						</div>
                     </div>
                 </div>
             </div>
@@ -200,18 +200,18 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
             ?>
             <div class="pt50">
                 <div class="page-top-grey-bottom no-pt-heading">
-          					<div class="container">
-          						<div class="row">
-          							<div class="col-md-12">
-                          <?= Breadcrumbs::widget([
-                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                            'options' => [
-                              'class' => 'breadcrumb',
-                            ],
-                          ]) ?>
-          						</div>
-          					</div>
-          				</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<?= Breadcrumbs::widget([
+									'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+									'options' => [
+									'class' => 'breadcrumb',
+									],
+								]) ?>
+							</div>
+						</div>
+					</div>
                 </div>
                 <div class="container">
                   <?= Alert::widget() ?>
@@ -254,7 +254,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 						<li><a href="#">Duis leo. Sed fringilla mauris sit amet nibh.</a></li>
 					</ul>
 				</div>
-        <div class="col-md-3">
+        		<div class="col-md-3">
 					<h5 class="footer-title">Ultimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
 						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
