@@ -22,11 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <h5 class="content-group">Login to your account <small class="display-block">Enter your credentials below</small></h5>
                         </div>
 
-                        <?= $form->field($model, 'username', [
+                        <?= $form->field($model, 'email', [
                             'options'      => ['class' => 'form-group  has-feedback has-feedback-left'],
                             'inputOptions' => [
                                 'class'       => 'input-lg form-control',
-                                'placeholder' => Yii::t('app', 'Usuario'),
+                                'placeholder' => Yii::t('app', 'Correo'),
                             ],
                             'template'     => '{input}<div class="form-control-feedback"><i class="fa fa-user fa-lg text-muted"></i></div>{error}{hint}',
                         ]); ?>

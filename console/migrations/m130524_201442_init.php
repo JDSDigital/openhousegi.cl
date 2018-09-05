@@ -14,7 +14,7 @@ class m130524_201442_init extends Migration
 
         $this->createTable('{{%xsystem_users}}', [
             'id' => $this->primaryKey(),
-            'username' => $this->string()->notNull()->unique(),
+            // 'username' => $this->string()->notNull()->unique(),
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
@@ -24,6 +24,17 @@ class m130524_201442_init extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->insert('{{%xsystem_users}}', [
+            // 'username'      => 'admin',
+            'auth_key'      => 'wYOHMP04ZS-UaWCLgZqdDOvuOMWUlids',
+            'password_hash' => '$2y$13$FD2J8Gr0YCaw5s3L3QZQzOsNwAE9VM37u.9sJPIk8Ts4WhSVmR7aW',
+            'email'         => 'jdsosa@gmail.com',
+
+            'status'     => 10,
+            'created_at' => 0,
+            'updated_at' => 0,
+        ]);
     }
 
     public function down()

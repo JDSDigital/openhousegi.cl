@@ -16,6 +16,7 @@ class m180731_112741_create_properties_tables extends Migration
         $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
       }
 
+	  // Define if it's for sale or for rent
       $this->createTable('xproperties_contracts', [
         'id' => Schema::TYPE_PK,
         'name' => Schema::TYPE_STRING . ' NOT NULL',
@@ -23,6 +24,7 @@ class m180731_112741_create_properties_tables extends Migration
         'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
+	  // Define if it's an apartment, house or similar
       $this->createTable('xproperties_types', [
         'id' => Schema::TYPE_PK,
         'name' => Schema::TYPE_STRING . ' NOT NULL',
@@ -30,6 +32,7 @@ class m180731_112741_create_properties_tables extends Migration
         'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
+	  // Define properties
       $this->createTable('xproperties_properties', [
         'id' => Schema::TYPE_PK,
         'type_id' => Schema::TYPE_INTEGER . ' NOT NULL',
@@ -48,12 +51,14 @@ class m180731_112741_create_properties_tables extends Migration
         'long' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'lat' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'visits' => Schema::TYPE_INTEGER . ' DEFAULT 0',
+		'taken' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
 
         'status' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
         'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
+	  // Define the properties images
       $this->createTable('xproperties_images', [
         'id' => Schema::TYPE_PK,
         'property_id' => Schema::TYPE_INTEGER . ' NOT NULL',
