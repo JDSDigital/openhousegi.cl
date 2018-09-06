@@ -92,11 +92,8 @@ AppAsset::register($this);
                                     <li class="<?= (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
                                         <?= Html::a('<i class="icon-home4"></i> <span>Dashboard</span>', ['//site/index']) ?>
                                     </li>
-                                    <li class="<?= (Yii::$app->controller->id == 'categories' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                                        <?= Html::a('Categorías', ['//categories/index']) ?>
-                                    </li>
-                                    <li class="<?= (Yii::$app->controller->id == 'products' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                                        <?= Html::a('Productos', ['//products/index']) ?>
+                                    <li class="<?= (Yii::$app->controller->id == 'properties' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
+                                        <?= Html::a('Propiedades', ['//Properties/properties/index']) ?>
                                     </li>
                                     <!-- /Main -->
                                 </ul>

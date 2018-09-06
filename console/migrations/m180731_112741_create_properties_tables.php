@@ -51,7 +51,7 @@ class m180731_112741_create_properties_tables extends Migration
         'long' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'lat' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'visits' => Schema::TYPE_INTEGER . ' DEFAULT 0',
-		'taken' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
+		    'taken' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
 
         'status' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
         'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
@@ -67,6 +67,16 @@ class m180731_112741_create_properties_tables extends Migration
         'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
+
+      $this->batchInsert('{{%xproperties_contracts}}', ['name'], [
+          ['Alquiler'],
+          ['Venta'],
+      ]);
+
+      $this->batchInsert('{{%xproperties_types}}', ['name'], [
+          ['Apartamento'],
+          ['Casa'],
+      ]);
 
       $this->createIndex('idx-xproperties_properties-type_id', 'xproperties_properties', 'type_id');
       $this->createIndex('idx-xproperties_properties-contract_id', 'xproperties_properties', 'contract_id');
