@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\file\FileInput;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Properties */
@@ -14,8 +14,25 @@ use kartik\file\FileInput;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'images[]')->widget(FileInput::classname(), [
-        'options' => ['multiple' => true],
-        'pluginOptions' => ['previewFileType' => 'any']
+        'language' => 'es',
+        'options' => [
+          'multiple' => true,
+        ],
+        'pluginOptions' => [
+          'previewFileType' => 'image',
+          'showCancel' => false,
+          'showUpload' => false,
+          'showDelete' => true,
+          'allowedFileTypes' => ['image'],
+          'allowedFileExtensions' => ['jpg', 'png'],
+          'maxFileSize' => 2800,
+          'maxFileCount' => 5,
+          'overwriteInitial' => false,
+          'initialPreview' => isset($previews) ? $previews : false,
+          'initialPreviewAsData' => true,
+          'initialPreviewShowDelete' => true,
+          'initialPreviewConfig' => isset($previewsConfig) ? $previewsConfig : false,
+        ]
     ]); ?>
 
     <?= $form->field($model, 'type_id')->textInput() ?>
@@ -30,7 +47,7 @@ use kartik\file\FileInput;
 
     <?= $form->field($model, 'price')->textInput() ?>
 
-    <?= $form->field($model, 'featured')->textInput() ?>
+    <?= $form->field($model, 'featured')->checkbox() ?>
 
     <?= $form->field($model, 'area')->textInput() ?>
 
@@ -48,15 +65,9 @@ use kartik\file\FileInput;
 
     <?= $form->field($model, 'lat')->textInput() ?>
 
-    <?= $form->field($model, 'visits')->textInput() ?>
+    <?= $form->field($model, 'taken')->checkbox() ?>
 
-    <?= $form->field($model, 'taken')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'createdAt')->textInput() ?>
-
-    <?= $form->field($model, 'updatedAt')->textInput() ?>
+    <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

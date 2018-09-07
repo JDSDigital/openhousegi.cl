@@ -93,7 +93,7 @@ AppAsset::register($this);
                                         <?= Html::a('<i class="icon-home4"></i> <span>Dashboard</span>', ['//site/index']) ?>
                                     </li>
                                     <li class="<?= (Yii::$app->controller->id == 'properties' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                                        <?= Html::a('Propiedades', ['//Properties/properties/index']) ?>
+                                        <?= Html::a('<i class="icon-home4"></i> Propiedades', ['//Properties/properties/index']) ?>
                                     </li>
                                     <!-- /Main -->
                                 </ul>
