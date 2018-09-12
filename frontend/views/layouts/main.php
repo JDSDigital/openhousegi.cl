@@ -143,8 +143,8 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
                 $menuItems = [
                   ['label' => 'Inicio', 'url' => ['/site/index']],
                   ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
-                  ['label' => 'Quienes Somos'],
-                  ['label' => 'Contacto'],
+                  ['label' => 'Quienes Somos', 'url' => ['/site/about']],
+                  ['label' => 'Contacto', 'url' => ['/site/contact']],
                 ];
                 echo Nav::widget([
                   'options' => ['class' => 'navbar-nav'],
@@ -191,8 +191,8 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
           $menuItems = [
             ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
-            ['label' => 'Quienes Somos'],
-            ['label' => 'Contacto'],
+            ['label' => 'Quienes Somos', 'url' => ['/site/about']],
+            ['label' => 'Contacto', 'url' => ['/site/contact']],
           ];
           echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
@@ -278,8 +278,8 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 							<ul>
 								<li><?= Html::a('Inicio', ['/site/index']) ?></li>
 								<li><?= Html::a('Propiedades', ['/propiedades/index']) ?></li>
-								<li><?= Html::a('Quienes Somos') ?></li>
-								<li><?= Html::a('Contacto') ?></li>
+								<li><?= Html::a('Quienes Somos', ['/site/about']) ?></li>
+								<li><?= Html::a('Contacto', ['/site/contact']) ?></li>
 							</ul>
 						</nav>
 					</div>
