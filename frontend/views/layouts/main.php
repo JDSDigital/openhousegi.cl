@@ -127,30 +127,31 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 						<span class="bar-icon"></span>
 					</div>
 				</a>
-                <div class="container">
-                    <div class="navbar navbar-default bg-color1" role="navigation">
-                        <?php
-                        NavBar::begin([
-                          'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
-                          'brandUrl' => Yii::$app->homeUrl,
-                          'brandOptions' => [
-                            'class' => 'logo',
-                          ],
-                          'innerContainerOptions' => [
-                              'class' => 'bg-color1',
-                          ],
-                        ]);
-                        $menuItems = [
-                          ['label' => 'Inicio', 'url' => ['/site/index']],
-                          ['label' => 'Quienes Somos'],
-                          ['label' => 'Contacto'],
-                        ];
-                        echo Nav::widget([
-                          'options' => ['class' => 'navbar-nav'],
-                          'items' => $menuItems,
-                        ]);
-                        NavBar::end();
-                      	?>
+        <div class="container">
+            <div class="navbar navbar-default bg-color1" role="navigation">
+                <?php
+                NavBar::begin([
+                  'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
+                  'brandUrl' => Yii::$app->homeUrl,
+                  'brandOptions' => [
+                    'class' => 'logo',
+                  ],
+                  'innerContainerOptions' => [
+                      'class' => 'bg-color1',
+                  ],
+                ]);
+                $menuItems = [
+                  ['label' => 'Inicio', 'url' => ['/site/index']],
+                  ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
+                  ['label' => 'Quienes Somos'],
+                  ['label' => 'Contacto'],
+                ];
+                echo Nav::widget([
+                  'options' => ['class' => 'navbar-nav'],
+                  'items' => $menuItems,
+                ]);
+                NavBar::end();
+              	?>
 						<div class="side-menu-bottom">
 							<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
 								<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
@@ -177,29 +178,31 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
         </div>
 
       <?php } else {
-            NavBar::begin([
-              'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => 'img-responsive']),
-              'brandUrl' => Yii::$app->homeUrl,
-              'brandOptions' => [
-                'class' => 'vertical-align navbar-top',
-              ],
-              'options' => [
-                'class' => 'navbar-inverse bg-color1 navbar-fixed-top',
-              ],
-            ]);
-            $menuItems = [
-              ['label' => 'Inicio', 'url' => ['/site/index']],
-              ['label' => 'Quienes Somos'],
-              ['label' => 'Contacto'],
-            ];
-            echo Nav::widget([
-              'options' => ['class' => 'navbar-nav navbar-right'],
-              'items' => $menuItems,
-            ]);
-            NavBar::end();
-            ?>
-            <div class="pt50">
-                <div class="page-top-grey-bottom no-pt-heading">
+          NavBar::begin([
+            'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => 'img-responsive']),
+            'brandUrl' => Yii::$app->homeUrl,
+            'brandOptions' => [
+              'class' => 'vertical-align navbar-top',
+            ],
+            'options' => [
+              'class' => 'navbar-inverse bg-color1 navbar-fixed-top',
+            ],
+          ]);
+          $menuItems = [
+            ['label' => 'Inicio', 'url' => ['/site/index']],
+            ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
+            ['label' => 'Quienes Somos'],
+            ['label' => 'Contacto'],
+          ];
+          echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => $menuItems,
+          ]);
+          NavBar::end();
+      ?>
+
+      <div class="pt50">
+        <div class="page-top-grey-bottom no-pt-heading">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -212,13 +215,13 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 							</div>
 						</div>
 					</div>
-                </div>
-                <div class="container">
-                  <?= Alert::widget() ?>
-                  <?= $content ?>
-                </div>
-            </div>
-        <?php } ?>
+        </div>
+        <div class="container">
+          <?= Alert::widget() ?>
+          <?= $content ?>
+        </div>
+    </div>
+<?php } ?>
 </div>
 
 <!-- Footer 8 - Theme -->
@@ -257,12 +260,9 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
         		<div class="col-md-3">
 					<h5 class="footer-title">Ultimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/03.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/04.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/05.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
-						<li><a href="#"><?= Html::img(Yii::getAlias('@web') . '/images/properties/06.jpg', ['class' => 'img-responsive crop-thumb']) ?></a></li>
+            <?php for ($i=1; $i <= 6 ; $i++) : ?>
+              <li><?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['class' => 'img-responsive crop-thumb']), ['/propiedades/view']) ?></li>
+            <?php endfor; ?>
 					</ul>
 				</div>
 			</div>
@@ -277,6 +277,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 						<nav>
 							<ul>
 								<li><?= Html::a('Inicio', ['/site/index']) ?></li>
+								<li><?= Html::a('Propiedades', ['/propiedades/index']) ?></li>
 								<li><?= Html::a('Quienes Somos') ?></li>
 								<li><?= Html::a('Contacto') ?></li>
 							</ul>

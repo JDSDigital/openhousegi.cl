@@ -1384,7 +1384,7 @@ $win.on("load", function() {
 
 	// wowInit(),
 
-	// shopSlider(),
+	shopSlider(),
 
 	// nivoLightbox(),
 

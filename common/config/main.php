@@ -16,5 +16,12 @@ return [
             'rules' => [
             ],
         ],
+        'formatter' => [
+            'dateFormat' => 'dd MMM Y',
+            'datetimeFormat' => 'dd MMM Y - H:mm:ss',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => '.',
+            'currencyCode' => 'CLP',
+        ],
     ],
 ];

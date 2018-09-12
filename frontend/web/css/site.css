@@ -296,3 +296,12 @@ figure.trailer {
   padding: 30px;
   border: 1px solid black;
 }
+.product-info .price {
+  font-size: 20px;
+}
+.product-info .type {
+  font-size: 12px;
+}
+.product-info .address {
+  font-size: 13px;
+}

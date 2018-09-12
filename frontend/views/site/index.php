@@ -259,7 +259,58 @@ $this->title = 'Open House';
 			<div class="form-theme form-md">
 				<select class="form-control">
 					<option>Todas las zonas</option>
-					<option>Santiago</option>
+					<option>Alhué</option>
+	        <option>Buin</option>
+	        <option>Calera de Tango</option>
+	        <option>Cerrillos</option>
+	        <option>Cerro Navia</option>
+	        <option>Colina</option>
+	        <option>Conchalí</option>
+	        <option>Curacaví</option>
+	        <option>El Bosque</option>
+	        <option>El Monte</option>
+	        <option>Estación Central</option>
+	        <option>Huechuraba</option>
+	        <option>Independencia</option>
+	        <option>Isla de Maipo</option>
+	        <option>La Cisterna</option>
+	        <option>La Florida</option>
+	        <option>La Granja</option>
+	        <option>La Pintana</option>
+	        <option>La Reina</option>
+	        <option>Lampa</option>
+	        <option>Las Condes</option>
+	        <option>Lo Barnechea</option>
+	        <option>Lo Espejo</option>
+	        <option>Lo Prado</option>
+	        <option>Macul</option>
+	        <option>Maipú</option>
+	        <option>María Pinto</option>
+	        <option>Melipilla</option>
+	        <option>Ñuñoa</option>
+	        <option>Padre Hurtado</option>
+	        <option>Paine</option>
+	        <option>Pedro Aguirre Cerda</option>
+	        <option>Peñaflor</option>
+	        <option>Peñalolén</option>
+	        <option>Pirque</option>
+	        <option>Providencia</option>
+	        <option>Pudahuel</option>
+	        <option>Puente Alto</option>
+	        <option>Quilicura</option>
+	        <option>Quinta Normal</option>
+	        <option>Recoleta</option>
+	        <option>Renca</option>
+	        <option>San Bernardo</option>
+	        <option>San Joaquín</option>
+	        <option>San José de Maipo</option>
+	        <option>San Miguel</option>
+	        <option>San Pedro</option>
+	        <option>San Ramón</option>
+	        <option>Santiago</option>
+	        <option>Talagante</option>
+	        <option>Til Til</option>
+	        <option>Vitacura</option>
 				</select>
 			</div>
 		</div>
@@ -272,62 +323,22 @@ $this->title = 'Open House';
 		<div class="col-md-12 sidebar-products text-center">
 			<h3 class="small-line text-center"><strong>Propiedades Destacadas</strong></h3>
 			<br>
-			<div class="row">
-				<!-- Related Product 1 -->
-
-				<div class="col-sm-3">
-					<div class="product-image">
-						<?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop']) ?>
-						<div class="thumbnail-btns">
-							<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-							<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
-						</div>
-					</div>
-					<h4 class="name"><strong><a href="#">Apartamento 1</a></strong></h4>
-					<h5 class="price">$<span>750</span></h5>
-				</div> <!-- End of Related Product 1 -->
-
-				<!-- Related Product 2 -->
-
-				<div class="col-sm-3">
-					<div class="product-image">
-						<?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop']) ?>
-						<div class="thumbnail-btns">
-							<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-							<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
-						</div>
-					</div>
-					<h4 class="name"><strong><a href="#">Apartamento 2</a></strong></h4>
-					<h5 class="price">$<span>750</span></h5>
-				</div> <!-- End of Related Product 2 -->
-
-				<!-- Related Product 3 -->
-
-				<div class="col-sm-3">
-					<div class="product-image">
-						<?= Html::img(Yii::getAlias('@web') . '/images/properties/03.jpg', ['class' => 'img-responsive crop']) ?>
-						<div class="thumbnail-btns">
-							<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-							<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
-						</div>
-					</div>
-					<h4 class="name"><strong><a href="#">Apartamento 3</a></strong></h4>
-					<h5 class="price">$<span>750</span></h5>
-				</div> <!-- End of Related Product 3 -->
-
-				<!-- Related Product 4 -->
-
-				<div class="col-sm-3">
-					<div class="product-image">
-						<?= Html::img(Yii::getAlias('@web') . '/images/properties/04.jpg', ['class' => 'img-responsive crop']) ?>
-						<div class="thumbnail-btns">
-							<a class="btn btn-small btn-theme" href="#"><i class="fa fa-bars"></i></a>
-							<a class="btn btn-small btn-dark btn-theme" href="#"><i class="fa fa-phone"></i></a>
-						</div>
-					</div>
-					<h4 class="name"><strong><a href="#">Apartamento 4</a></strong></h4>
-					<h5 class="price">$<span>750</span></h5>
-				</div> <!-- End of Related Product 4 -->
+			<div class="row product">
+				<?php for ($i=1; $i <= 4; $i++) : ?>
+			  	<div class="col-sm-3">
+			  		<div class="product-thumbnail">
+			  			<div class="product-image">
+			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view']) ?>
+			  			</div>
+			  			<div class="product-info text-left p20">
+			          <p><span class="price"><?=Yii::$app->formatter->asCurrency(7500)?></span></p>
+			  				<h3><?= Html::a('Apartamento ' . $i, ['/propiedades/view']) ?></h3>
+			  				<p><span class="type">Apartamento en venta</span></p>
+			  				<p><span class="address">Santiago de Chile</span></p>
+			  			</div>
+			  		</div>
+			  	</div>
+			  <?php endfor; ?>
 			</div>
 		</div> <!-- End of Related Products -->
 	</div>
@@ -344,7 +355,7 @@ $this->title = 'Open House';
 
 				<p>OpenHouse pertenece a una red de especialistas inmobiliarios, conformada por profesionales con más	de 10 años de experiencia en el rubro inmobiliario y pertenecientes a la mayor asociación de corredores de propiedades a nivel nacional, con más de 450 oficinas establecidas a lo largo de todo Chile.</p>
 				<p>Nuestro compromiso y trabajo que entregamos semana a semana nos diferencia completamente de un corredor de propiedades tradicional, lo que asegura resultados en el más breve plazo, con estrategias y metodologías internacionales que son fundamentales hoy en dia.</p>
-				
+
 			</div>
 
 			<!-- Boostrap Carousel -->
@@ -363,13 +374,13 @@ $this->title = 'Open House';
 
 					<div class="carousel-inner">
 						<div class="item">
-							<img class="img-responsive" src="images/blog/6.jpg" alt=" ">
+							<?= Html::img(Yii::getAlias('@web') . '/images/blog/6.jpg', ['class' => 'img-responsive']) ?>
 							<div class="carousel-caption text-light">
 								<h4>Lorem Ipsum Dolor</h4>
 							</div>
 						</div>
 						<div class="item active">
-							<img class="img-responsive" src="images/blog/8.jpg" alt=" ">
+							<?= Html::img(Yii::getAlias('@web') . '/images/blog/8.jpg', ['class' => 'img-responsive']) ?>
 							<div class="carousel-caption text-light">
 								<h4>Aenean Massa</h4>
 							</div>
@@ -403,13 +414,13 @@ $this->title = 'Open House';
 
 						<div class="carousel-inner">
 							<div class="item">
-								<img class="img-responsive" src="images/blog/6.jpg" alt=" ">
+								<?= Html::img(Yii::getAlias('@web') . '/images/blog/6.jpg', ['class' => 'img-responsive']) ?>
 								<div class="carousel-caption text-light">
 									<h4>Lorem Ipsum Dolor</h4>
 								</div>
 							</div>
 							<div class="item active">
-								<img class="img-responsive" src="images/blog/8.jpg" alt=" ">
+								<?= Html::img(Yii::getAlias('@web') . '/images/blog/8.jpg', ['class' => 'img-responsive']) ?>
 								<div class="carousel-caption text-light">
 									<h4>Aenean Massa</h4>
 								</div>
