@@ -6,13 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Properties */
 
-$this->title = 'Create Properties';
-$this->params['breadcrumbs'][] = ['label' => 'Properties', 'url' => ['index']];
+$this->title = 'Crear Propiedades';
+$this->params['breadcrumbs'][] = ['label' => 'Propiedades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="properties-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

@@ -10,18 +10,28 @@ use yii\grid\GridView;
 $this->title = 'Properties';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="properties-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<section class="panel">
+    <header class="panel-heading">
+      <?= Html::a('<i class="fa fa-plus mr5"></i>Crear Propiedad', ['create'], ['class' => 'btn bg-success btn-xs']) ?>
+    </header>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Properties', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'options'        => [
+  				'class' => 'grid-view table-responsive',
+  			],
+  			'tableOptions'   => [
+  				'class' => 'table table-striped table-hover',
+  			],
+  			'pager'          => [
+  				'options' => ['class' => 'pagination ml20 mt10'],
+  			],
+  			'summaryOptions' => [
+  				'class' => 'summary ml20 mt25',
+  			],
+  			'layout'         => '{items}{pager}{summary}',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 

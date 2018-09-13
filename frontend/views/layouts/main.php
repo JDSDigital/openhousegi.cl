@@ -241,12 +241,11 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 				</div>
 				<div class="col-md-3 mar-top-15">
 					<p>
-					Suite 101, Creek Street,<br/>
-					Splace, 100001,<br/>
-					SA, SCountry<br/>
-					Email: <a href="#">support@revelo.com</a><br/>
-					Phone: <a href="#">+1 101 0000001</a><br/>
-					Fax: <a href="#">+1 101 1000001</a>
+					#123, Building Name<br/>
+					ABC Street,<br/>
+					Santiago de Chile<br/>
+					Correo: <a href="#">admin@openhousegi.cl</a><br/>
+					Teléfono: <a href="#">+1 123 456 7890</a><br/>
 					</p>
 				</div>
 				<div class="col-md-3">

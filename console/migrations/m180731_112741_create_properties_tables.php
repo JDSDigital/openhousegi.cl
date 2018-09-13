@@ -47,7 +47,7 @@ class m180731_112741_create_properties_tables extends Migration
         'toilets' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'garage' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'address' => Schema::TYPE_STRING . ' DEFAULT NULL',
-        'city' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'zone' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'long' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'lat' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'visits' => Schema::TYPE_INTEGER . ' DEFAULT 0',

@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 
@@ -22,7 +23,7 @@ use yii\behaviors\TimestampBehavior;
  * @property int $toilets
  * @property int $garage
  * @property string $address
- * @property int $city
+ * @property int $zone
  * @property double $long
  * @property double $lat
  * @property int $visits
@@ -39,7 +40,7 @@ class Properties extends \yii\db\ActiveRecord
 {
 
     public $images;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -70,7 +71,7 @@ class Properties extends \yii\db\ActiveRecord
     {
         return [
             [['type_id', 'contract_id', 'title'], 'required'],
-            [['type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'city', 'visits', 'taken', 'status', 'createdAt', 'updatedAt'], 'integer'],
+            [['type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'createdAt', 'updatedAt'], 'integer'],
             [['description'], 'string'],
             [['price', 'area', 'long', 'lat'], 'number'],
             [['address'], 'string', 'max' => 255],
@@ -86,26 +87,27 @@ class Properties extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type_id' => 'Type ID',
-            'contract_id' => 'Contract ID',
-            'title' => 'Title',
-            'summary' => 'Summary',
-            'description' => 'Description',
-            'price' => 'Price',
-            'featured' => 'Featured',
-            'area' => 'Area',
-            'rooms' => 'Rooms',
-            'toilets' => 'Toilets',
-            'garage' => 'Garage',
-            'address' => 'Address',
-            'city' => 'City',
-            'long' => 'Long',
-            'lat' => 'Lat',
-            'visits' => 'Visits',
-            'taken' => 'Taken',
-            'status' => 'Status',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
+            'type_id' => 'Tipo',
+            'contract_id' => 'Tipo de contrato',
+            'title' => 'Título',
+            'summary' => 'Resumen',
+            'description' => 'Descripción',
+            'price' => 'Precio',
+            'featured' => 'Destacado',
+            'area' => 'Tamaño',
+            'rooms' => 'Habitaciones',
+            'toilets' => 'Baños',
+            'garage' => 'Estacionamiento',
+            'address' => 'Dirección',
+            'zone' => 'Zona',
+            'long' => 'Longitud',
+            'lat' => 'Latitud',
+            'visits' => 'Visitas',
+            'taken' => 'Vendida/Alquilada',
+            'status' => 'Estado',
+            'createdAt' => 'Creado En',
+            'updatedAt' => 'Actualizado En',
+            'images' => 'Imágenes',
         ];
     }
 
@@ -128,8 +130,95 @@ class Properties extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getContractList()
+    {
+        $contracts = Contracts::find()->select(['id', 'name'])->asArray()->all();
+        $contracts = ArrayHelper::map($contracts, 'id', 'name');
+
+        return $contracts;
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getType()
     {
         return $this->hasOne(Types::className(), ['id' => 'type_id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTypeList()
+    {
+        $types = Types::find()->select(['id', 'name'])->asArray()->all();
+        $types = ArrayHelper::map($types, 'id', 'name');
+
+        return $types;
+    }
+
+    /**
+    * @return array
+    */
+    public function getZoneList()
+    {
+      $zones = [
+        'Todas las zonas',
+        'Alhué',
+        'Buin',
+        'Calera de Tango',
+        'Cerrillos',
+        'Cerro Navia',
+        'Colina',
+        'Conchalí',
+        'Curacaví',
+        'El Bosque',
+        'El Monte',
+        'Estación Central',
+        'Huechuraba',
+        'Independencia',
+        'Isla de Maipo',
+        'La Cisterna',
+        'La Florida',
+        'La Granja',
+        'La Pintana',
+        'La Reina',
+        'Lampa',
+        'Las Condes',
+        'Lo Barnechea',
+        'Lo Espejo',
+        'Lo Prado',
+        'Macul',
+        'Maipú',
+        'María Pinto',
+        'Melipilla',
+        'Ñuñoa',
+        'Padre Hurtado',
+        'Paine',
+        'Pedro Aguirre Cerda',
+        'Peñaflor',
+        'Peñalolén',
+        'Pirque',
+        'Providencia',
+        'Pudahuel',
+        'Puente Alto',
+        'Quilicura',
+        'Quinta Normal',
+        'Recoleta',
+        'Renca',
+        'San Bernardo',
+        'San Joaquín',
+        'San José de Maipo',
+        'San Miguel',
+        'San Pedro',
+        'San Ramón',
+        'Santiago',
+        'Talagante',
+        'Til Til',
+        'Vitacura',
+      ];
+
+      return $zones;
+    }
+
 }
