@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\Properties;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\PropertiesSearch */
@@ -33,27 +34,73 @@ $this->params['breadcrumbs'][] = $this->title;
   			],
   			'layout'         => '{items}{pager}{summary}',
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'type_id',
-            'contract_id',
-            'title',
-            'summary',
+            [
+              'attribute' => 'id',
+              'format' => 'raw',
+            ],
+            [
+              'attribute' => 'status',
+              'format' => 'raw',
+              'value' => function ($model) {
+                $check = ($model->status == Properties::STATUS_ACTIVE) ? "checked='checked'" : null;
+                return "<div class='switchery-xs m0'>
+                  <input id='status-$model->id' type='checkbox' class='switchery switchStatus' $check>
+                </div>";
+              }
+            ],
+            [
+              'attribute' => 'featured',
+              'format' => 'raw',
+              'value' => function ($model) {
+                $check = ($model->status == Properties::STATUS_ACTIVE) ? "checked='checked'" : null;
+                return "<div class='switchery-xs m0'>
+                  <input id='status-$model->id' type='checkbox' class='switchery switchStatus' $check>
+                </div>";
+              }
+            ],
+            [
+              'attribute' => 'type_id',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->type->name;
+              }
+            ],
+            [
+              'attribute' => 'contract_id',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->contract->name;
+              }
+            ],
+            [
+              'attribute' => 'title',
+              'format' => 'raw',
+            ],
+            [
+              'attribute' => 'price',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return Yii::$app->formatter->asCurrency($model->price);
+              }
+            ],
+            [
+              'attribute' => 'zone',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->getZone($model->zone);
+              }
+            ],
+            //'summary',
             //'description:ntext',
-            //'price',
-            //'featured',
             //'area',
             //'rooms',
             //'toilets',
             //'garage',
             //'address',
-            //'city',
             //'long',
             //'lat',
             //'visits',
             //'taken',
-            //'status',
             //'createdAt',
             //'updatedAt',
 

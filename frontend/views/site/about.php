@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
       </div>
 
       <p>OpenHouse pertenece a una red de especialistas inmobiliarios, conformada por profesionales con más	de 10 años de experiencia en el rubro inmobiliario y pertenecientes a la mayor asociación de corredores de propiedades a nivel nacional, con más de 450 oficinas establecidas a lo largo de todo Chile.</p>
-      <p>Nuestro compromiso y trabajo que entregamos semana a semana nos diferencia completamente de un corredor de propiedades tradicional, lo que asegura resultados en el más breve plazo, con estrategias y metodologías internacionales que son fundamentales hoy en dia.</p>
+      <p>Nuestro compromiso y trabajo que entregamos semana a semana nos diferencia completamente de un corredor de propiedades tradicional, lo que asegura resultados en el más breve plazo, con estrategias y metodologías internacionales que son fundamentales hoy en día.</p>
 
     </div>
 
@@ -106,7 +106,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <hr>
         </div>
 
-        <p>En Openhouse lo más importante eres TU, fidelizarte para toda la vida es nuestro gran objetivo.<p>
+        <p>En Openhouse lo más importante eres TÚ, fidelizarte para toda la vida es nuestro gran objetivo.<p>
         <p>Te guiamos durante todos los procesos, entregándote un servicio personalizado semana a semana que va a la vanguardia en un mercado cada vez más exigente.<p>
         <p>Nuestro modelo lo ajustamos a la medida de cada cliente, verás que ocupamos las mejores estrategias y herramientas a un nivel de clase mundial.<p>
 

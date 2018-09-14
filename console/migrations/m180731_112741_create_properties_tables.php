@@ -20,16 +20,16 @@ class m180731_112741_create_properties_tables extends Migration
       $this->createTable('xproperties_contracts', [
         'id' => Schema::TYPE_PK,
         'name' => Schema::TYPE_STRING . ' NOT NULL',
-        'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
-        'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
 	  // Define if it's an apartment, house or similar
       $this->createTable('xproperties_types', [
         'id' => Schema::TYPE_PK,
         'name' => Schema::TYPE_STRING . ' NOT NULL',
-        'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
-        'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
 	  // Define properties
@@ -37,8 +37,8 @@ class m180731_112741_create_properties_tables extends Migration
         'id' => Schema::TYPE_PK,
         'type_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         'contract_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-        'title' => Schema::TYPE_INTEGER . ' NOT NULL',
-        'summary' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'title' => Schema::TYPE_STRING . ' NOT NULL',
+        'summary' => Schema::TYPE_STRING . ' DEFAULT NULL',
         'description' => Schema::TYPE_TEXT . ' DEFAULT NULL',
         'price' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'featured' => Schema::TYPE_INTEGER . ' DEFAULT 0',
@@ -54,8 +54,8 @@ class m180731_112741_create_properties_tables extends Migration
 		    'taken' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
 
         'status' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
-        'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
-        'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
 	  // Define the properties images
@@ -64,8 +64,8 @@ class m180731_112741_create_properties_tables extends Migration
         'property_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         'file' => Schema::TYPE_STRING . ' NOT NULL',
         'cover' => Schema::TYPE_STRING . ' DEFAULT 0',
-        'createdAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
-        'updatedAt' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
+        'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
       $this->batchInsert('{{%xproperties_contracts}}', ['name'], [

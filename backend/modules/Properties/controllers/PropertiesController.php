@@ -4,10 +4,12 @@ namespace backend\modules\Properties\controllers;
 
 use Yii;
 use common\models\Properties;
+use common\models\Images;
 use common\models\search\PropertiesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * PropertiesController implements the CRUD actions for Properties model.
@@ -23,7 +25,7 @@ class PropertiesController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    // 'delete' => ['POST'],
                 ],
             ],
         ];
@@ -66,8 +68,14 @@ class PropertiesController extends Controller
     {
         $model = new Properties();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            if ($model->save()) {
+
+              $model->upload();
+
+              return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('create', [
@@ -86,12 +94,37 @@ class PropertiesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $uploadedImages = Images::find()->where(['property_id' => $id])->all();
+
+        $previews = [];
+        $previewsConfig = [];
+
+        foreach ($uploadedImages as $image){
+            $url = Url::to('@web/images/properties/') . $image->file;
+            $url = str_replace('backend', 'frontend', $url);
+            $previews[] = $url;
+
+            $previewsConfig[] = [
+              'caption' => $image->file,
+              'key' => $image->id,
+              'url' => Url::to(["/Properties/properties/deleteimage?id=" . $image->id])
+            ];
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+
+          if ($model->save()) {
+
+            $model->upload();
+            
             return $this->redirect(['view', 'id' => $model->id]);
+          }
         }
 
         return $this->render('update', [
             'model' => $model,
+            'previews' => $previews,
+            'previewsConfig' => $previewsConfig,
         ]);
     }
 
@@ -104,9 +137,37 @@ class PropertiesController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $images = Images::find()->where(['property_id' => $id])->all();
+
+        foreach ($images as $image) {
+          $this->actionDeleteimage($image->id);
+        }
+
+        $model->delete();
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * Deletes a single image
+     * @param $id
+     * @return bool
+     */
+    public function actionDeleteimage($id){
+
+        $image = Images::findOne($id);
+
+        $property_id = $image->property_id;
+
+        $url = Url::to('@frontend/web/images/properties/') . $image->file;
+        // $url = str_replace('backend', 'frontend', $url);
+
+        // Delete image from the database and the folder
+        if (unlink($url) && $image->delete())
+            return true;
+        else
+            return false;
     }
 
     /**

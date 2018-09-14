@@ -18,7 +18,7 @@ class PropertiesSearch extends Properties
     public function rules()
     {
         return [
-            [['id', 'type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'city', 'visits', 'taken', 'status', 'createdAt', 'updatedAt'], 'integer'],
+            [['id', 'type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'created_at', 'updated_at'], 'integer'],
             [['description', 'address'], 'safe'],
             [['price', 'area', 'long', 'lat'], 'number'],
         ];
@@ -71,14 +71,14 @@ class PropertiesSearch extends Properties
             'rooms' => $this->rooms,
             'toilets' => $this->toilets,
             'garage' => $this->garage,
-            'city' => $this->city,
+            'zone' => $this->zone,
             'long' => $this->long,
             'lat' => $this->lat,
             'visits' => $this->visits,
             'taken' => $this->taken,
             'status' => $this->status,
-            'createdAt' => $this->createdAt,
-            'updatedAt' => $this->updatedAt,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'description', $this->description])

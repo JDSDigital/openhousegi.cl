@@ -14,8 +14,8 @@ use yii\web\UploadedFile;
  * @property int $property_id
  * @property string $file
  * @property string $cover
- * @property int $createdAt
- * @property int $updatedAt
+ * @property int $created_at
+ * @property int $updated_at
  *
  * @property Properties $property
  */
@@ -51,7 +51,7 @@ class Images extends \yii\db\ActiveRecord
     {
         return [
             [['property_id', 'file'], 'required'],
-            [['property_id', 'createdAt', 'updatedAt'], 'integer'],
+            [['property_id', 'created_at', 'updated_at'], 'integer'],
             [['file', 'cover'], 'string', 'max' => 255],
             [['property_id'], 'exist', 'skipOnError' => true, 'targetClass' => Properties::className(), 'targetAttribute' => ['property_id' => 'id']],
         ];
@@ -67,8 +67,8 @@ class Images extends \yii\db\ActiveRecord
             'property_id' => 'Property ID',
             'file' => 'File',
             'cover' => 'Cover',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

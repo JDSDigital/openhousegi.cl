@@ -11,8 +11,8 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property int $id
  * @property string $name
- * @property int $createdAt
- * @property int $updatedAt
+ * @property int $created_at
+ * @property int $updated_at
  *
  * @property Properties[] $Properties
  */
@@ -48,7 +48,7 @@ class Types extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['createdAt', 'updatedAt'], 'integer'],
+            [['created_at', 'updated_at'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -61,8 +61,8 @@ class Types extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'createdAt' => 'Created At',
-            'updatedAt' => 'Updated At',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

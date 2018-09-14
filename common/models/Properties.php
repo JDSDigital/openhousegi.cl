@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "xproperties_properties".
@@ -29,8 +30,8 @@ use yii\behaviors\TimestampBehavior;
  * @property int $visits
  * @property int $taken
  * @property int $status
- * @property int $createdAt
- * @property int $updatedAt
+ * @property int $created_at
+ * @property int $updated_at
  *
  * @property Images[] $Images
  * @property Contracts $contract
@@ -38,6 +39,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Properties extends \yii\db\ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+    const STATUS_DELETED = 0;
 
     public $images;
 
@@ -71,8 +74,8 @@ class Properties extends \yii\db\ActiveRecord
     {
         return [
             [['type_id', 'contract_id', 'title'], 'required'],
-            [['type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'createdAt', 'updatedAt'], 'integer'],
-            [['description'], 'string'],
+            [['type_id', 'contract_id', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'summary', 'description'], 'string'],
             [['price', 'area', 'long', 'lat'], 'number'],
             [['address'], 'string', 'max' => 255],
             [['contract_id'], 'exist', 'skipOnError' => true, 'targetClass' => Contracts::className(), 'targetAttribute' => ['contract_id' => 'id']],
@@ -105,8 +108,8 @@ class Properties extends \yii\db\ActiveRecord
             'visits' => 'Visitas',
             'taken' => 'Vendida/Alquilada',
             'status' => 'Estado',
-            'createdAt' => 'Creado En',
-            'updatedAt' => 'Actualizado En',
+            'created_at' => 'Creado En',
+            'updated_at' => 'Actualizado En',
             'images' => 'Imágenes',
         ];
     }
@@ -219,6 +222,40 @@ class Properties extends \yii\db\ActiveRecord
       ];
 
       return $zones;
+    }
+
+    public function getZone($id) {
+        return $this->getZoneList()[$id];
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $url = Yii::getAlias('@frontend') . '/web/images/properties/';
+
+            $uploadedImages = UploadedFile::getInstances($this,'images');
+
+            if (count($uploadedImages) > 0) {
+
+              foreach ($uploadedImages as $key => $uploadedImage) {
+
+                $image = new Images;
+                $name = $this->id . '-' . ($key + 1) . '-' . $this->updated_at . '.' . $uploadedImage->extension;
+
+                $image->file = $name;
+                $image->property_id = $this->id;
+
+                $uploadedImage->saveAs($url . $name);
+
+                $image->save();
+
+              }
+
+            } else
+              return true;
+
+        } else
+            return false;
     }
 
 }

@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="no-padding" style="margin-top: -35px">
 	<div class="row no-margin">
 		<div class="col-sm-8 mt50 pad-left-30 pad-right-30">
-			<h4 class="text-uppercase"><Strong>¡Nos encantaría escuchar de tí!</strong></h4>
+			<h4 class="text-uppercase"><Strong>¡Nos encantaría saber de tí!</strong></h4>
 			<hr class="mar-top-25 mar-bot-25"/>
 			<!-- Contact Form-->
 

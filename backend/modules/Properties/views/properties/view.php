@@ -10,16 +10,18 @@ $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Properties', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="properties-view">
+<div class="row">
+  <div class="col-md-12">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="panel panel-flat">
+  			<div class="panel-body">
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Seguro desea eliminar esta propiedad?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,27 +31,72 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'type_id',
-            'contract_id',
+            [
+              'attribute' => 'type_id',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->type->name;
+              }
+            ],
+            [
+              'attribute' => 'contract_id',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->contract->name;
+              }
+            ],
             'title',
             'summary',
             'description:ntext',
-            'price',
-            'featured',
+            [
+              'attribute' => 'price',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return Yii::$app->formatter->asCurrency($model->price);
+              }
+            ],
+            [
+              'attribute' => 'featured',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return ($model->featured) ? 'Activado' : 'Desactivado';
+              }
+            ],
             'area',
             'rooms',
             'toilets',
             'garage',
             'address',
-            'city',
-            'long',
-            'lat',
+            [
+              'attribute' => 'zone',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return $model->getZone($model->zone);
+              }
+            ],
+            // 'long',
+            // 'lat',
             'visits',
-            'taken',
-            'status',
-            'createdAt',
-            'updatedAt',
+            [
+              'attribute' => 'taken',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return ($model->taken) ? 'Activado' : 'Desactivado';
+              }
+            ],
+            [
+              'attribute' => 'status',
+              'format' => 'raw',
+              'value' => function ($model) {
+                  return ($model->status) ? 'Activado' : 'Desactivado';
+              }
+            ],
+            // 'created_at',
+            // 'updated_at',
         ],
     ]) ?>
 
+</div>
+</div>
+</div>
 </div>

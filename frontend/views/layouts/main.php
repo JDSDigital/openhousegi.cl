@@ -257,7 +257,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					</ul>
 				</div>
         		<div class="col-md-3">
-					<h5 class="footer-title">Ultimas Propiedades</h5>
+					<h5 class="footer-title">Últimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
             <?php for ($i=1; $i <= 6 ; $i++) : ?>
               <li><?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['class' => 'img-responsive crop-thumb']), ['/propiedades/view']) ?></li>
