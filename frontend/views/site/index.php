@@ -324,21 +324,21 @@ $this->title = 'Open House';
 			<h3 class="small-line text-center"><strong>Propiedades Destacadas</strong></h3>
 			<br>
 			<div class="row product">
-				<?php for ($i=1; $i <= 4; $i++) : ?>
+				<?php foreach ($featured as $property) : ?>
 			  	<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">
-			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view']) ?>
+			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $property->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
 			  			</div>
 			  			<div class="product-info text-left p20">
-			          <p><span class="price"><?=Yii::$app->formatter->asCurrency(7500)?></span></p>
-			  				<h3><?= Html::a('Apartamento ' . $i, ['/propiedades/view']) ?></h3>
-			  				<p><span class="type">Apartamento en venta</span></p>
-			  				<p><span class="address">Santiago de Chile</span></p>
+			          <p><span class="price"><?=Yii::$app->formatter->asCurrency($property->price)?></span></p>
+			  				<h3><?= Html::a($property->title, ['/propiedades/view', 'id' => $property->id]) ?></h3>
+			  				<p><span class="type"><?= $property->type->name ?> en <?= strtolower($property->contract->name) ?></span></p>
+			  				<p><span class="address"><?= $property->getZone($property->zone) ?></span></p>
 			  			</div>
 			  		</div>
 			  	</div>
-			  <?php endfor; ?>
+			  <?php endforeach; ?>
 			</div>
 		</div> <!-- End of Related Products -->
 	</div>

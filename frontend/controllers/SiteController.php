@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Properties;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -72,7 +73,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $featured = Properties::find()
+          ->where(['status' => Properties::STATUS_ACTIVE])
+          ->andWhere(['featured' => Properties::STATUS_ACTIVE])
+          ->andWhere(['taken' => Properties::STATUS_DELETED])
+          ->all();
+
+        return $this->render('index', [
+          'featured' => $featured,
+        ]);
     }
 
     /**

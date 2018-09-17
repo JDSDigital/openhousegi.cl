@@ -116,7 +116,7 @@ class PropertiesController extends Controller
           if ($model->save()) {
 
             $model->upload();
-            
+
             return $this->redirect(['view', 'id' => $model->id]);
           }
         }
@@ -168,6 +168,52 @@ class PropertiesController extends Controller
             return true;
         else
             return false;
+    }
+
+    /**
+     * Changes Status.
+     *
+     * @return string
+     */
+    public function actionStatus()
+    {
+        if (Yii::$app->request->isAjax) {
+            $data = Yii::$app->request->post();
+
+            $model = Properties::findOne($data['id']);
+
+            if ($model->status)
+                $model->status = Properties::STATUS_DELETED;
+            else
+                $model->status = Properties::STATUS_ACTIVE;
+
+            $model->save();
+        }
+
+        return null;
+    }
+
+    /**
+     * Changes Featured Status.
+     *
+     * @return string
+     */
+    public function actionFeatured()
+    {
+        if (Yii::$app->request->isAjax) {
+            $data = Yii::$app->request->post();
+
+            $model = Properties::findOne($data['id']);
+
+            if ($model->featured)
+                $model->featured = Properties::STATUS_DELETED;
+            else
+                $model->featured = Properties::STATUS_ACTIVE;
+
+            $model->save();
+        }
+
+        return null;
     }
 
     /**

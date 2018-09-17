@@ -10,6 +10,14 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use common\models\Properties;
+
+$latest = Properties::find()
+  ->where(['status' => Properties::STATUS_ACTIVE])
+  ->andWhere(['taken' => Properties::STATUS_DELETED])
+  ->orderBy(['created_at' => SORT_DESC])
+  ->limit(6)
+  ->all();
 
 AppAsset::register($this);
 
@@ -259,9 +267,9 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
         		<div class="col-md-3">
 					<h5 class="footer-title">Últimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
-            <?php for ($i=1; $i <= 6 ; $i++) : ?>
-              <li><?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['class' => 'img-responsive crop-thumb']), ['/propiedades/view']) ?></li>
-            <?php endfor; ?>
+            <?php foreach ($latest as $property) : ?>
+              <li><?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $property->images[0]->file, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id]) ?></li>
+            <?php endforeach; ?>
 					</ul>
 				</div>
 			</div>

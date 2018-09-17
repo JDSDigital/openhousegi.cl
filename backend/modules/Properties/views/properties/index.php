@@ -3,12 +3,13 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use common\models\Properties;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\PropertiesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Properties';
+$this->title = 'Propiedades';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="panel">
@@ -52,9 +53,9 @@ $this->params['breadcrumbs'][] = $this->title;
               'attribute' => 'featured',
               'format' => 'raw',
               'value' => function ($model) {
-                $check = ($model->status == Properties::STATUS_ACTIVE) ? "checked='checked'" : null;
+                $check = ($model->featured == Properties::STATUS_ACTIVE) ? "checked='checked'" : null;
                 return "<div class='switchery-xs m0'>
-                  <input id='status-$model->id' type='checkbox' class='switchery switchStatus' $check>
+                  <input id='featured-$model->id' type='checkbox' class='switchery switchFeatured' $check>
                 </div>";
               }
             ],
@@ -108,3 +109,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+<?php $this->registerJs('listenerChangeStatus("'.Url::to(["//Properties/properties/status"]).'");'); ?>
+<?php $this->registerJs('listenerChangeFeatured("'.Url::to(["//Properties/properties/featured"]).'");'); ?>

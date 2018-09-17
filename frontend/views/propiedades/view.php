@@ -6,7 +6,7 @@ use yii\helpers\Html;
 $this->title = 'Apartamento 1';
 
 $this->params['breadcrumbs'][] = ['label' => 'Propiedades', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => 'Apartamentos en Venta', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $property->contract->name, 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Apartamento 1';
 
 ?>
@@ -18,11 +18,9 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 
 			<div class="slider-wrapper theme-default shop-carousel">
 				<div id="slider-shop" class="nivoSlider">
-          <?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['alt' => 'image', 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/01.jpg']), Yii::getAlias('@web') . '/images/properties/01.jpg') ?>
-          <?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['alt' => 'image', 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/02.jpg']), Yii::getAlias('@web') . '/images/properties/02.jpg') ?>
-          <?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/03.jpg', ['alt' => 'image', 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/03.jpg']), Yii::getAlias('@web') . '/images/properties/03.jpg') ?>
-          <?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/04.jpg', ['alt' => 'image', 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/04.jpg']), Yii::getAlias('@web') . '/images/properties/04.jpg') ?>
-          <?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/05.jpg', ['alt' => 'image', 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/05.jpg']), Yii::getAlias('@web') . '/images/properties/05.jpg') ?>
+					<?php foreach ($property->images as $image) : ?>
+						<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $image->file, ['alt' => $property->title, 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/' . $image->file]), Yii::getAlias('@web') . '/images/properties/02.jpg') ?>
+					<?php endforeach; ?>
 				</div>
 			</div> <!-- End of Product Image Slider -->
 		</div>
@@ -30,12 +28,12 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 		<!-- Product Info -->
 
 		<div class="col-sm-6 product-header">
-			<h3 class="no-margin-top text-uppercase"><strong>Apartamento 1</strong></h3>
-			<h4 class="text-theme"><strong><?= Yii::$app->formatter->asCurrency(7500) ?></strong></h4>
-			<p style="color:#999;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<p class=""><strong>TIPO:</strong> <span style="color:#999;">Apartamento</span></p>
-			<p><strong>CONTRATO:</strong> <span style="color:#999;">Venta</span></p>
-			<p><strong>TAMAÑO:</strong> <span style="color:#999;">120 m2</span></p>
+			<h3 class="no-margin-top text-uppercase"><strong><?= $property->title ?></strong></h3>
+			<h4 class="text-theme"><strong><?= Yii::$app->formatter->asCurrency($property->price) ?></strong></h4>
+			<p style="color:#999;"><?= $property->summary ?></p>
+			<p class=""><strong>TIPO:</strong> <span style="color:#999;"><?= $property->type->name ?></span></p>
+			<p><strong>CONTRATO:</strong> <span style="color:#999;"><?= $property->contract->name ?></span></p>
+			<p><strong>TAMAÑO:</strong> <span style="color:#999;"><?= $property->area ?> m2</span></p>
 
 			<!-- Accordion -->
 
@@ -48,7 +46,7 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 					</div>
 					<div id="collapse3One" class="panel-collapse collapse in">
 						<div class="panel-body">
-							Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa.
+							<?= $property->description ?>
 						</div>
 					</div>
 				</div>
@@ -60,9 +58,9 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 					</div>
 					<div id="collapse3Two" class="panel-collapse collapse">
 						<div class="panel-body">
-							<p><strong>HABITACIONES:</strong> 3</p>
-							<p><strong>BAÑOS:</strong> 2</p>
-							<p><strong>ESTACIONAMIENTO:</strong> 2</p>
+							<p><strong>HABITACIONES:</strong> <?= $property->rooms ?></p>
+							<p><strong>BAÑOS:</strong> <?= $property->toilets ?></p>
+							<p><strong>ESTACIONAMIENTO:</strong> <?= $property->garage ?></p>
 						</div>
 					</div>
 				</div>
@@ -111,21 +109,21 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 			<h3><strong>Propiedades Relacionadas</strong></h3>
 			<br/>
 			<div class="row product">
-				<?php for ($i=1; $i <= 4; $i++) : ?>
-			  	<div class="col-sm-3">
+				<?php foreach ($related as $propertyRelated) : ?>
+					<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">
-			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/0'.$i.'.jpg', ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view']) ?>
+			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $propertyRelated->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $propertyRelated->id]) ?>
 			  			</div>
 			  			<div class="product-info text-left p20">
-			          <p><span class="price"><?=Yii::$app->formatter->asCurrency(7500)?></span></p>
-			  				<h3><?= Html::a('Apartamento ' . $i, ['/propiedades/view']) ?></h3>
-			  				<p><span class="type">Apartamento en venta</span></p>
-			  				<p><span class="address">Santiago de Chile</span></p>
+			          <p><span class="price"><?=Yii::$app->formatter->asCurrency($propertyRelated->price)?></span></p>
+			  				<h3><?= Html::a($propertyRelated->title, ['/propiedades/view', 'id' => $propertyRelated->id]) ?></h3>
+			  				<p><span class="type"><?= $propertyRelated->type->name ?> en <?= strtolower($propertyRelated->contract->name) ?></span></p>
+			  				<p><span class="address"><?= $propertyRelated->getZone($propertyRelated->zone) ?></span></p>
 			  			</div>
 			  		</div>
 			  	</div>
-			  <?php endfor; ?>
+			  <?php endforeach; ?>
 			</div>
 		</div> <!-- End of Related Products -->
 	</div>
