@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\web\UploadedFile;
+use common\models\Communes;
 
 /**
  * This is the model class for table "xproperties_properties".
@@ -76,7 +77,7 @@ class Properties extends \yii\db\ActiveRecord
             [['type_id', 'contract_id', 'title'], 'required'],
             [['type_id', 'contract_id', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title', 'summary', 'description'], 'string'],
-            [['price', 'area', 'long', 'lat'], 'number'],
+            [['price', 'uf', 'area', 'long', 'lat'], 'number'],
             [['address'], 'string', 'max' => 255],
             [['contract_id'], 'exist', 'skipOnError' => true, 'targetClass' => Contracts::className(), 'targetAttribute' => ['contract_id' => 'id']],
             [['type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Types::className(), 'targetAttribute' => ['type_id' => 'id']],
@@ -96,8 +97,9 @@ class Properties extends \yii\db\ActiveRecord
             'summary' => 'Resumen',
             'description' => 'Descripción',
             'price' => 'Precio',
+            'uf' => 'U.F.',
             'featured' => 'Destacado',
-            'area' => 'Tamaño',
+            'area' => 'Superficie Habitable',
             'rooms' => 'Habitaciones',
             'toilets' => 'Baños',
             'garage' => 'Estacionamiento',
