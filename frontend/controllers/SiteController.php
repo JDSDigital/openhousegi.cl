@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 use common\models\Properties;
+use common\models\search\PropertiesSearch;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -79,8 +80,11 @@ class SiteController extends Controller
           ->andWhere(['taken' => Properties::STATUS_DELETED])
           ->all();
 
+        $propertiesSearch = new PropertiesSearch;
+
         return $this->render('index', [
           'featured' => $featured,
+          'propertiesSearch' => $propertiesSearch,
         ]);
     }
 

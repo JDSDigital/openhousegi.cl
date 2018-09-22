@@ -88,7 +88,7 @@ $this->params['breadcrumbs'][] = $this->title;
               'attribute' => 'zone',
               'format' => 'raw',
               'value' => function ($model) {
-                  return $model->getZone($model->zone);
+                  return $model->region->name . ', ' . $model->commune->name;
               }
             ],
             //'summary',

@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Properties;
+use common\models\search\PropertiesSearch;
 
 class PropiedadesController extends \yii\web\Controller
 {
@@ -17,8 +18,11 @@ class PropiedadesController extends \yii\web\Controller
           ])
           ->all();
 
+        $propertiesSearch = new PropertiesSearch;
+
         return $this->render('index', [
           'properties' => $properties,
+          'propertiesSearch' => $propertiesSearch,
         ]);
     }
 

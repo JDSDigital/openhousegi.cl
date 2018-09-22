@@ -1,13 +1,14 @@
 <?php
 /* @var $this yii\web\View */
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Propiedades';
 
 $this->params['breadcrumbs'][] = 'Propiedades';
 
 ?>
-
+<?php $form = ActiveForm::begin(['id' => 'properties-search']); ?>
 <div class="row">
   <div class="col-md-12">
     <div class="form-theme form-big">
@@ -24,81 +25,21 @@ $this->params['breadcrumbs'][] = 'Propiedades';
 <div class="row mt30 mb30">
   <div class="col-md-4">
     <div class="form-theme form-md">
-      <select class="form-control">
-        <option>Alquiler</option>
-        <option>Venta</option>
-      </select>
+      <?= $form->field($propertiesSearch, 'contract_id')->dropDownList($propertiesSearch->getContractList(), ['class' => 'form-control'])->label(false) ?>
     </div>
   </div>
   <div class="col-md-4">
     <div class="form-theme form-md">
-      <select class="form-control">
-        <option>Apartamentos</option>
-        <option>Casas</option>
-      </select>
+      <?= $form->field($propertiesSearch, 'type_id')->dropDownList($propertiesSearch->getTypeList(), ['class' => 'form-control'])->label(false) ?>
     </div>
   </div>
   <div class="col-md-4">
     <div class="form-theme form-md">
-      <select class="form-control">
-        <option>Todas las zonas</option>
-        <option>Alhué</option>
-        <option>Buin</option>
-        <option>Calera de Tango</option>
-        <option>Cerrillos</option>
-        <option>Cerro Navia</option>
-        <option>Colina</option>
-        <option>Conchalí</option>
-        <option>Curacaví</option>
-        <option>El Bosque</option>
-        <option>El Monte</option>
-        <option>Estación Central</option>
-        <option>Huechuraba</option>
-        <option>Independencia</option>
-        <option>Isla de Maipo</option>
-        <option>La Cisterna</option>
-        <option>La Florida</option>
-        <option>La Granja</option>
-        <option>La Pintana</option>
-        <option>La Reina</option>
-        <option>Lampa</option>
-        <option>Las Condes</option>
-        <option>Lo Barnechea</option>
-        <option>Lo Espejo</option>
-        <option>Lo Prado</option>
-        <option>Macul</option>
-        <option>Maipú</option>
-        <option>María Pinto</option>
-        <option>Melipilla</option>
-        <option>Ñuñoa</option>
-        <option>Padre Hurtado</option>
-        <option>Paine</option>
-        <option>Pedro Aguirre Cerda</option>
-        <option>Peñaflor</option>
-        <option>Peñalolén</option>
-        <option>Pirque</option>
-        <option>Providencia</option>
-        <option>Pudahuel</option>
-        <option>Puente Alto</option>
-        <option>Quilicura</option>
-        <option>Quinta Normal</option>
-        <option>Recoleta</option>
-        <option>Renca</option>
-        <option>San Bernardo</option>
-        <option>San Joaquín</option>
-        <option>San José de Maipo</option>
-        <option>San Miguel</option>
-        <option>San Pedro</option>
-        <option>San Ramón</option>
-        <option>Santiago</option>
-        <option>Talagante</option>
-        <option>Til Til</option>
-        <option>Vitacura</option>
-      </select>
+      <?= $form->field($propertiesSearch, 'zone')->dropDownList($propertiesSearch->getZoneList(), ['class' => 'form-control'])->label(false) ?>
     </div>
   </div>
 </div>
-
+<?php ActiveForm::end(); ?>
 <!-- Product Grid -->
 
 <div class="row product">

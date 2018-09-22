@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\web\UploadedFile;
 use common\models\Communes;
+use common\models\Regions;
 
 /**
  * This is the model class for table "xproperties_properties".
@@ -167,67 +168,34 @@ class Properties extends \yii\db\ActiveRecord
     */
     public function getZoneList()
     {
-      $zones = [
-        'Todas las zonas',
-        'Alhué',
-        'Buin',
-        'Calera de Tango',
-        'Cerrillos',
-        'Cerro Navia',
-        'Colina',
-        'Conchalí',
-        'Curacaví',
-        'El Bosque',
-        'El Monte',
-        'Estación Central',
-        'Huechuraba',
-        'Independencia',
-        'Isla de Maipo',
-        'La Cisterna',
-        'La Florida',
-        'La Granja',
-        'La Pintana',
-        'La Reina',
-        'Lampa',
-        'Las Condes',
-        'Lo Barnechea',
-        'Lo Espejo',
-        'Lo Prado',
-        'Macul',
-        'Maipú',
-        'María Pinto',
-        'Melipilla',
-        'Ñuñoa',
-        'Padre Hurtado',
-        'Paine',
-        'Pedro Aguirre Cerda',
-        'Peñaflor',
-        'Peñalolén',
-        'Pirque',
-        'Providencia',
-        'Pudahuel',
-        'Puente Alto',
-        'Quilicura',
-        'Quinta Normal',
-        'Recoleta',
-        'Renca',
-        'San Bernardo',
-        'San Joaquín',
-        'San José de Maipo',
-        'San Miguel',
-        'San Pedro',
-        'San Ramón',
-        'Santiago',
-        'Talagante',
-        'Til Til',
-        'Vitacura',
-      ];
+      $zones = Communes::find()
+        ->select(['id', 'name'])
+        ->all();
+
+      $zones = ArrayHelper::map($zones, 'id', 'name');
+      array_unshift($zones, 'Todas las zonas');
 
       return $zones;
     }
 
     public function getZone($id) {
         return $this->getZoneList()[$id];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCommune()
+    {
+        return $this->hasOne(Communes::className(), ['id' => 'zone']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRegion()
+    {
+        return $this->hasOne(Regions::className(), ['id' => 'region_id'])->via('commune');
     }
 
     public function upload()
