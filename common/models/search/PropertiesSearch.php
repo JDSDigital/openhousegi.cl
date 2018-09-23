@@ -18,8 +18,8 @@ class PropertiesSearch extends Properties
     public function rules()
     {
         return [
-            [['id', 'type_id', 'contract_id', 'title', 'summary', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['description', 'address'], 'safe'],
+            [['id', 'type_id', 'contract_id', 'featured', 'rooms', 'toilets', 'garage', 'zone', 'visits', 'taken', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'summary', 'description', 'address'], 'safe'],
             [['price', 'area', 'long', 'lat'], 'number'],
         ];
     }
@@ -44,10 +44,22 @@ class PropertiesSearch extends Properties
     {
         $query = Properties::find();
 
+        if (Yii::$app->id == 'app-frontend') {
+          $query->where(['status' => Properties::STATUS_ACTIVE])
+            ->andWhere(['taken' => Properties::STATUS_DELETED])
+            ->orderBy([
+              'featured' => SORT_DESC,
+              'created_at' => SORT_DESC,
+            ]);
+        }
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 12,
+            ],
         ]);
 
         $this->load($params);
@@ -61,17 +73,12 @@ class PropertiesSearch extends Properties
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'type_id' => $this->type_id,
-            'contract_id' => $this->contract_id,
-            'title' => $this->title,
-            'summary' => $this->summary,
             'price' => $this->price,
             'featured' => $this->featured,
             'area' => $this->area,
             'rooms' => $this->rooms,
             'toilets' => $this->toilets,
             'garage' => $this->garage,
-            'zone' => $this->zone,
             'long' => $this->long,
             'lat' => $this->lat,
             'visits' => $this->visits,
@@ -81,7 +88,18 @@ class PropertiesSearch extends Properties
             'updated_at' => $this->updated_at,
         ]);
 
+        if ($this->zone != 0)
+          $query->andFilterWhere(['zone' => $this->zone]);
+
+        if ($this->contract_id != 0)
+          $query->andFilterWhere(['contract_id' => $this->contract_id]);
+
+        if ($this->type_id != 0)
+          $query->andFilterWhere(['type_id' => $this->type_id]);
+
         $query->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'summary', $this->summary])
             ->andFilterWhere(['like', 'address', $this->address]);
 
         return $dataProvider;

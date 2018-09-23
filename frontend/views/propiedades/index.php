@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\LinkPager;
 
 $this->title = 'Propiedades';
 
@@ -13,9 +14,11 @@ $this->params['breadcrumbs'][] = 'Propiedades';
   <div class="col-md-12">
     <div class="form-theme form-big">
       <div class="input-group">
-        <?= Html::input('text', 'search', '', ['class' => 'form-control', 'placeholder' => 'Buscar...']) ?>
+        <?= $form->field($propertiesSearch, 'title')->textInput(['class' => 'form-control'])->label(false) ?>
         <span class="input-group-btn">
-          <button class="btn btn-theme" type="button"><i class="glyphicon glyphicon-search"></i></button>
+          <?= Html::submitButton('<i class="glyphicon glyphicon-search"></i>', [
+              'class' => 'btn btn-theme mt10',
+          ]) ?>
         </span>
       </div>
     </div>
@@ -40,11 +43,12 @@ $this->params['breadcrumbs'][] = 'Propiedades';
   </div>
 </div>
 <?php ActiveForm::end(); ?>
+
 <!-- Product Grid -->
 
 <div class="row product">
 
-  <?php foreach ($properties as $property) : ?>
+  <?php foreach ($dataProvider->getModels() as $property) : ?>
     <div class="col-sm-3">
       <div class="product-thumbnail">
         <div class="product-image">
@@ -61,3 +65,10 @@ $this->params['breadcrumbs'][] = 'Propiedades';
   <?php endforeach; ?>
 
 </div> <!-- End of Product Grid -->
+
+<!-- Paginador -->
+<div class="text-center mb30">
+  <?= LinkPager::widget([
+      'pagination' => $dataProvider->getPagination(),
+  ]); ?>
+</div><!-- /.paginador -->

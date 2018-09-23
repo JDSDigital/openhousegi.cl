@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\web\UploadedFile;
+use yii\imagine\Image;
 use common\models\Communes;
 use common\models\Regions;
 
@@ -140,6 +141,7 @@ class Properties extends \yii\db\ActiveRecord
     {
         $contracts = Contracts::find()->select(['id', 'name'])->asArray()->all();
         $contracts = ArrayHelper::map($contracts, 'id', 'name');
+        array_unshift($contracts, 'Todo tipo de contrato');
 
         return $contracts;
     }
@@ -159,6 +161,7 @@ class Properties extends \yii\db\ActiveRecord
     {
         $types = Types::find()->select(['id', 'name'])->asArray()->all();
         $types = ArrayHelper::map($types, 'id', 'name');
+        array_unshift($types, 'Todo tipo de inmueble');
 
         return $types;
     }
@@ -198,6 +201,28 @@ class Properties extends \yii\db\ActiveRecord
         return $this->hasOne(Regions::className(), ['id' => 'region_id'])->via('commune');
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRelated()
+    {
+        return self::find()
+          ->where(['status' => self::STATUS_ACTIVE])
+          ->andWhere(['taken' => self::STATUS_DELETED])
+          ->andWhere(['type_id' => $this->type_id])
+          ->andWhere(['contract_id' => $this->contract_id])
+          ->orderBy([
+            // 'featured' => SORT_DESC,
+            'created_at' => SORT_DESC,
+          ])
+          ->limit(4)
+          ->all();
+    }
+
+    /**
+     * Upload supplied images via UploadedFile
+     * @return boolean
+     */
     public function upload()
     {
         if ($this->validate()) {
@@ -215,7 +240,12 @@ class Properties extends \yii\db\ActiveRecord
                 $image->file = $name;
                 $image->property_id = $this->id;
 
-                $uploadedImage->saveAs($url . $name);
+                $uploadedImage->saveAs($url . 'tmp-' . $name);
+
+                Image::resize($url . 'tmp-' . $name, 1024, null)
+                    ->save($url . $name, ['jpeg_quality' => 80]);
+
+                unlink($url . 'tmp-' . $name);
 
                 $image->save();
 

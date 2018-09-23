@@ -2,27 +2,21 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use common\models\Properties;
 use common\models\search\PropertiesSearch;
+use yii\data\Pagination;
 
 class PropiedadesController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        $properties = Properties::find()
-          ->where(['status' => Properties::STATUS_ACTIVE])
-          ->andWhere(['taken' => Properties::STATUS_DELETED])
-          ->orderBy([
-            'featured' => SORT_DESC,
-            'created_at' => SORT_DESC,
-          ])
-          ->all();
-
         $propertiesSearch = new PropertiesSearch;
+        $dataProvider = $propertiesSearch->search(Yii::$app->request->post());
 
         return $this->render('index', [
-          'properties' => $properties,
           'propertiesSearch' => $propertiesSearch,
+          'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -30,21 +24,8 @@ class PropiedadesController extends \yii\web\Controller
     {
         $property = Properties::findOne($id);
 
-        $related = Properties::find()
-          ->where(['status' => Properties::STATUS_ACTIVE])
-          ->andWhere(['taken' => Properties::STATUS_DELETED])
-          ->andWhere(['type_id' => $property->type_id])
-          ->andWhere(['contract_id' => $property->contract_id])
-          ->orderBy([
-            // 'featured' => SORT_DESC,
-            'created_at' => SORT_DESC,
-          ])
-          ->limit(4)
-          ->all();
-
         return $this->render('view', [
           'property' => $property,
-          'related' => $related,
         ]);
     }
 

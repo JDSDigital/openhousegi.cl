@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use kartik\widgets\FileInput;
 
@@ -73,8 +74,6 @@ use kartik\widgets\FileInput;
     <?= $form->field($model, 'garage')->textInput() ?>
   </div>
 </div>
-
-
 
           <?= $form->field($model, 'featured')->checkbox() ?>
 

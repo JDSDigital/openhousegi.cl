@@ -3,11 +3,11 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Apartamento 1';
+$this->title = $property->title;
 
 $this->params['breadcrumbs'][] = ['label' => 'Propiedades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $property->contract->name, 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Apartamento 1';
+$this->params['breadcrumbs'][] = $property->title;
 
 ?>
 <div class="container pad-top-50">
@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = 'Apartamento 1';
 			<h3><strong>Propiedades Relacionadas</strong></h3>
 			<br/>
 			<div class="row product">
-				<?php foreach ($related as $propertyRelated) : ?>
+				<?php foreach ($property->getRelated() as $propertyRelated) : ?>
 					<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">

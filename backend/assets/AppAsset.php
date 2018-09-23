@@ -11,7 +11,7 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    
+
     public $css = [
         'css/site.css',
         'css/master.css',
@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
 
     public $js = [
         'js/yii/yii_overrides.js',
+        'js/yii/piexif.js',
         'js/plugins/loaders/pace.min.js',
         'js/core/libraries/bootstrap.min.js',
         'js/plugins/forms/selects/bootstrap_multiselect.js',
