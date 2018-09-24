@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $property->title;
 			<div class="slider-wrapper theme-default shop-carousel">
 				<div id="slider-shop" class="nivoSlider">
 					<?php foreach ($property->images as $image) : ?>
-						<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $image->file, ['alt' => $property->title, 'class' => 'img-responsive', 'data-thumb' => Yii::getAlias('@web') . '/images/properties/' . $image->file]), Yii::getAlias('@web') . '/images/properties/02.jpg') ?>
+						<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $image->file, ['alt' => $property->title, 'data-thumb' => Yii::getAlias('@web') . '/images/properties/thumbs/' . $image->file]), Yii::getAlias('@web') . '/images/properties/' . $image->file, ['data-lightbox-gallery'=>'gallery']) ?>
 					<?php endforeach; ?>
 				</div>
 			</div> <!-- End of Product Image Slider -->
@@ -113,7 +113,7 @@ $this->params['breadcrumbs'][] = $property->title;
 					<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">
-			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $propertyRelated->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $propertyRelated->id]) ?>
+			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/thumbs/' . $propertyRelated->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $propertyRelated->id]) ?>
 			  			</div>
 			  			<div class="product-info text-left p20">
 			          <p><span class="price"><?=Yii::$app->formatter->asCurrency($propertyRelated->price)?></span></p>

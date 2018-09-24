@@ -245,6 +245,9 @@ class Properties extends \yii\db\ActiveRecord
                 Image::resize($url . 'tmp-' . $name, 1024, null)
                     ->save($url . $name, ['jpeg_quality' => 80]);
 
+                Image::resize($url . 'tmp-' . $name, null, 270)
+                    ->save($url . 'thumbs/' . $name, ['jpeg_quality' => 80]);
+
                 unlink($url . 'tmp-' . $name);
 
                 $image->save();

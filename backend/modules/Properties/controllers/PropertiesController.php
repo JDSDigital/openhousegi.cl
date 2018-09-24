@@ -161,7 +161,6 @@ class PropertiesController extends Controller
         $property_id = $image->property_id;
 
         $url = Url::to('@frontend/web/images/properties/') . $image->file;
-        // $url = str_replace('backend', 'frontend', $url);
 
         // Delete image from the database and the folder
         if (unlink($url) && $image->delete())

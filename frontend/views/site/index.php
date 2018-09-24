@@ -271,7 +271,7 @@ $this->title = 'Open House';
 			  	<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">
-			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/' . $property->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
+			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
 			  			</div>
 			  			<div class="product-info text-left p20">
 			          <p><span class="price"><?=Yii::$app->formatter->asCurrency($property->price)?></span></p>
