@@ -5,7 +5,6 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Properties;
 use common\models\search\PropertiesSearch;
-use yii\data\Pagination;
 
 class PropiedadesController extends \yii\web\Controller
 {
@@ -26,6 +25,26 @@ class PropiedadesController extends \yii\web\Controller
 
         return $this->render('view', [
           'property' => $property,
+        ]);
+    }
+
+    public function actionSearch($id)
+    {
+        $property = Properties::findOne($id);
+
+        $propertiesSearch = new PropertiesSearch;
+        $dataProvider = $propertiesSearch->search([
+          'PropertiesSearch' => [
+              'title' => '',
+              'contract_id' => $property->contract_id,
+              'type_id' => 0,
+              'zone' => 0,
+          ]
+        ]);
+
+        return $this->render('index', [
+          'propertiesSearch' => $propertiesSearch,
+          'dataProvider' => $dataProvider,
         ]);
     }
 

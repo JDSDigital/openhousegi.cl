@@ -9,7 +9,10 @@ $this->title = 'Propiedades';
 $this->params['breadcrumbs'][] = 'Propiedades';
 
 ?>
-<?php $form = ActiveForm::begin(['id' => 'properties-search']); ?>
+<?php $form = ActiveForm::begin([
+  'id' => 'properties-search',
+  'action' => ['index']
+]); ?>
 <div class="row">
   <div class="col-md-12">
     <div class="form-theme form-big">

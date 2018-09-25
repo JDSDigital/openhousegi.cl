@@ -56,9 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
 					<div class="col-md-12 pad-left-30 pad-right-30">
 						<h4 class="text-uppercase"><strong>Información de contacto</strong></h4>
 						<p class="company-name">Open House C.A.</p>
-						<p>#123, Building Name, ABC Street</p>
-						<p>Santiago de Chile</p>
-						<p><strong>T <a href="#">+1 123 456 7890</a></strong></p>
+						<p>Monseñor Felix Cabrera #39, Oficina 6</p>
+						<p>Providencia, Santiago de Chile</p>
+						<p><strong>T <a href="#">+56 9 7103 2622</a></strong></p>
+						<p><strong>T <a href="#">+56 9 3022 5644</a></strong></p>
 						<p><strong>E <a href="#">admin@openhousegi.cl</a></strong></p>
 					</div>
 				</div>
@@ -66,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="row no-margin pb30">
 					<div class="col-md-12 pad-left-30 pad-right-30">
 						<h4><strong>Horario de atención</strong></h4>
-						<p>Lunes a Viernes: <b>9AM a 6PM</b></p>
+						<p>Lunes a Domingo: <b>7:30 a 20:00</b></p>
 					</div>
 				</div>
 			</section>

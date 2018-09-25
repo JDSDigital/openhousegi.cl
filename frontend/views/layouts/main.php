@@ -249,11 +249,11 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 				</div>
 				<div class="col-md-3 mar-top-15">
 					<p>
-					#123, Building Name<br/>
-					ABC Street,<br/>
-					Santiago de Chile<br/>
+					Monseñor Felix Cabrera #39<br/>
+					Oficina 6,<br/>
+					Providencia, Santiago de Chile<br/>
 					Correo: <a href="#">admin@openhousegi.cl</a><br/>
-					Teléfono: <a href="#">+1 123 456 7890</a><br/>
+					Teléfonos: <br/>+56 9 7103 2622<br/>+56 9 3022 5644<br/>
 					</p>
 				</div>
 				<div class="col-md-3">

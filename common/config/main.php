@@ -22,6 +22,10 @@ return [
             'decimalSeparator' => ',',
             'thousandSeparator' => '.',
             'currencyCode' => 'CLP',
+            'numberFormatterOptions' => [
+                NumberFormatter::MIN_FRACTION_DIGITS => 0,
+                NumberFormatter::MAX_FRACTION_DIGITS => 2,
+            ]
         ],
     ],
 ];

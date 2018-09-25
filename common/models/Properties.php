@@ -45,6 +45,9 @@ class Properties extends \yii\db\ActiveRecord
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 0;
 
+    const CONTRACT_RENT = 1;
+    const CONTRACT_SALE = 2;
+
     // public $images;
 
     /**

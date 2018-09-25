@@ -100,7 +100,7 @@ class PropertiesController extends Controller
         $previewsConfig = [];
 
         foreach ($uploadedImages as $image){
-            $url = Url::to('@web/images/properties/') . $image->file;
+            $url = Url::to('@web/images/properties/thumbs/') . $image->file;
             $url = str_replace('backend', 'frontend', $url);
             $previews[] = $url;
 
@@ -161,9 +161,10 @@ class PropertiesController extends Controller
         $property_id = $image->property_id;
 
         $url = Url::to('@frontend/web/images/properties/') . $image->file;
+        $urlThumb = Url::to('@frontend/web/images/properties/thumbs/') . $image->file;
 
         // Delete image from the database and the folder
-        if (unlink($url) && $image->delete())
+        if (unlink($url) && unlink($urlThumb) && $image->delete())
             return true;
         else
             return false;
