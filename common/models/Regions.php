@@ -12,7 +12,7 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  *
- * @property Communes[] $xpropertiesCommunes
+ * @property Communes[] $Communes
  */
 class Regions extends \yii\db\ActiveRecord
 {

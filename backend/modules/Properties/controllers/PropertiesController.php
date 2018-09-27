@@ -217,6 +217,21 @@ class PropertiesController extends Controller
     }
 
     /**
+     * List communes according to the selected region
+     * @param $id
+     */
+    public function actionCommunes(){
+
+        if (Yii::$app->request->isAjax) {
+            $data = Yii::$app->request->post();
+
+            $model = new Properties;
+
+            return $model->getCommunesSelect($data['id']);
+        }
+    }
+
+    /**
      * Finds the Properties model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id

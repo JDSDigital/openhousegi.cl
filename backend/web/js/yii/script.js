@@ -37,3 +37,26 @@ function listenerChangeFeatured(url){
 		});
 	});
 }
+
+function listenerRegionsSelect() {
+
+	$('#properties-region').on('change', function() {
+		var id = $('#properties-region').val();
+		$.ajax({
+			url: 'communes',
+			type: 'post',
+			data: {
+				id: id,
+				_csrf : yii.getCsrfToken()
+			},
+			success: function (data) {
+				console.log(true);
+				$('#properties-zone').html(data);
+			},
+			error: function () {
+				console.log(false);
+			}
+		});
+	});
+
+}

@@ -52,7 +52,10 @@ use kartik\widgets\FileInput;
           </div>
 
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
+              <?= $form->field($model, 'region')->dropdownList($model->getRegionsList()) ?>
+            </div>
+            <div class="col-sm-6">
               <?= $form->field($model, 'zone')->dropdownList($model->getZoneList()) ?>
             </div>
           </div>
@@ -116,3 +119,9 @@ use kartik\widgets\FileInput;
     <?php ActiveForm::end(); ?>
 
 </div>
+<?php
+$js = <<<JS
+  listenerRegionsSelect();
+JS;
+$this->registerJs($js);
+?>

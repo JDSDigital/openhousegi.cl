@@ -48,7 +48,7 @@ class Properties extends \yii\db\ActiveRecord
     const CONTRACT_RENT = 1;
     const CONTRACT_SALE = 2;
 
-    // public $images;
+    public $region;
 
     /**
      * {@inheritdoc}
@@ -172,6 +172,21 @@ class Properties extends \yii\db\ActiveRecord
     /**
     * @return array
     */
+    public function getRegionsList()
+    {
+      $zones = Regions::find()
+        ->select(['id', 'name'])
+        ->all();
+
+      $zones = ArrayHelper::map($zones, 'id', 'name');
+      array_unshift($zones, 'Todas las zonas');
+
+      return $zones;
+    }
+
+    /**
+    * @return array
+    */
     public function getZoneList()
     {
       $zones = Communes::find()
@@ -202,6 +217,42 @@ class Properties extends \yii\db\ActiveRecord
     public function getRegion()
     {
         return $this->hasOne(Regions::className(), ['id' => 'region_id'])->via('commune');
+    }
+
+    public function getRegionsSelect()
+    {
+        $response = '';
+        $regions = Regions::find()->all();
+
+        if (count($regions) > 0){
+            foreach($regions as $region){
+                $response .= "<option value='".$region->id."'>".$region->name."</option>";
+            }
+        } else {
+            $response = "<option value='0'>-</option>";
+        }
+
+        return $response;
+    }
+
+    public function getCommunesSelect($id)
+    {
+        $response = '';
+        
+        if ($id == 0)
+          $communes = Communes::find()->all();
+        else
+          $communes = Communes::find()->where(['region_id' => $id])->all();
+
+        if (count($communes) > 0){
+            foreach($communes as $commune){
+                $response .= "<option value='".$commune->id."'>".$commune->name."</option>";
+            }
+        } else {
+            $response = "<option value='0'>-</option>";
+        }
+
+        return $response;
     }
 
     /**
