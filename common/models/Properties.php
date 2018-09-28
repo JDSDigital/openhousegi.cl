@@ -48,7 +48,7 @@ class Properties extends \yii\db\ActiveRecord
     const CONTRACT_RENT = 1;
     const CONTRACT_SALE = 2;
 
-    public $region;
+    // public $region;
 
     /**
      * {@inheritdoc}
@@ -238,7 +238,7 @@ class Properties extends \yii\db\ActiveRecord
     public function getCommunesSelect($id)
     {
         $response = '';
-        
+
         if ($id == 0)
           $communes = Communes::find()->all();
         else
@@ -313,6 +313,11 @@ class Properties extends \yii\db\ActiveRecord
 
         } else
             return false;
+    }
+
+    public function getCover()
+    {
+        return $this->hasOne(Images::className(), ['property_id' => 'id'])->andOnCondition(['cover' => Images::STATUS_ACTIVE]);
     }
 
 }

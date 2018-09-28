@@ -22,6 +22,7 @@ class PropiedadesController extends \yii\web\Controller
     public function actionView($id)
     {
         $property = Properties::findOne($id);
+        $property->updateCounters(['visits' => 1]);
 
         return $this->render('view', [
           'property' => $property,

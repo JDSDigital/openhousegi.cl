@@ -81,7 +81,7 @@ class m180731_112741_create_properties_tables extends Migration
         'id' => Schema::TYPE_PK,
         'property_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         'file' => Schema::TYPE_STRING . ' NOT NULL',
-        'cover' => Schema::TYPE_STRING . ' DEFAULT 0',
+        'cover' => Schema::TYPE_INTEGER . ' DEFAULT 0',
         'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);

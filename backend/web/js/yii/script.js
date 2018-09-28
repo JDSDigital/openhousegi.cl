@@ -60,3 +60,27 @@ function listenerRegionsSelect() {
 	});
 
 }
+
+function listenerCover() {
+	$('.kv-file-cover').on('click', function() {
+	    var $btn = $(this), key = $btn.data('key');
+			$.ajax({
+				url: 'cover',
+				type: 'post',
+				data: {
+					id: key,
+					_csrf : yii.getCsrfToken()
+				},
+				success: function (data) {
+					$('.kv-file-cover').each(function () {
+						$(this).removeClass('btn-success');
+					});
+					$btn.toggleClass('btn-default');
+					$btn.addClass('btn-success');
+				},
+				error: function () {
+					console.log(false);
+				}
+			});
+	});
+}

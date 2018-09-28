@@ -107,7 +107,7 @@ class PropertiesController extends Controller
             $previewsConfig[] = [
               'caption' => $image->file,
               'key' => $image->id,
-              'url' => Url::to(["/Properties/properties/deleteimage?id=" . $image->id])
+              'url' => Url::to(["/Properties/properties/deleteimage?id=" . $image->id]),
             ];
         }
 
@@ -214,6 +214,24 @@ class PropertiesController extends Controller
         }
 
         return null;
+    }
+
+    /**
+     * Sets Cover image.
+     *
+     * @return string
+     */
+    public function actionCover()
+    {
+      if (Yii::$app->request->isAjax) {
+          $data = Yii::$app->request->post();
+
+          $model = Images::findOne($data['id']);
+
+          return $model->setCover();
+      }
+
+      return null;
     }
 
     /**

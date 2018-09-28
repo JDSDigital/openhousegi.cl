@@ -8,6 +8,8 @@ use kartik\widgets\FileInput;
 /* @var $this yii\web\View */
 /* @var $model common\models\Properties */
 /* @var $form yii\widgets\ActiveForm */
+$cover = Url::to(['//Properties/properties/cover?id=']);
+$btn = "<button type='button' class='kv-file-cover btn btn-sm btn-kv btn-default btn-outline-secondary' title='Portada' data-url='$cover{key}' data-key='{key}'><i class='glyphicon glyphicon-star'></i></button>";
 ?>
 
 <div class="row">
@@ -100,12 +102,13 @@ use kartik\widgets\FileInput;
                 'allowedFileTypes' => ['image'],
                 'allowedFileExtensions' => ['jpg', 'png'],
                 'maxFileSize' => 2800,
-                'maxFileCount' => 5,
+                'maxFileCount' => 9,
                 'overwriteInitial' => false,
                 'initialPreview' => isset($previews) ? $previews : false,
                 'initialPreviewAsData' => true,
                 'initialPreviewShowDelete' => true,
                 'initialPreviewConfig' => isset($previewsConfig) ? $previewsConfig : false,
+                'otherActionButtons' => $btn,
               ]
           ]); ?>
 
@@ -122,6 +125,7 @@ use kartik\widgets\FileInput;
 <?php
 $js = <<<JS
   listenerRegionsSelect();
+  listenerCover();
 JS;
 $this->registerJs($js);
 ?>

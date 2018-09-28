@@ -21,6 +21,9 @@ use yii\web\UploadedFile;
  */
 class Images extends \yii\db\ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+    const STATUS_DELETED = 0;
+    
     /**
      * {@inheritdoc}
      */
@@ -51,8 +54,8 @@ class Images extends \yii\db\ActiveRecord
     {
         return [
             [['property_id', 'file'], 'required'],
-            [['property_id', 'created_at', 'updated_at'], 'integer'],
-            [['file', 'cover'], 'string', 'max' => 255],
+            [['property_id', 'cover', 'created_at', 'updated_at'], 'integer'],
+            [['file'], 'string', 'max' => 255],
             [['property_id'], 'exist', 'skipOnError' => true, 'targetClass' => Properties::className(), 'targetAttribute' => ['property_id' => 'id']],
         ];
     }
@@ -78,5 +81,18 @@ class Images extends \yii\db\ActiveRecord
     public function getProperty()
     {
         return $this->hasOne(Properties::className(), ['id' => 'property_id']);
+    }
+
+    public function setCover()
+    {
+        self::updateAll(['cover' => 0], 'property_id = ' . $this->property_id);
+
+        $this->cover = 1;
+
+        if (self::update())
+          return true;
+        else
+          return false;
+
     }
 }
