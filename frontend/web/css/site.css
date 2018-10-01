@@ -312,3 +312,9 @@ hr {
     margin-bottom: 50px;
     margin-top: 50px;
 }
+.tab-pane p, .tab-pane li {
+  font-size: 16px;
+}
+.footer-logo {
+  max-height: 60px;
+}

@@ -152,6 +152,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
                   ['label' => 'Inicio', 'url' => ['/site/index']],
                   ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
                   ['label' => 'Quienes Somos', 'url' => ['/site/about']],
+                  ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
                   ['label' => 'Contacto', 'url' => ['/site/contact']],
                 ];
                 echo Nav::widget([
@@ -200,6 +201,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
             ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
             ['label' => 'Quienes Somos', 'url' => ['/site/about']],
+            ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
           ];
           echo Nav::widget([
@@ -237,8 +239,8 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 	<footer class="footer footer-plain footer-theme bg-color1">
 		<div class="container mt60 mb50">
 			<div class="row">
-				<div class="col-md-3 text-center">
-					<?= Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'img-responsive mt20']) ?>
+				<div class="col-md-3">
+					<?= Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'footer-logo img-responsive mt20']) ?>
 					<ul class="social-icons list-inline list-unstyled si-6-white si-no-border inverse lg mt20">
 						<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
@@ -286,6 +288,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 								<li><?= Html::a('Inicio', ['/site/index']) ?></li>
 								<li><?= Html::a('Propiedades', ['/propiedades/index']) ?></li>
 								<li><?= Html::a('Quienes Somos', ['/site/about']) ?></li>
+								<li><?= Html::a('Otros Servicios', ['/site/servicios']) ?></li>
 								<li><?= Html::a('Contacto', ['/site/contact']) ?></li>
 							</ul>
 						</nav>
