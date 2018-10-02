@@ -11,22 +11,23 @@ $this->params['breadcrumbs'][] = $this->title;
   <div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>We are great at what we do</h3>
-				<br/>
-				<p>
-					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-				</p>
+				<h3><strong>Cubrimos todas tus necesidades</strong></h3>
+        <div class="symbol">
+          <i class="fa fa-thumbs-up"></i>
+          <hr>
+        </div>
+				<p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
 				<br/>
 
 				<!-- Services Tab -->
 
 				<div class="mb30">
 					<ul class="nav nav-pills">
-						<li class="active"><a href="#tab20" data-toggle="tab"><i class="fa fa-star"></i> Gestión de Venta y Arriendo</a></li>
-						<li><a href="#tab21" data-toggle="tab"><i class="fa fa-cog"></i> Apoyo Legal</a></li>
-						<li><a href="#tab22" data-toggle="tab"><i class="fa fa-trophy"></i> Administración de Propiedades</a></li>
-						<li><a href="#tab23" data-toggle="tab"><i class="fa fa-trophy"></i> Inversiones</a></li>
-						<li><a href="#tab24" data-toggle="tab"><i class="fa fa-trophy"></i> Check In House</a></li>
+						<li class="active"><a href="#tab20" data-toggle="tab"><i class="fa fa-suitcase"></i> Gestión de Venta y Arriendo</a></li>
+						<li><a href="#tab21" data-toggle="tab"><i class="fa fa-balance-scale"></i> Apoyo Legal</a></li>
+						<li><a href="#tab22" data-toggle="tab"><i class="fa fa-home"></i> Administración de Propiedades</a></li>
+						<li><a href="#tab23" data-toggle="tab"><i class="fa fa-bar-chart"></i> Inversiones</a></li>
+						<li><a href="#tab24" data-toggle="tab"><i class="fa fa-search"></i> Check In House</a></li>
 					</ul>
         <div class="tab-pills">
 					<div class="tab-content">
@@ -75,25 +76,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
   						</div>
   						<div class="tab-pane pt30 pb30" id="tab24">
-                <h4 class="text-theme"><strong>Servicio de Inspección de departamentos y casas nuevas, previa entrega por parte de la inmobiliaria.</strong></h4>
-                <p>Este servicio consiste en la revisión de las siguientes partidas:</p>
-                <ul>
-                  <li>Terminaciones</li>
-                  <li>Muebles y equipos</li>
-                  <li>Mediciones de recintos</li>
-                  <li>
-                    Pruebas de funcionalidad:
+                <div class="row">
+                  <div class="col-md-4">
+                    <?= Html::img(Yii::getAlias('@web') . '/images/svg/check-in-house.svg', ['class' => 'img-responsive']) ?>
+                  </div>
+                  <div class="col-md-8">
+                    <h4 class="text-theme"><strong>Servicio de Inspección de departamentos y casas nuevas, previa entrega por parte de la inmobiliaria.</strong></h4>
+                    <p>Este servicio consiste en la revisión de las siguientes partidas:</p>
                     <ul>
-                      <li>Instalaciones Sanitarias</li>
-                      <li>Instalaciones Eléctricas</li>
-                      <li>Corrientes débiles</li>
+                      <li>Terminaciones</li>
+                      <li>Muebles y equipos</li>
+                      <li>Mediciones de recintos</li>
+                      <li>
+                        Pruebas de funcionalidad:
+                        <ul>
+                          <li>Instalaciones Sanitarias</li>
+                          <li>Instalaciones Eléctricas</li>
+                          <li>Corrientes débiles</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
-                <br/>
-                <p>Una vez realizada la inspección, se entregará un informe en un plazo de 10 días hábiles, indicando todas las observaciones de la vivienda y la prioridad de resolución de cada una de ellas.</p>
-                <p>La inmobiliaria tiene la obligación de realizar el levantamiento de ellas en un plazo de 20 días desde el rechazo de la entrega.</p>
-                <p>Profesional a cargo: Ingeniero en construcción con vasta experiencia en entrega de departamento, preparación de entrega, terminaciones finas, normativa vigente en importantes empresas de inspección técnica de obras e inmobiliarias de alto estándar de calidad.</p>
+                    <br/>
+                    <p>Una vez realizada la inspección, se entregará un informe en un plazo de 10 días hábiles, indicando todas las observaciones de la vivienda y la prioridad de resolución de cada una de ellas.</p>
+                    <p>La inmobiliaria tiene la obligación de realizar el levantamiento de ellas en un plazo de 20 días desde el rechazo de la entrega.</p>
+                    <p>Profesional a cargo: Ingeniero en construcción con vasta experiencia en entrega de departamento, preparación de entrega, terminaciones finas, normativa vigente en importantes empresas de inspección técnica de obras e inmobiliarias de alto estándar de calidad.</p>
+                  </div>
+                </div>
   						</div>
             </div>
 					</div>

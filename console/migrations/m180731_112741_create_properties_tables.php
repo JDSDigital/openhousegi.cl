@@ -59,7 +59,7 @@ class m180731_112741_create_properties_tables extends Migration
         'description' => Schema::TYPE_TEXT . ' DEFAULT NULL',
         'price' => Schema::TYPE_FLOAT . ' DEFAULT 0',
         'uf' => Schema::TYPE_FLOAT . ' DEFAULT NULL',
-        'featured' => Schema::TYPE_INTEGER . ' DEFAULT 0',
+        'featured' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
         'area' => Schema::TYPE_FLOAT . ' DEFAULT NULL',
         'rooms' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'toilets' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
@@ -81,68 +81,85 @@ class m180731_112741_create_properties_tables extends Migration
         'id' => Schema::TYPE_PK,
         'property_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         'file' => Schema::TYPE_STRING . ' NOT NULL',
-        'cover' => Schema::TYPE_INTEGER . ' DEFAULT 0',
+        'cover' => Schema::TYPE_BOOLEAN . ' DEFAULT 0',
         'created_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
         'updated_at' => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       ], $tableOptions);
 
       $this->batchInsert('{{%xproperties_regions}}', ['name'], [
-          ['Region 1'],
+          ['Santiago'],
+          ['V Región'],
       ]);
 
       $this->batchInsert('{{%xproperties_communes}}', ['region_id', 'name'], [
-        ['1', 'Alhué'],
-        ['1', 'Buin'],
-        ['1', 'Calera de Tango'],
-        ['1', 'Cerrillos'],
-        ['1', 'Cerro Navia'],
-        ['1', 'Colina'],
-        ['1', 'Conchalí'],
-        ['1', 'Curacaví'],
-        ['1', 'El Bosque'],
-        ['1', 'El Monte'],
-        ['1', 'Estación Central'],
-        ['1', 'Huechuraba'],
-        ['1', 'Independencia'],
-        ['1', 'Isla de Maipo'],
-        ['1', 'La Cisterna'],
-        ['1', 'La Florida'],
-        ['1', 'La Granja'],
-        ['1', 'La Pintana'],
-        ['1', 'La Reina'],
-        ['1', 'Lampa'],
-        ['1', 'Las Condes'],
-        ['1', 'Lo Barnechea'],
-        ['1', 'Lo Espejo'],
-        ['1', 'Lo Prado'],
-        ['1', 'Macul'],
-        ['1', 'Maipú'],
-        ['1', 'María Pinto'],
-        ['1', 'Melipilla'],
-        ['1', 'Ñuñoa'],
-        ['1', 'Padre Hurtado'],
-        ['1', 'Paine'],
-        ['1', 'Pedro Aguirre Cerda'],
-        ['1', 'Peñaflor'],
-        ['1', 'Peñalolén'],
-        ['1', 'Pirque'],
-        ['1', 'Providencia'],
-        ['1', 'Pudahuel'],
-        ['1', 'Puente Alto'],
-        ['1', 'Quilicura'],
-        ['1', 'Quinta Normal'],
-        ['1', 'Recoleta'],
-        ['1', 'Renca'],
-        ['1', 'San Bernardo'],
-        ['1', 'San Joaquín'],
-        ['1', 'San José de Maipo'],
-        ['1', 'San Miguel'],
-        ['1', 'San Pedro'],
-        ['1', 'San Ramón'],
-        ['1', 'Santiago'],
-        ['1', 'Talagante'],
-        ['1', 'Til Til'],
-        ['1', 'Vitacura'],
+        [1, 'Cerrillos'],
+        [1, 'Cerro Navia'],
+        [1, 'Conchalí'],
+        [1, 'El Bosque'],
+        [1, 'Estación Central'],
+        [1, 'Huechuraba'],
+        [1, 'Independencia'],
+        [1, 'La Cisterna'],
+        [1, 'La Florida'],
+        [1, 'La Granja'],
+        [1, 'La Pintana'],
+        [1, 'La Reina'],
+        [1, 'Las Condes'],
+        [1, 'Lo Barnechea'],
+        [1, 'Lo Espejo'],
+        [1, 'Lo Prado'],
+        [1, 'Macul'],
+        [1, 'Maipú'],
+        [1, 'Ñuñoa'],
+        [1, 'Pedro Aguirre Cerda'],
+        [1, 'Peñalolén'],
+        [1, 'Providencia'],
+        [1, 'Pudahuel'],
+        [1, 'Quilicura'],
+        [1, 'Quinta Normal'],
+        [1, 'Recoleta'],
+        [1, 'Renca'],
+        [1, 'San Joaquín'],
+        [1, 'San Miguel'],
+        [1, 'San Ramón'],
+        [1, 'Santiago'],
+        [1, 'Vitacura'],
+
+        [2, 'Algarrobo'],
+        [2, 'Cabildo'],
+        [2, 'Calera'],
+        [2, 'Calle Larga'],
+        [2, 'Cartagena'],
+        [2, 'Casa Blanca'],
+        [2, 'Catemu'],
+        [2, 'Con Con'],
+        [2, 'El Quisco'],
+        [2, 'El Tabo'],
+        [2, 'Hijuelas'],
+        [2, 'La Cruz'],
+        [2, 'La Ligua'],
+        [2, 'Limache'],
+        [2, 'Llay Llay'],
+        [2, 'Los Andes'],
+        [2, 'Nogales'],
+        [2, 'Olmué'],
+        [2, 'Panquehue'],
+        [2, 'Papudo'],
+        [2, 'Petorca'],
+        [2, 'Puchuncavi'],
+        [2, 'Putaendo'],
+        [2, 'Quillota'],
+        [2, 'Quilpue'],
+        [2, 'Quintero'],
+        [2, 'Rinconada'],
+        [2, 'San Esteban'],
+        [2, 'San Felipe'],
+        [2, 'Santa Maria'],
+        [2, 'Santo Domingo'],
+        [2, 'Valparaiso'],
+        [2, 'Villa Alemana'],
+        [2, 'Viña del Mar'],
+        [2, 'Zapallar'],
       ]);
 
       $this->batchInsert('{{%xproperties_contracts}}', ['name'], [
@@ -158,11 +175,13 @@ class m180731_112741_create_properties_tables extends Migration
       $this->createIndex('idx-xproperties_communes-region_id', 'xproperties_communes', 'region_id');
       $this->createIndex('idx-xproperties_properties-type_id', 'xproperties_properties', 'type_id');
       $this->createIndex('idx-xproperties_properties-contract_id', 'xproperties_properties', 'contract_id');
+      $this->createIndex('idx-xproperties_properties-zone', 'xproperties_properties', 'zone');
       $this->createIndex('idx-xproperties_images-property_id', 'xproperties_images', 'property_id');
 
       $this->addForeignKey('fk-xproperties_communes-xproperties_regions', 'xproperties_communes', 'region_id', 'xproperties_regions', 'id', 'CASCADE', 'CASCADE');
       $this->addForeignKey('fk-xproperties_properties-xproperties_types', 'xproperties_properties', 'type_id', 'xproperties_types', 'id', 'CASCADE', 'CASCADE');
       $this->addForeignKey('fk-xproperties_properties-xproperties_contracts', 'xproperties_properties', 'contract_id', 'xproperties_contracts', 'id', 'CASCADE', 'CASCADE');
+      $this->addForeignKey('fk-xproperties_properties-xproperties_communes', 'xproperties_properties', 'zone', 'xproperties_communes', 'id', 'CASCADE', 'CASCADE');
       $this->addForeignKey('fk-xproperties_images-xproperties_properties', 'xproperties_images', 'property_id', 'xproperties_properties', 'id', 'CASCADE', 'CASCADE');
 
     }
@@ -172,11 +191,13 @@ class m180731_112741_create_properties_tables extends Migration
         $this->dropForeignKey('fk-xproperties_communes-xproperties_regions', 'xproperties_communes');
         $this->dropForeignKey('fk-xproperties_properties-xproperties_types', 'xproperties_properties');
         $this->dropForeignKey('fk-xproperties_properties-xproperties_contracts', 'xproperties_properties');
+        $this->dropForeignKey('fk-xproperties_properties-xproperties_communes', 'xproperties_properties');
         $this->dropForeignKey('fk-xproperties_images-xproperties_properties', 'xproperties_images');
 
         $this->dropIndex('idx-xproperties_communes-region_id', 'xproperties_communes');
         $this->dropIndex('idx-xproperties_properties-type_id', 'xproperties_properties');
         $this->dropIndex('idx-xproperties_properties-contract_id', 'xproperties_properties');
+        $this->dropIndex('idx-xproperties_properties-zone', 'xproperties_properties');
         $this->dropIndex('idx-xproperties_images-property_id', 'xproperties_images');
 
         $this->dropTable('xproperties_communes');

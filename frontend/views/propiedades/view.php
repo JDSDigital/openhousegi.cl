@@ -3,6 +3,9 @@
 
 use yii\helpers\Html;
 use common\models\Properties;
+use frontend\assets\NivoAsset;
+
+NivoAsset::register($this);
 
 $this->title = $property->title;
 
@@ -40,7 +43,7 @@ $this->params['breadcrumbs'][] = $property->title;
 			<p style="color:#999;"><?= $property->summary ?></p>
 			<p class=""><strong>TIPO:</strong> <span style="color:#999;"><?= $property->type->name ?></span></p>
 			<p><strong>CONTRATO:</strong> <span style="color:#999;"><?= $property->contract->name ?></span></p>
-			<p><strong>TAMAÑO:</strong> <span style="color:#999;"><?= $property->area ?> m2</span></p>
+			<p><strong>SUPERFICIE HABITABLE:</strong> <span style="color:#999;"><?= $property->area ?> m2</span></p>
 
 			<!-- Accordion -->
 

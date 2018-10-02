@@ -304,6 +304,9 @@ class Properties extends \yii\db\ActiveRecord
 
                 unlink($url . 'tmp-' . $name);
 
+                if ($key == 0)
+                    $image->cover = (!$this->cover) ? Images::STATUS_ACTIVE : Images::STATUS_DELETED;
+
                 $image->save();
 
               }

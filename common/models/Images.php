@@ -23,7 +23,7 @@ class Images extends \yii\db\ActiveRecord
 {
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 0;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -87,7 +87,7 @@ class Images extends \yii\db\ActiveRecord
     {
         self::updateAll(['cover' => 0], 'property_id = ' . $this->property_id);
 
-        $this->cover = 1;
+        $this->cover = self::STATUS_ACTIVE;
 
         if (self::update())
           return true;

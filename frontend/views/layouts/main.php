@@ -270,7 +270,12 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					<h5 class="footer-title">Últimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
             <?php foreach ($latest as $property) : ?>
-              <li><?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->images[0]->file, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id]) ?></li>
+              <?php
+    						$url = ($property->cover)
+    						? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
+    						: Yii::getAlias('@web') . '/images/logo/logo.jpg';
+    					?>
+              <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id]) ?></li>
             <?php endforeach; ?>
 					</ul>
 				</div>

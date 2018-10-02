@@ -4,6 +4,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use frontend\assets\RevolutionAsset;
+
+RevolutionAsset::register($this);
 
 $this->title = 'Open House';
 ?>
@@ -188,42 +191,7 @@ $this->title = 'Open House';
 		<div class="tp-bannertimer tp-bottom" style="height: 5px; background: #fff;"></div>
 	</div>
 </div><!-- END REVOLUTION SLIDER -->
-<?php /* ?>
-<div class="row">
-	<div class="test">
-		<a href="#">
-			<figure class="trailer effect-3">
-				<?= Html::img(Yii::getAlias('@web') . '/images/properties/01.jpg', ['class' => 'img-responsive crop-menu']) ?>
-				<figcaption>
-					<div class="trailer-text trailer-full-dark">
-						<div class="trailer-center">
-							<div class="trailer-light">
-								<h2>Propiedades en Venta</h2>
-							</div>
-						</div>
-					</div>
-				</figcaption>
-			</figure>
-		</a>
-	</div>
-	<div class="test">
-		<a href="#">
-			<figure class="trailer effect-3">
-				<?= Html::img(Yii::getAlias('@web') . '/images/properties/02.jpg', ['class' => 'img-responsive crop-menu']) ?>
-				<figcaption>
-					<div class="trailer-text trailer-full-dark">
-						<div class="trailer-center">
-							<div class="trailer-light">
-								<h2>Propiedades en Arriendo</h2>
-							</div>
-						</div>
-					</div>
-				</figcaption>
-			</figure>
-		</a>
-	</div>
-</div>
-<?php */ ?>
+
 <div class="container mt50 mb50 bg-white">
 
 	<?php $form = ActiveForm::begin([
@@ -273,10 +241,15 @@ $this->title = 'Open House';
 			<br>
 			<div class="row product">
 				<?php foreach ($featured as $property) : ?>
+					<?php
+						$url = ($property->cover)
+						? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
+						: Yii::getAlias('@web') . '/images/logo/logo.jpg';
+					?>
 			  	<div class="col-sm-3">
 			  		<div class="product-thumbnail">
 			  			<div class="product-image">
-			  				<?= Html::a(Html::img(Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->images[0]->file, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
+			  				<?= Html::a(Html::img($url, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
 			  			</div>
 			  			<div class="product-info text-left p20">
 			          <p><span class="price"><?=Yii::$app->formatter->asCurrency($property->price)?></span></p>
