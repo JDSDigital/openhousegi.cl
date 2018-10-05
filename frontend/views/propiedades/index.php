@@ -1,6 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 use common\models\Properties;
+use common\widgets\SearchForm;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\LinkPager;
@@ -8,8 +9,10 @@ use yii\widgets\LinkPager;
 $this->title = 'Propiedades';
 
 $this->params['breadcrumbs'][] = 'Propiedades';
-
 ?>
+
+<?php /* SearchForm::widget() */ ?>
+
 <?php $form = ActiveForm::begin([
   'id' => 'properties-search',
   'action' => ['index']
