@@ -11,45 +11,8 @@ $this->title = 'Propiedades';
 $this->params['breadcrumbs'][] = 'Propiedades';
 ?>
 
-<?php /* SearchForm::widget() */ ?>
+<?= SearchForm::widget()  ?>
 
-<?php $form = ActiveForm::begin([
-  'id' => 'properties-search',
-  'action' => ['index']
-]); ?>
-<div class="row">
-  <div class="col-md-12">
-    <div class="form-theme form-big">
-      <div class="input-group">
-        <?= $form->field($propertiesSearch, 'title')->textInput(['class' => 'form-control'])->label(false) ?>
-        <span class="input-group-btn">
-          <?= Html::submitButton('<i class="glyphicon glyphicon-search"></i>', [
-              'class' => 'btn btn-theme mt10',
-          ]) ?>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row mt30 mb30">
-  <div class="col-md-4">
-    <div class="form-theme form-md">
-      <?= $form->field($propertiesSearch, 'contract_id')->dropDownList($propertiesSearch->getContractList(), ['class' => 'form-control'])->label(false) ?>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="form-theme form-md">
-      <?= $form->field($propertiesSearch, 'type_id')->dropDownList($propertiesSearch->getTypeList(), ['class' => 'form-control'])->label(false) ?>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="form-theme form-md">
-      <?= $form->field($propertiesSearch, 'zone')->dropDownList($propertiesSearch->getZoneList(), ['class' => 'form-control'])->label(false) ?>
-    </div>
-  </div>
-</div>
-<?php ActiveForm::end(); ?>
 
 <!-- Product Grid -->
 
@@ -69,15 +32,15 @@ $this->params['breadcrumbs'][] = 'Propiedades';
         <div class="product-info text-left p20">
           <div class="price-box">
             <p class="mb0"><span class="price"><?= Yii::$app->formatter->asCurrency($property->price) ?></span></p>
-            <p><span class="price">
+            <p><span class="price uf">
               <?= ($property->contract_id == Properties::CONTRACT_SALE && $property->uf)
               ? Yii::$app->formatter->asDecimal($property->uf) . ' U.F.'
               : '' ?>
             </span></p>
           </div>
-          <div class="title-box">
-            <h3><?= Html::a($property->title, ['/propiedades/view', 'id' => $property->id]) ?></h3>
-          </div>
+          <h3 class="fit-text">
+            <?= Html::a($property->title, ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?>
+          </h3>
           <p><span class="type"><?= $property->type->name ?> en <?= strtolower($property->contract->name) ?></span></p>
           <div class="row">
             <div class="col-xs-6 text-left">
@@ -103,7 +66,6 @@ $this->params['breadcrumbs'][] = 'Propiedades';
 <?php
 $js = <<<JS
   $('.price-box').SameHeight();
-  $('.title-box').SameHeight();
 JS;
 $this->registerJs($js);
 ?>

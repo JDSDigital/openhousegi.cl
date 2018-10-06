@@ -36,10 +36,12 @@ $this->params['breadcrumbs'][] = $property->title;
 
 		<div class="col-sm-6 product-header">
 			<h3 class="no-margin-top text-uppercase"><strong><?= $property->title ?></strong></h3>
-			<h4 class="text-theme"><strong>
-				<?= Yii::$app->formatter->asCurrency($property->price) ?>
-				<?= ($property->contract_id == Properties::CONTRACT_SALE && $property->uf) ? ' / ' . Yii::$app->formatter->asDecimal($property->uf) . ' U.F.' : '' ?>
-			</strong></h4>
+			<h4 class="text-theme">
+				<strong><?= Yii::$app->formatter->asCurrency($property->price) ?></strong>
+			</h4>
+			<h5 class="text-theme">
+				<strong><?=($property->contract_id == Properties::CONTRACT_SALE && $property->uf) ? Yii::$app->formatter->asDecimal($property->uf) . ' U.F.' : '' ?></strong>
+			</h5>
 			<p style="color:#999;"><?= $property->summary ?></p>
 			<p class=""><strong>TIPO:</strong> <span style="color:#999;"><?= $property->type->name ?></span></p>
 			<p><strong>CONTRATO:</strong> <span style="color:#999;"><?= $property->contract->name ?></span></p>

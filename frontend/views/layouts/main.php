@@ -275,7 +275,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
     						? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
     						: Yii::getAlias('@web') . '/images/logo/logo.jpg';
     					?>
-              <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id]) ?></li>
+              <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?></li>
             <?php endforeach; ?>
 					</ul>
 				</div>

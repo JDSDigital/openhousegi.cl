@@ -1390,7 +1390,7 @@ $win.on("load", function() {
 
 	// newsCarousel(),
 
-	// tooltip(),
+	tooltip(),
 
 	// fixedSocialIcons(),
 
