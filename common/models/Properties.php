@@ -323,4 +323,23 @@ class Properties extends \yii\db\ActiveRecord
         return $this->hasOne(Images::className(), ['property_id' => 'id'])->andOnCondition(['cover' => Images::STATUS_ACTIVE]);
     }
 
+    public function getTopProperties()
+    {
+        $properties = self::find()
+          ->select(['id', 'title', 'visits'])
+          ->orderBy(['visits' => SORT_DESC])
+          ->limit(10)
+          ->asArray()
+          ->all();
+
+        if (!$properties)
+          return null;
+
+        $response = [];
+        foreach ($properties as $property)
+            $response[$property['title']] = (int)$property['visits'];
+
+        return $response;
+    }
+
 }

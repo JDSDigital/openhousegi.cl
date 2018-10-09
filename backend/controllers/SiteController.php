@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Properties;
 
 /**
  * Site controller
@@ -60,7 +61,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $properties = new Properties;
+
+        return $this->render('index', [
+          'topProperties' => json_encode($properties->getTopProperties()),
+        ]);
     }
 
     /**
