@@ -46,7 +46,7 @@ class PropertiesSearch extends Properties
 
         if (Yii::$app->id == 'app-frontend') {
           $query->where(['status' => Properties::STATUS_ACTIVE])
-            ->andWhere(['taken' => Properties::STATUS_DELETED])
+            // ->andWhere(['taken' => Properties::STATUS_DELETED])
             ->orderBy([
               'featured' => SORT_DESC,
               'created_at' => SORT_DESC,

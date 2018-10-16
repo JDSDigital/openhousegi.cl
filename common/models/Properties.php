@@ -174,14 +174,14 @@ class Properties extends \yii\db\ActiveRecord
     */
     public function getRegionsList()
     {
-      $zones = Regions::find()
+        $zones = Regions::find()
         ->select(['id', 'name'])
         ->all();
 
-      $zones = ArrayHelper::map($zones, 'id', 'name');
-      array_unshift($zones, 'Todas las zonas');
+        $zones = ArrayHelper::map($zones, 'id', 'name');
+        array_unshift($zones, 'Todas las zonas');
 
-      return $zones;
+        return $zones;
     }
 
     /**
@@ -189,17 +189,18 @@ class Properties extends \yii\db\ActiveRecord
     */
     public function getZoneList()
     {
-      $zones = Communes::find()
+        $zones = Communes::find()
         ->select(['id', 'name'])
         ->all();
 
-      $zones = ArrayHelper::map($zones, 'id', 'name');
-      array_unshift($zones, 'Todas las zonas');
+        $zones = ArrayHelper::map($zones, 'id', 'name');
+        array_unshift($zones, 'Todas las zonas');
 
-      return $zones;
+        return $zones;
     }
 
-    public function getZone($id) {
+    public function getZone($id)
+    {
         return $this->getZoneList()[$id];
     }
 
@@ -224,8 +225,8 @@ class Properties extends \yii\db\ActiveRecord
         $response = '';
         $regions = Regions::find()->all();
 
-        if (count($regions) > 0){
-            foreach($regions as $region){
+        if (count($regions) > 0) {
+            foreach ($regions as $region) {
                 $response .= "<option value='".$region->id."'>".$region->name."</option>";
             }
         } else {
@@ -239,13 +240,14 @@ class Properties extends \yii\db\ActiveRecord
     {
         $response = '';
 
-        if ($id == 0)
-          $communes = Communes::find()->all();
-        else
-          $communes = Communes::find()->where(['region_id' => $id])->all();
+        if ($id == 0) {
+            $communes = Communes::find()->all();
+        } else {
+            $communes = Communes::find()->where(['region_id' => $id])->all();
+        }
 
-        if (count($communes) > 0){
-            foreach($communes as $commune){
+        if (count($communes) > 0) {
+            foreach ($communes as $commune) {
                 $response .= "<option value='".$commune->id."'>".$commune->name."</option>";
             }
         } else {
@@ -282,40 +284,38 @@ class Properties extends \yii\db\ActiveRecord
         if ($this->validate()) {
             $url = Yii::getAlias('@frontend') . '/web/images/properties/';
 
-            $uploadedImages = UploadedFile::getInstances($this,'images');
+            $uploadedImages = UploadedFile::getInstances($this, 'images');
 
             if (count($uploadedImages) > 0) {
+                foreach ($uploadedImages as $key => $uploadedImage) {
+                    $image = new Images;
+                    $name = $this->id . '-' . ($key + 1) . '-' . $this->updated_at . '.' . $uploadedImage->extension;
 
-              foreach ($uploadedImages as $key => $uploadedImage) {
+                    $image->file = $name;
+                    $image->property_id = $this->id;
 
-                $image = new Images;
-                $name = $this->id . '-' . ($key + 1) . '-' . $this->updated_at . '.' . $uploadedImage->extension;
+                    $uploadedImage->saveAs($url . 'tmp-' . $name);
 
-                $image->file = $name;
-                $image->property_id = $this->id;
-
-                $uploadedImage->saveAs($url . 'tmp-' . $name);
-
-                Image::resize($url . 'tmp-' . $name, 1024, null)
+                    Image::resize($url . 'tmp-' . $name, 1024, null)
                     ->save($url . $name, ['jpeg_quality' => 80]);
 
-                Image::resize($url . 'tmp-' . $name, null, 270)
+                    Image::resize($url . 'tmp-' . $name, null, 270)
                     ->save($url . 'thumbs/' . $name, ['jpeg_quality' => 80]);
 
-                unlink($url . 'tmp-' . $name);
+                    unlink($url . 'tmp-' . $name);
 
-                if ($key == 0)
-                    $image->cover = (!$this->cover) ? Images::STATUS_ACTIVE : Images::STATUS_DELETED;
+                    if ($key == 0) {
+                        $image->cover = (!$this->cover) ? Images::STATUS_ACTIVE : Images::STATUS_DELETED;
+                    }
 
-                $image->save();
-
-              }
-
-            } else
-              return true;
-
-        } else
+                    $image->save();
+                }
+            } else {
+                return true;
+            }
+        } else {
             return false;
+        }
     }
 
     public function getCover()
@@ -332,14 +332,15 @@ class Properties extends \yii\db\ActiveRecord
           ->asArray()
           ->all();
 
-        if (!$properties)
-          return null;
+        if (!$properties) {
+            return null;
+        }
 
         $response = [];
-        foreach ($properties as $property)
+        foreach ($properties as $property) {
             $response[$property['title']] = (int)$property['visits'];
+        }
 
         return $response;
     }
-
 }

@@ -90,7 +90,7 @@ function listenerCover() {
 
 // Initialize chart
 google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawColumn);
+// google.setOnLoadCallback(drawColumn);
 
 // Chart settings
 function drawColumn(properties) {
