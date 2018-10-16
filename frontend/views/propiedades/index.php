@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = 'Propiedades';
     ?>
     <div class="col-md-3 col-sm-6">
       <div class="product-thumbnail">
-        <div class="product-image">
+        <div class="product-image <?= ($property->taken) ? 'taken' : '' ?>">
           <?= Html::a(Html::img($url, ['alt' => 'image', 'class' => 'img-responsive crop']), ['/propiedades/view', 'id' => $property->id]) ?>
         </div>
         <div class="product-info text-left p20">
