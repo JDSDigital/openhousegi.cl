@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <i class="fa fa-thumbs-up"></i>
           <hr>
         </div>
-				<p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+				<p>Nuestro equipo de especialistas y agentes inmobiliarios esta en una constante ejecución del mejor modelo de proceso y de calidad que permite entregarle un servicio del mas alto nivel y de clase mundial utilizando las herramientas de vanguardia que hoy nos caracterizan al ser rápidos,  acertivos y acuciosos con la información que usamos tanto en los perfilamientos  para los casos de arriendo como para  venta  de su inversión inmobiliaria ,  minimizando los riesgos y rentabilizando al máximo su patrimonio inmobiliario.</p>
 				<br/>
 
 				<!-- Services Tab -->
@@ -37,7 +37,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Html::img(Yii::getAlias('@web') . '/images/svg/venta-y-arriendo.svg', ['class' => 'img-responsive']) ?>
                   </div>
                   <div class="col-md-8">
-                    <h4 class="text-theme"><strong>Gestión de Venta y Arriendo.</strong></h4>
+                    <h4 class="text-theme"><strong>Arriendo y venta de su inversión inmobiliaria.</strong></h4>
+
+                    <p>Nuestro servicios comprenden, lo siguiente:</p>
+                    <ul>
+                      <li>Nos especializamos en comunas haciendo una investigaciones de mercado de propiedades , del sector , del precio, unidades vendidas y unidades nuevas para conocer su oferta y demanda real .</li>
+                      <li>Levantamiento de los detalles de la propiedad</li>
+                      <li>Evaluación comercial que nos dara el valor de su propiedadl.</li>
+                      <li>Carpeta estudio de títulos que permitan contar con la mayor información de la propiedad </li>
+                      <li>idear la mejor estrategia de mercado que nos permita lograr colocar la propiedad en el mercado de arriendo o venta en el mejor precio posible obteniendo el resultado esperado en el menor tiempo posible .</li>
+                      <li>Fotografía profesional  y video marketing de la propiedad, para subirla a portales o promocionarla en redes inmobiliarias que permitan su rápida transacción .</li>
+                      <li>Perfilamientos con técnicas ajustadas a poder encontrar al interesado ideal para cerrar la operación inmobiliaria de arriendo o venta .</li>
+                      <li>Antecedentes de los interesados validados en diversos organismos financieros y judiciales .</li>
+                      <li>Formalización y redacción de contrato de arriendo con acuerdos, aspectos legales infaltables y buenas prácticas.</li>
+                      <li>Inscripción en el conservador de bienes raíces si es que procede en el arriendo.</li>
+                    <ul>
                   </div>
                 </div>
   						</div>
@@ -62,6 +76,18 @@ $this->params['breadcrumbs'][] = $this->title;
                   </div>
                   <div class="col-md-8">
                     <h4 class="text-theme"><strong>Administración de Propiedades.</strong></h4>
+                    <p>Además, prestamos el servicio de Administración de su inversión en base a su arrendamiento, que constan de lo siguiente :</p>
+                    <ul>
+                      <li>Gestión de cobros de las cuentas mensuales con pago al dia .</li>
+                      <li>En el caso de incumplimiento de contrato por no pago revocación instantánea del mismo , se gestiona acción judicial  si amerita con departamento legal.</li>
+                      <li>Verificación de pagos de consumos básicos (agua, gas, y otros servicios)</li>
+                      <li>Verificación de pago de gastos comunes y gestionar pago al dia mediante informe consolidado enviado en fecha clave, indicada al momento de contratar la administración.</li>
+                      <li>Aviso de pago de contribuciones.</li>
+                      <li>Gestión y formalización de términos de contrato y finiquitos de arriendo llevando un orden sistemático del proceso.</li>
+                      <li>Gestión de cobranza en caso de incobrables.</li>
+                      <li>Visitas al departamento notificado en contrato , con el efecto de visualizar en el inmueble tanto en la condición como en el uso específico para el cual fue arrendado el inmueble.</li>
+                      <li>En caso de problemas en el departamento  como por ejemplo desperfectos, problemas estructurales y similares, se gestionan reparaciones particulares o en el caso de ser un inmueble nuevo se gestionan las garantías a través de post venta.</li>
+                    </ul>
                   </div>
                 </div>
   						</div>
