@@ -132,9 +132,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<li class="col-md-3">
 				<div class="team-item ">
-          <?= Html::img(Yii::getAlias('@web') . '/images/team/01.jpg', ['class' => 'img-responsive img-circle', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>John Doe</h3>
-					<p>CEO</p>
+          <?= Html::img(Yii::getAlias('@web') . '/images/team/01.jpg', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Rodrigo Leiva</h3>
+					<p>CEO & Real Estate Specialist</p>
 					<hr class="faded"/>
 					<ul class="social-icons circle list-inline list-unstyled inverse">
 						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -149,9 +149,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<li class="col-md-3">
 				<div class="team-item">
-					<?= Html::img(Yii::getAlias('@web') . '/images/team/02.jpg', ['class' => 'img-responsive img-circle', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Jessica Doe</h3>
-					<p>Mercadeo</p>
+					<?= Html::img(Yii::getAlias('@web') . '/images/team/02.jpg', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Carolina Araya Queirolo</h3>
+					<p>Operational Coordinator</p>
 					<hr class="faded"/>
 					<ul class="social-icons circle list-inline list-unstyled inverse">
 						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -166,9 +166,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<li class="col-md-3">
 				<div class="team-item">
-					<?= Html::img(Yii::getAlias('@web') . '/images/team/03.jpg', ['class' => 'img-responsive img-circle', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Rick Edward Doe</h3>
-					<p>Diseñador</p>
+					<?= Html::img(Yii::getAlias('@web') . '/images/team/03.jpg', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Jaime Valencia</h3>
+					<p>Estate Agent</p>
 					<hr class="faded"/>
 					<ul class="social-icons circle list-inline list-unstyled inverse">
 						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
@@ -183,9 +183,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<li class="col-md-3">
 				<div class="team-item">
-					<?= Html::img(Yii::getAlias('@web') . '/images/team/04.jpg', ['class' => 'img-responsive img-circle', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Albert Doe</h3>
-					<p>Desarrollador</p>
+					<?= Html::img(Yii::getAlias('@web') . '/images/team/04.jpg', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Macarena Padilla</h3>
+					<p>Estate Agent</p>
 					<hr class="faded"/>
 					<ul class="social-icons circle list-inline list-unstyled inverse">
 						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
