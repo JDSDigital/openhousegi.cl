@@ -21,7 +21,7 @@ tpj(document).ready(function() {
       navigation: {
         onHoverStop: 'off',
         arrows: {
-          enable: true,
+          enable: false,
           style: 'hesperiden',
           tmp: '',
           rtl: false,
