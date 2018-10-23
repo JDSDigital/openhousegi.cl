@@ -127,57 +127,57 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
     <?php
         if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') { ?>
           <header class="navigation side-menu left">
-            <div class="main-nav">
-				<a class="nav-trigger">
-					<div class="bar-icon-wrapper bg-color1">
-						<span class="bar-icon"></span>
-						<span class="bar-icon"></span>
-						<span class="bar-icon"></span>
-					</div>
-				</a>
-        <div class="container">
-            <div class="navbar navbar-default bg-color1" role="navigation">
-                <?php
-                NavBar::begin([
-                  'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
-                  'brandUrl' => Yii::$app->homeUrl,
-                  'brandOptions' => [
-                    'class' => 'logo',
-                  ],
-                  'innerContainerOptions' => [
-                      'class' => 'bg-color1',
-                  ],
-                ]);
-                $menuItems = [
-                  ['label' => 'Inicio', 'url' => ['/site/index']],
-                  ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
-                  ['label' => 'Quienes Somos', 'url' => ['/site/about']],
-                  ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
-                  ['label' => 'Contacto', 'url' => ['/site/contact']],
-                ];
-                echo Nav::widget([
-                  'options' => ['class' => 'navbar-nav'],
-                  'items' => $menuItems,
-                ]);
-                NavBar::end();
-              	?>
-						<div class="side-menu-bottom">
-							<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
-								<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="flickr"><i class="fa fa-flickr"></i></a></li>
-								<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-								<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
-								<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-							</ul>
-							<p class="text text-uppercase white-text"><strong>© Open House</strong></p>
+				<div class="main-nav">
+					<a class="nav-trigger">
+						<div class="bar-icon-wrapper bg-color1">
+							<span class="bar-icon"></span>
+							<span class="bar-icon"></span>
+							<span class="bar-icon"></span>
 						</div>
-                    </div>
-                </div>
-            </div>
-        </header> <!-- End of Header -->
+					</a>
+					<div class="container">
+						<div class="navbar navbar-default bg-color1" role="navigation">
+							<?php
+							NavBar::begin([
+							  'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
+							  'brandUrl' => Yii::$app->homeUrl,
+							  'brandOptions' => [
+								'class' => 'logo',
+							  ],
+							  'innerContainerOptions' => [
+								  'class' => 'bg-color1',
+							  ],
+							]);
+							$menuItems = [
+							  ['label' => 'Inicio', 'url' => ['/site/index']],
+							  ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
+							  ['label' => 'Quienes Somos', 'url' => ['/site/about']],
+							  ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
+							  ['label' => 'Contacto', 'url' => ['/site/contact']],
+							];
+							echo Nav::widget([
+							  'options' => ['class' => 'navbar-nav'],
+							  'items' => $menuItems,
+							]);
+							NavBar::end();
+							?>
+							<div class="side-menu-bottom">
+								<ul class="side-menu-social social-icons list-inline list-unstyled si-6 si-no-border inverse sm">
+									<li><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></li>
+									<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#" class="flickr"><i class="fa fa-flickr"></i></a></li>
+									<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+									<li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
+									<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+								</ul>
+								<p class="text text-uppercase white-text"><strong>© Open House</strong></p>
+							</div>
+						</div>
+					</div>
+				</div>
+        	</header> <!-- End of Header -->
 
         <div class="">
             <div class="container">
@@ -213,18 +213,18 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 
       <div class="pt50">
         <div class="page-top-grey-bottom no-pt-heading">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<?= Breadcrumbs::widget([
-									'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-									'options' => [
-									'class' => 'breadcrumb',
-									],
-								]) ?>
-							</div>
-						</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<?= Breadcrumbs::widget([
+							'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+							'options' => [
+							'class' => 'breadcrumb',
+							],
+						]) ?>
 					</div>
+				</div>
+			</div>
         </div>
         <div class="container">
           <?= Alert::widget() ?>
@@ -234,7 +234,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 <?php } ?>
 </div>
 
-<!-- Footer 8 - Theme -->
+<!-- Footer 8 -->
 
 	<footer class="footer footer-plain footer-theme bg-color1">
 		<div class="container mt60 mb50">
@@ -269,14 +269,14 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
         		<div class="col-md-3">
 					<h5 class="footer-title">Últimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
-            <?php foreach ($latest as $property) : ?>
-              <?php
-    						$url = ($property->cover)
-    						? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
-    						: Yii::getAlias('@web') . '/images/logo/logo.jpg';
-    					?>
-              <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?></li>
-            <?php endforeach; ?>
+						<?php foreach ($latest as $property) : ?>
+						  <?php
+										$url = ($property->cover)
+										? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
+										: Yii::getAlias('@web') . '/images/logo/logo.jpg';
+									?>
+						  <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 			</div>
@@ -301,7 +301,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 				</div>
 			</div>
 		</div>
-	</footer><!-- End of Footer 8 - Theme -->
+	</footer><!-- End of Footer -->
 
 <?php $this->endBody() ?>
 </body>
