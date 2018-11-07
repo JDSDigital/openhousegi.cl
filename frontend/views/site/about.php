@@ -36,15 +36,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="carousel-inner">
           <div class="item">
-            <?= Html::img(Yii::getAlias('@web') . '/images/blog/6.jpg', ['class' => 'img-responsive']) ?>
+            <?= Html::img(Yii::getAlias('@web') . '/images/1.jpg', ['class' => 'img-responsive']) ?>
             <div class="carousel-caption text-light">
-              <h4>Lorem Ipsum Dolor</h4>
+              <!-- <h4>Lorem Ipsum Dolor</h4> -->
             </div>
           </div>
           <div class="item active">
-            <?= Html::img(Yii::getAlias('@web') . '/images/blog/8.jpg', ['class' => 'img-responsive']) ?>
+            <?= Html::img(Yii::getAlias('@web') . '/images/2.jpg', ['class' => 'img-responsive']) ?>
             <div class="carousel-caption text-light">
-              <h4>Aenean Massa</h4>
+              <!-- <h4>Aenean Massa</h4> -->
             </div>
           </div>
         </div>
@@ -76,15 +76,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
           <div class="carousel-inner">
             <div class="item">
-              <?= Html::img(Yii::getAlias('@web') . '/images/blog/6.jpg', ['class' => 'img-responsive']) ?>
+              <?= Html::img(Yii::getAlias('@web') . '/images/3.jpg', ['class' => 'img-responsive']) ?>
               <div class="carousel-caption text-light">
-                <h4>Lorem Ipsum Dolor</h4>
+                <!-- <h4>Lorem Ipsum Dolor</h4> -->
               </div>
             </div>
             <div class="item active">
-              <?= Html::img(Yii::getAlias('@web') . '/images/blog/8.jpg', ['class' => 'img-responsive']) ?>
+              <?= Html::img(Yii::getAlias('@web') . '/images/5.jpg', ['class' => 'img-responsive']) ?>
               <div class="carousel-caption text-light">
-                <h4>Aenean Massa</h4>
+                <!-- <h4>Aenean Massa</h4> -->
               </div>
             </div>
           </div>

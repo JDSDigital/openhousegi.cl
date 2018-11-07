@@ -259,23 +259,23 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					</p>
 				</div>
 				<div class="col-md-3">
-					<h5 class="footer-title">Links Útiles</h5>
+					<!-- <h5 class="footer-title">Links Útiles</h5>
 					<ul class="list-unstyled page-links">
 						<li><a href="#">Lorem ipsum dolor sit amet.</a></li>
 						<li><a href="#"> Aliquam lorem ante viverra quis.</a></li>
 						<li><a href="#">Duis leo. Sed fringilla mauris sit amet nibh.</a></li>
-					</ul>
+					</ul> -->
 				</div>
         		<div class="col-md-3">
 					<h5 class="footer-title">Últimas Propiedades</h5>
 					<ul class="list-unstyled latest-projects clearfix">
 						<?php foreach ($latest as $property) : ?>
-						  <?php
-										$url = ($property->cover)
-										? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
-										: Yii::getAlias('@web') . '/images/logo/logo.jpg';
-									?>
-						  <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?></li>
+                            <?php
+    							$url = ($property->cover)
+    							? Yii::getAlias('@web') . '/images/properties/thumbs/' . $property->cover->file
+    							: Yii::getAlias('@web') . '/images/logo/logo.jpg';
+    						?>
+                            <li><?= Html::a(Html::img($url, ['class' => 'img-responsive crop-thumb']), ['/propiedades/view', 'id' => $property->id], ['data-placement' => 'top', 'data-toggle' => 'tooltip', 'class' => 'tip-top', 'data-original-title' => $property->title]) ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>

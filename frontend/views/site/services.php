@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						<li class="active"><a href="#tab20" data-toggle="tab"><i class="fa fa-suitcase"></i> Gestión de Venta y Arriendo</a></li>
 						<li><a href="#tab21" data-toggle="tab"><i class="fa fa-balance-scale"></i> Apoyo Legal</a></li>
 						<li><a href="#tab22" data-toggle="tab"><i class="fa fa-home"></i> Administración de Propiedades</a></li>
-						<li><a href="#tab23" data-toggle="tab"><i class="fa fa-bar-chart"></i> Inversiones</a></li>
+						<!-- <li><a href="#tab23" data-toggle="tab"><i class="fa fa-bar-chart"></i> Inversiones</a></li> -->
 						<li><a href="#tab24" data-toggle="tab"><i class="fa fa-search"></i> Check In House</a></li>
 					</ul>
         <div class="tab-pills">
