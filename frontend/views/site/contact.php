@@ -55,12 +55,12 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="row no-margin">
 					<div class="col-md-12 pad-left-30 pad-right-30">
 						<h4 class="text-uppercase"><strong>Información de contacto</strong></h4>
-						<p class="company-name">Open House C.A.</p>
+						<p class="company-name">Open Housse C.A.</p>
 						<p>Monseñor Felix Cabrera #39, Oficina 6</p>
 						<p>Providencia, Santiago de Chile</p>
 						<p><strong>T <a href="#">+56 9 7103 2622</a></strong></p>
 						<p><strong>T <a href="#">+56 9 3022 5644</a></strong></p>
-						<p><strong>E <a href="#">admin@openhousegi.cl</a></strong></p>
+						<p><strong>E <a href="#">admin@openhousse.cl</a></strong></p>
 					</div>
 				</div>
 				<hr class="mar-top-40 mar-bot-40"/>

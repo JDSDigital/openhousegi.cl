@@ -152,7 +152,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 							  ['label' => 'Inicio', 'url' => ['/site/index']],
 							  ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
 							  ['label' => 'Quienes Somos', 'url' => ['/site/about']],
-							  ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
+							  ['label' => 'Nuestros Servicios', 'url' => ['/site/servicios']],
 							  ['label' => 'Contacto', 'url' => ['/site/contact']],
 							];
 							echo Nav::widget([
@@ -201,7 +201,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
             ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Propiedades', 'url' => ['/propiedades/index']],
             ['label' => 'Quienes Somos', 'url' => ['/site/about']],
-            ['label' => 'Otros Servicios', 'url' => ['/site/servicios']],
+            ['label' => 'Nuestros Servicios', 'url' => ['/site/servicios']],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
           ];
           echo Nav::widget([
@@ -254,7 +254,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					Monseñor Felix Cabrera #39<br/>
 					Oficina 6,<br/>
 					Providencia, Santiago de Chile<br/>
-					Correo: <a href="#">admin@openhousegi.cl</a><br/>
+					Correo: <a href="#">admin@openhoussegcl</a><br/>
 					Teléfonos: <br/>+56 9 7103 2622<br/>+56 9 3022 5644<br/>
 					</p>
 				</div>
@@ -285,7 +285,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-5">
-						<p>Copyright © <?= date('Y') ?> <?= Html::a('openhousegi.cl',['//site/index']) ?> / Diseño y desarrollo por <?= Html::a('Geknology', Url::to('http://www.geknology.com/')) ?></p>
+						<p>Copyright © <?= date('Y') ?> <?= Html::a('openhousse.cl',['//site/index']) ?> / Diseño y desarrollo por <?= Html::a('Geknology', Url::to('http://www.geknology.com/')) ?></p>
 					</div>
 					<div class="col-sm-7 visible-sm-block visible-md-block visible-lg-block">
 						<nav>
@@ -293,7 +293,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 								<li><?= Html::a('Inicio', ['/site/index']) ?></li>
 								<li><?= Html::a('Propiedades', ['/propiedades/index']) ?></li>
 								<li><?= Html::a('Quienes Somos', ['/site/about']) ?></li>
-								<li><?= Html::a('Otros Servicios', ['/site/servicios']) ?></li>
+								<li><?= Html::a('Nuestros Servicios', ['/site/servicios']) ?></li>
 								<li><?= Html::a('Contacto', ['/site/contact']) ?></li>
 							</ul>
 						</nav>

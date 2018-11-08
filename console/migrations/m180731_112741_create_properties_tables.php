@@ -163,12 +163,12 @@ class m180731_112741_create_properties_tables extends Migration
       ]);
 
       $this->batchInsert('{{%xproperties_contracts}}', ['name'], [
-          ['Alquiler'],
+          ['Arriendo'],
           ['Venta'],
       ]);
 
       $this->batchInsert('{{%xproperties_types}}', ['name'], [
-          ['Apartamento'],
+          ['Departamento'],
           ['Casa'],
       ]);
 

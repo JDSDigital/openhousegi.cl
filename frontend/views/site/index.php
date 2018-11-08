@@ -10,7 +10,7 @@ use common\models\Properties;
 
 RevolutionAsset::register($this);
 
-$this->title = 'Open House';
+$this->title = 'Open Housse';
 ?>
 
 <div id="rev_slider_110_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="rotating-words82" style="background-color:#e5e5e5;padding:0px;">
