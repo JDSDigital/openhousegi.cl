@@ -139,7 +139,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 						<div class="navbar navbar-default bg-color1" role="navigation">
 							<?php
 							NavBar::begin([
-							  'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => '']),
+							  'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => '']),
 							  'brandUrl' => Yii::$app->homeUrl,
 							  'brandOptions' => [
 								'class' => 'logo',
@@ -188,7 +188,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 
       <?php } else {
           NavBar::begin([
-            'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-text.png', ['class' => 'img-responsive']),
+            'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo/logo-full.png', ['class' => 'img-responsive']),
             'brandUrl' => Yii::$app->homeUrl,
             'brandOptions' => [
               'class' => 'vertical-align navbar-top',

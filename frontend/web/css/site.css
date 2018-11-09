@@ -261,8 +261,8 @@ a.desc:after {
   padding: 0;
 }
 .logo-rev-slider {
-  width: 50vw !important;
-  height: auto !important;
+  /* width: 50vw !important; */
+  /* height: auto !important; */
   /* position: absolute; */
   /* margin: auto; */
   /* top: 0; */
@@ -348,4 +348,13 @@ hr {
   text-align: center;
   padding: 100px 0;
   text-transform: uppercase;
+}
+.main-nav a.logo img {
+    height: 40px;
+}
+.side-menu .nav.navbar-nav > li.active {
+    background-color: #EEE !important;
+}
+.main-nav .navbar-default .navbar-toggle.collapsed {
+    background-color: transparent !important;
 }
