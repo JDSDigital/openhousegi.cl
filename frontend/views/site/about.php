@@ -130,7 +130,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<!-- Team Member 1 -->
 
-			<li class="col-md-3">
+			<li class="col-md-2 col-md-offset-1">
 				<div class="team-item ">
           <?= Html::img(Yii::getAlias('@web') . '/images/team/01.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
 					<h3>Rodrigo Leiva</h3>
@@ -147,7 +147,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<!-- Team Member 2 -->
 
-			<li class="col-md-3">
+			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/02.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
 					<h3>Carolina Araya Queirolo</h3>
@@ -164,7 +164,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<!-- Team Member 3 -->
 
-			<li class="col-md-3">
+			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/03.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
 					<h3>Jaime Valencia</h3>
@@ -181,11 +181,28 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<!-- Team Member 4 -->
 
-			<li class="col-md-3">
+			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/04.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
 					<h3>Macarena Padilla</h3>
 					<p>Estate Agent</p>
+					<!-- <hr class="faded"/>
+					<ul class="social-icons circle list-inline list-unstyled inverse">
+						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul> -->
+				</div>
+			</li>
+
+			<!-- Team Member 5 -->
+
+			<li class="col-md-2">
+				<div class="team-item">
+					<?= Html::img(Yii::getAlias('@web') . '/images/team/05.png', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Francisco Becerra</h3>
+					<p>Real Estate Legal Advisor</p>
 					<!-- <hr class="faded"/>
 					<ul class="social-icons circle list-inline list-unstyled inverse">
 						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
