@@ -254,7 +254,7 @@ $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' =
 					Monseñor Felix Cabrera #39<br/>
 					Oficina 6,<br/>
 					Providencia, Santiago de Chile<br/>
-					Correo: <a href="#">admin@openhoussegcl</a><br/>
+					Correo: <?= Html::mailto('admin@openhousse.cl', 'admin@openhousse.cl') ?><br/>
 					Teléfonos: <br/>+56 9 7103 2622<br/>+56 9 3022 5644<br/>
 					</p>
 				</div>

@@ -28,23 +28,17 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- Indicators -->
 
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-3" data-slide-to="0" class=""></li>
-          <li data-target="#carousel-example-3" data-slide-to="1" class="active"></li>
+          <!-- <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li> -->
+          <!-- <li data-target="#carousel-example-3" data-slide-to="1" class=""></li> -->
         </ol>
 
         <!-- Wrapper for slides -->
 
         <div class="carousel-inner">
-          <div class="item">
-            <?= Html::img(Yii::getAlias('@web') . '/images/1.jpg', ['class' => 'img-responsive']) ?>
+          <div class="item active">
+            <?= Html::img(Yii::getAlias('@web') . '/images/7.jpg', ['class' => 'img-responsive']) ?>
             <div class="carousel-caption text-light">
               <!-- <h4>Lorem Ipsum Dolor</h4> -->
-            </div>
-          </div>
-          <div class="item active">
-            <?= Html::img(Yii::getAlias('@web') . '/images/2.jpg', ['class' => 'img-responsive']) ?>
-            <div class="carousel-caption text-light">
-              <!-- <h4>Aenean Massa</h4> -->
             </div>
           </div>
         </div>
@@ -68,23 +62,17 @@ $this->params['breadcrumbs'][] = $this->title;
           <!-- Indicators -->
 
           <ol class="carousel-indicators">
-            <li data-target="#carousel-example-3" data-slide-to="0" class=""></li>
-            <li data-target="#carousel-example-3" data-slide-to="1" class="active"></li>
+            <!-- <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li> -->
+            <!-- <li data-target="#carousel-example-3" data-slide-to="1" class=""></li> -->
           </ol>
 
           <!-- Wrapper for slides -->
 
           <div class="carousel-inner">
-            <div class="item">
-              <?= Html::img(Yii::getAlias('@web') . '/images/3.jpg', ['class' => 'img-responsive']) ?>
+            <div class="item active">
+              <?= Html::img(Yii::getAlias('@web') . '/images/8.jpg', ['class' => 'img-responsive']) ?>
               <div class="carousel-caption text-light">
                 <!-- <h4>Lorem Ipsum Dolor</h4> -->
-              </div>
-            </div>
-            <div class="item active">
-              <?= Html::img(Yii::getAlias('@web') . '/images/5.jpg', ['class' => 'img-responsive']) ?>
-              <div class="carousel-caption text-light">
-                <!-- <h4>Aenean Massa</h4> -->
               </div>
             </div>
           </div>
