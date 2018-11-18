@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						<p>Providencia, Santiago de Chile</p>
 						<p><strong>T <a href="#">+56 9 7103 2622</a></strong></p>
 						<p><strong>T <a href="#">+56 9 3022 5644</a></strong></p>
-						<p><strong>E <a href="#">admin@openhousse.cl</a></strong></p>
+						<p><strong>E <?= Html::mailto('contacto@openhousse.cl', 'contacto@openhousse.cl') ?></strong></p>
 					</div>
 				</div>
 				<hr class="mar-top-40 mar-bot-40"/>

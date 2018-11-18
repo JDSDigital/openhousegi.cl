@@ -2,6 +2,8 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\captcha\Captcha;
+use yii\bootstrap\ActiveForm;
 use common\models\Properties;
 use frontend\assets\NivoAsset;
 
@@ -88,25 +90,33 @@ $this->params['breadcrumbs'][] = $property->title;
 
 							<!-- Product Review Form -->
 
-							<div class="form-theme form-md">
-								<div class="form-group mt10">
-									<label class="control-label">Nombre*</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="form-group mt10">
-									<label class="control-label">Correo*</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="form-group mt10">
-									<label class="control-label">Teléfono*</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="form-group mt10">
-									<label class="control-label">Comentarios Adicionales</label>
-									<textarea class="form-control form-text-area"></textarea>
-								</div>
-								<a class="btn btn-hollow-dark mt10"><strong>ENVIAR</strong></a>
-							</div> <!-- End of Product Review Form -->
+										<?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+											<div class="row">
+												<div class="col-sm-12">
+													<?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+												</div>
+												<div class="col-sm-12">
+													<?= $form->field($model, 'email') ?>
+												</div>
+												<div class="col-sm-12">
+													<?= $form->field($model, 'phone') ?>
+												</div>
+												<div class="col-sm-12">
+													<?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+												</div>
+												<div class="col-sm-12">
+													<?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+													    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-9">{input}</div></div>',
+													]) ?>
+												</div>
+												<div class="col-sm-4">
+													<div class="form-group">
+														<?= Html::submitButton('Enviar', ['class' => 'btn btn-hollow-dark mt10', 'name' => 'contact-button']) ?>
+													</div>
+												</div>
+											</div>
+										<?php ActiveForm::end(); ?>
+							<!-- End of Product Review Form -->
 						</div>
 					</div>
 				</div>

@@ -14,6 +14,7 @@ class ContactForm extends Model
     public $email;
     public $phone;
     public $body;
+    public $url;
     public $verifyCode;
 
 
@@ -27,6 +28,7 @@ class ContactForm extends Model
             [['name', 'email', 'phone', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
+            ['url', 'string'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];
@@ -42,6 +44,7 @@ class ContactForm extends Model
             'email' => 'Correo',
             'phone' => 'Teléfono',
             'body' => 'Mensaje',
+            'url' => 'Url',
             'verifyCode' => 'Código de verificación',
         ];
     }
@@ -52,7 +55,7 @@ class ContactForm extends Model
      * @param string $email the target email address
      * @return bool whether the email was sent
      */
-    public function sendEmail()
+    public function sendEmail($url = '')
     {
         return Yii::$app->mailer->compose(
                  'contact-html',
@@ -60,7 +63,8 @@ class ContactForm extends Model
                    'name'  => $this->name,
                    'phone' => $this->phone,
                    'email'  => $this->email,
-                   'body'  => $this->body
+                   'body'  => $this->body,
+                   'url' => $url
                  ]
              )
              ->setTo(Yii::$app->params['adminEmail'])

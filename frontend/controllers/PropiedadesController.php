@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\helpers\Url;
+use frontend\models\ContactForm;
 use common\models\Properties;
 use common\models\search\PropertiesSearch;
 
@@ -21,12 +23,27 @@ class PropiedadesController extends \yii\web\Controller
 
     public function actionView($id)
     {
-        $property = Properties::findOne($id);
-        $property->updateCounters(['visits' => 1]);
+        $model = new ContactForm;
+        $url = Url::to(['propiedades/view', 'id' => $id], true);
 
-        return $this->render('view', [
-          'property' => $property,
-        ]);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail($url)) {
+                Yii::$app->session->setFlash('success', 'Gracias por escribirnos. Te contactaremos lo mas pronto posible.');
+            } else {
+                Yii::$app->session->setFlash('error', 'Ocurrió un error enviando tu mensaje. Por favor intenta mas tarde.');
+            }
+
+            return $this->refresh();
+        } else {
+            $property = Properties::findOne($id);
+            $property->updateCounters(['visits' => 1]);
+
+            return $this->render('view', [
+                'property' => $property,
+                'model' => $model,
+            ]);
+        }
+
     }
 
     public function actionSearch($id)

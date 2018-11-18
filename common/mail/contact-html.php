@@ -13,4 +13,8 @@ use yii\helpers\Html;
     <p><strong>Correo: </strong> <?= $email ?></p>
     <p><strong>Mensaje: </strong> <?= $body ?></p>
 
+    <?php if ($url != '' && $url != null) : ?>
+        <p><strong>Propiedad: </strong> <?= $url ?></p>
+    <?php endif; ?>
+
 </div>
