@@ -23,7 +23,7 @@ AppAsset::register($this);
 
 // Meta tags
 $this->registerMetaTag(['name' => 'author', 'content' => 'geknology.com']);
-$this->registerMetaTag(['name' => 'description', 'content' => '']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Open Housse es parte de una Red de Especialistas inmobiliarios compuesta por agentes profesionales con experiencia de mas de 10 años en el rubro y también somos parte integrante de una de las organizaciones más masivas en el ambiente del corretaje de propiedades del país.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => 'propiedades, inmuebles, alquiler, venta, apartamento, casa']);
 $this->registerMetaTag(['rel' => 'canonical', 'href' => 'http://www.openhousegi.cl']);
 

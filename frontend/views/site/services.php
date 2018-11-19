@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
     				<li class="active"><a href="#tab20" data-toggle="tab"><i class="fa fa-suitcase"></i> Gestión de Venta y Arriendo</a></li>
     				<li><a href="#tab21" data-toggle="tab"><i class="fa fa-balance-scale"></i> Apoyo Legal</a></li>
     				<li><a href="#tab22" data-toggle="tab"><i class="fa fa-home"></i> Administración de Propiedades</a></li>
-    				<!-- <li><a href="#tab23" data-toggle="tab"><i class="fa fa-bar-chart"></i> Inversiones</a></li> -->
+    				<li><a href="#tab23" data-toggle="tab"><i class="fa fa-bar-chart"></i> Inversiones</a></li>
     				<li><a href="#tab24" data-toggle="tab"><i class="fa fa-search"></i> Check In House</a></li>
     			</ul>
                 <div class="tab-pills">
@@ -98,6 +98,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     <div class="col-md-8">
                                         <h4 class="text-theme"><strong>Inversiones.</strong></h4>
+                                        <p>Tenemos para tí la asesoria inteligente, te asesoramos en la busqueda de la mejor opción para invertir en el rubro inmobiliario, en base a un perfil determinado que logre optar por la mejor opción y decisión de compra de un proyecto, para eso contamos con un equipo proactivo que te gestiona en bancos todo el proceso de otorgamiento de créditos necesarios para la inversion a realizar.</p>
+                                        <p>Te acompañamos desde la elección del mejor proyecto, la recepción por nuestros expertos y posterior arriendo - administración o venta de tu inversión, orientándote en todo momento para maximizar rentabilidades.</p>
                                     </div>
                                 </div>
       						</div>

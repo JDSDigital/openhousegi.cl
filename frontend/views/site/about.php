@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <hr>
       </div>
 
-      <p>OpenHouse pertenece a una red de especialistas inmobiliarios, conformada por profesionales con más	de 10 años de experiencia en el rubro inmobiliario y pertenecientes a la mayor asociación de corredores de propiedades a nivel nacional, con más de 450 oficinas establecidas a lo largo de todo Chile.</p>
+      <p>Open Housse es parte de una Red de Especialistas inmobiliarios compuesta por agentes profesionales con experiencia de mas de 10 años en el rubro y también somos parte integrante de una de las organizaciones más masivas en el ambiente del corretaje de propiedades del país.</p>
       <p>Nuestro compromiso y trabajo que entregamos semana a semana nos diferencia completamente de un corredor de propiedades tradicional, lo que asegura resultados en el más breve plazo, con estrategias y metodologías internacionales que son fundamentales hoy en día.</p>
 
     </div>
@@ -118,18 +118,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<!-- Team Member 1 -->
 
-			<li class="col-md-2 col-md-offset-1">
-				<div class="team-item ">
-          <?= Html::img(Yii::getAlias('@web') . '/images/team/01.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Rodrigo Leiva</h3>
+			<li class="col-md-2">
+				<div class="team-item">
+                    <?= Html::img(Yii::getAlias('@web') . '/images/team/01.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Rodrigo San Juan</h3>
 					<p>CEO & Real Estate Specialist</p>
-					<!-- <hr class="faded"/>
-					<ul class="social-icons circle list-inline list-unstyled inverse">
-						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-					</ul> -->
 				</div>
 			</li>
 
@@ -138,32 +131,28 @@ $this->params['breadcrumbs'][] = $this->title;
 			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/02.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Carolina Araya Queirolo</h3>
+					<h3>Carolina</h3>
 					<p>Operational Coordinator</p>
-					<!-- <hr class="faded"/>
-					<ul class="social-icons circle list-inline list-unstyled inverse">
-						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-					</ul> -->
 				</div>
 			</li>
+
+            <!-- Team Member 5 -->
+
+            <li class="col-md-2">
+                <div class="team-item">
+                    <?= Html::img(Yii::getAlias('@web') . '/images/team/05.png', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+                    <h3>Francisco</h3>
+                    <p>Real Estate Legal Advisor</p>
+                </div>
+            </li>
 
 			<!-- Team Member 3 -->
 
 			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/03.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Jaime Valencia</h3>
-					<p>Estate Agent</p>
-					<!-- <hr class="faded"/>
-					<ul class="social-icons circle list-inline list-unstyled inverse">
-						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-					</ul> -->
+					<h3>Jaime</h3>
+					<p>Real Estate Specialist</p>
 				</div>
 			</li>
 
@@ -172,34 +161,27 @@ $this->params['breadcrumbs'][] = $this->title;
 			<li class="col-md-2">
 				<div class="team-item">
 					<?= Html::img(Yii::getAlias('@web') . '/images/team/04.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Macarena Padilla</h3>
-					<p>Estate Agent</p>
-					<!-- <hr class="faded"/>
-					<ul class="social-icons circle list-inline list-unstyled inverse">
-						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-					</ul> -->
+					<h3>Macarena</h3>
+					<p>Real Estate Specialist</p>
 				</div>
 			</li>
 
-			<!-- Team Member 5 -->
+			<!-- Team Member 6 -->
 
 			<li class="col-md-2">
 				<div class="team-item">
-					<?= Html::img(Yii::getAlias('@web') . '/images/team/05.png', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Francisco Becerra</h3>
-					<p>Real Estate Legal Advisor</p>
-					<!-- <hr class="faded"/>
-					<ul class="social-icons circle list-inline list-unstyled inverse">
-						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-					</ul> -->
+					<?= Html::img(Yii::getAlias('@web') . '/images/team/06.png', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Francisca</h3>
+					<p>Real Estate Specialist</p>
 				</div>
 			</li>
 		</ul>
 	</div>
 </div>
+
+<?php
+$js = <<<JS
+  $('.team-item').SameHeight();
+JS;
+$this->registerJs($js);
+?>
