@@ -23,32 +23,41 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- Boostrap Carousel -->
 
     <div class="col-md-6 hidden-xs">
-      <div id="carousel-example-3" class="carousel slide" data-ride="carousel">
+      <div id="carousel-example-2" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
 
         <ol class="carousel-indicators">
-          <!-- <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li> -->
-          <!-- <li data-target="#carousel-example-3" data-slide-to="1" class=""></li> -->
+          <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-2" data-slide-to="1" class=""></li>
         </ol>
 
         <!-- Wrapper for slides -->
 
         <div class="carousel-inner">
           <div class="item active">
-            <?= Html::img(Yii::getAlias('@web') . '/images/7.jpg', ['class' => 'img-responsive']) ?>
+            
+			<video controls width="600">
+
+				<source src="<?= Yii::getAlias('@web') . '/video/timelapse1.mp4' ?>" type="video/mp4">
+
+				Sorry, your browser doesn't support embedded videos.
+			</video>
             <div class="carousel-caption text-light">
               <!-- <h4>Lorem Ipsum Dolor</h4> -->
             </div>
           </div>
+		  <div class="item">
+			<?= Html::img(Yii::getAlias('@web') . '/images/7.jpg', ['class' => 'img-responsive']) ?>
+		  </div>
         </div>
 
         <!-- Controls -->
 
-        <a class="left carousel-control" href="#carousel-example-3" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#carousel-example-2" role="button" data-slide="prev">
           <i class="fa fa-angle-left fa-2x"></i>
         </a>
-        <a class="right carousel-control" href="#carousel-example-3" role="button" data-slide="next">
+        <a class="right carousel-control" href="#carousel-example-2" role="button" data-slide="next">
           <i class="fa fa-angle-right fa-2x"></i>
         </a>
       </div>
@@ -62,19 +71,27 @@ $this->params['breadcrumbs'][] = $this->title;
           <!-- Indicators -->
 
           <ol class="carousel-indicators">
-            <!-- <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li> -->
-            <!-- <li data-target="#carousel-example-3" data-slide-to="1" class=""></li> -->
+            <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-3" data-slide-to="1" class=""></li>
           </ol>
 
           <!-- Wrapper for slides -->
 
           <div class="carousel-inner">
             <div class="item active">
-              <?= Html::img(Yii::getAlias('@web') . '/images/8.jpg', ['class' => 'img-responsive']) ?>
+				<video controls width="600">
+
+					<source src="<?= Yii::getAlias('@web') . '/video/timelapse2.mp4' ?>" type="video/mp4">
+
+					Sorry, your browser doesn't support embedded videos.
+				</video>
               <div class="carousel-caption text-light">
                 <!-- <h4>Lorem Ipsum Dolor</h4> -->
               </div>
             </div>
+			<div class="item">
+				<?= Html::img(Yii::getAlias('@web') . '/images/8.jpg', ['class' => 'img-responsive']) ?>
+			</div>
           </div>
 
           <!-- Controls -->

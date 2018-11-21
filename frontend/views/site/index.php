@@ -19,7 +19,7 @@ $this->title = 'Open Housse';
 		<ul class="js-scroll-nav">	<!-- SLIDE  -->
 			<li data-index="rs-333" data-transition="fade" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="Intro" data-description="">
 				<!-- MAIN IMAGE -->
-				<img src="<?= Yii::getAlias('@web') . '/video/timelapse1.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+				<img src="<?= Yii::getAlias('@web') . '/video/office_cover.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 				<!-- LAYERS -->
 
 				<!-- BACKGROUND VIDEO LAYER -->
@@ -29,7 +29,7 @@ $this->title = 'Open Housse';
 					data-muted="true"
 					data-videowidth="100%"
 					data-videoheight="100%"
-					data-videomp4="<?= Yii::getAlias('@web') . '/video/timelapse1.mp4' ?>"
+					data-videomp4="<?= Yii::getAlias('@web') . '/video/Working-Space.mp4' ?>"
 					data-videopreload="preload"
 					data-videoloop="loopandnoslidestop"
 					data-forceCover="1"
@@ -105,24 +105,8 @@ $this->title = 'Open Housse';
 			</li>
 			<li data-index="rs-334" data-transition="fade" data-slotamount="default"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-rotate="0"  data-saveperformance="off"  data-title="Intro" data-description="">
 				<!-- MAIN IMAGE -->
-				<img src="<?= Yii::getAlias('@web') . '/video/timelapse2.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+				<img src="<?= Yii::getAlias('@web') . '/video/santiago-cover.jpg' ?>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 				<!-- LAYERS -->
-
-				<!-- BACKGROUND VIDEO LAYER -->
-				<div class="rs-background-video-layer"
-					data-forcerewind="on"
-					data-volume="mute"
-					data-muted="true"
-					data-videowidth="100%"
-					data-videoheight="100%"
-					data-videomp4="<?= Yii::getAlias('@web') . '/video/timelapse2.mp4' ?>"
-					data-videopreload="preload"
-					data-videoloop="loopandnoslidestop"
-					data-forceCover="1"
-					data-aspectratio="16:9"
-					data-autoplay="true"
-					data-nextslideatend="true"
-				></div>
 
 				<!-- LAYER NR. 1 -->
 				<div class="tp-caption tp-shape tp-shapewrapper   rs-parallaxlevel-0"
