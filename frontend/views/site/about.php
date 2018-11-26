@@ -23,86 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- Boostrap Carousel -->
 
     <div class="col-md-6 hidden-xs">
-      <div id="carousel-example-2" class="carousel slide" data-ride="carousel">
-
-        <!-- Indicators -->
-
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-2" data-slide-to="1" class=""></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-
-        <div class="carousel-inner">
-          <div class="item active">
-            
-			<video controls width="600">
-
-				<source src="<?= Yii::getAlias('@web') . '/video/timelapse1.mp4' ?>" type="video/mp4">
-
-				Sorry, your browser doesn't support embedded videos.
-			</video>
-            <div class="carousel-caption text-light">
-              <!-- <h4>Lorem Ipsum Dolor</h4> -->
-            </div>
-          </div>
-		  <div class="item">
-			<?= Html::img(Yii::getAlias('@web') . '/images/7.jpg', ['class' => 'img-responsive']) ?>
-		  </div>
-        </div>
-
-        <!-- Controls -->
-
-        <a class="left carousel-control" href="#carousel-example-2" role="button" data-slide="prev">
-          <i class="fa fa-angle-left fa-2x"></i>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-2" role="button" data-slide="next">
-          <i class="fa fa-angle-right fa-2x"></i>
-        </a>
-      </div>
+			<?= Html::img(Yii::getAlias('@web') . '/images/8.jpg', ['class' => 'img-responsive']) ?>
     </div><!-- End of Boostrap Carousel -->
   </div>
 
   <div class="row mt50 wow fadeInUp">
       <div class="col-md-6 hidden-xs">
-        <div id="carousel-example-3" class="carousel slide" data-ride="carousel">
-
-          <!-- Indicators -->
-
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-3" data-slide-to="1" class=""></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-
-          <div class="carousel-inner">
-            <div class="item active">
-				<video controls width="600">
-
+				<video controls width="500">
 					<source src="<?= Yii::getAlias('@web') . '/video/timelapse2.mp4' ?>" type="video/mp4">
-
 					Sorry, your browser doesn't support embedded videos.
 				</video>
-              <div class="carousel-caption text-light">
-                <!-- <h4>Lorem Ipsum Dolor</h4> -->
-              </div>
-            </div>
-			<div class="item">
-				<?= Html::img(Yii::getAlias('@web') . '/images/8.jpg', ['class' => 'img-responsive']) ?>
-			</div>
-          </div>
-
-          <!-- Controls -->
-
-          <a class="left carousel-control" href="#carousel-example-3" role="button" data-slide="prev">
-            <i class="fa fa-angle-left fa-2x"></i>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-3" role="button" data-slide="next">
-            <i class="fa fa-angle-right fa-2x"></i>
-          </a>
-        </div>
       </div><!-- End of Boostrap Carousel -->
 
       <div class="col-sm-6">
@@ -111,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <hr>
         </div>
 
-        <p>En Openhouse lo más importante eres TÚ, fidelizarte para toda la vida es nuestro gran objetivo.<p>
+        <p>En Open Housse lo más importante eres TÚ, fidelizarte para toda la vida es nuestro gran objetivo.<p>
         <p>Te guiamos durante todos los procesos, entregándote un servicio personalizado semana a semana que va a la vanguardia en un mercado cada vez más exigente.<p>
         <p>Nuestro modelo lo ajustamos a la medida de cada cliente, verás que ocupamos las mejores estrategias y herramientas a un nivel de clase mundial.<p>
 
@@ -137,8 +67,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			<li class="col-md-2">
 				<div class="team-item">
-                    <?= Html::img(Yii::getAlias('@web') . '/images/team/01.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
-					<h3>Rodrigo San Juan</h3>
+          <?= Html::img(Yii::getAlias('@web') . '/images/team/01.gif', ['class' => 'img-responsive', 'height' => '270', 'alt' => 'image']) ?>
+					<h3>Rodrigo</h3>
 					<p>CEO & Real Estate Specialist</p>
 				</div>
 			</li>
